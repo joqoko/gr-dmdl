@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<block>
+  <name>timer</name>
+  <key>dmdl_timer</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.timer($develop_mode, $block_id, $timer_type, $duration_ms, $system_time_granularity_us, $reserved_time_ms)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>Timer type</name>
+    <key>timer_type</key>
+    <type>enum</type>
+    <hide>none</hide>
+    <option>
+      <name>One shot</name>
+      <key>0</key>
+      <opt>hide_reserve:all</opt>
+    </option>
+    <option>
+      <name>Periodic</name>
+      <key>1</key>
+      <opt>hide_reserve:all</opt>
+    </option>
+    <option>
+      <name>Continual</name>
+      <key>2</key>
+      <opt>hide_reserve:part</opt>
+    </option>
+    <option>
+      <name>Oneshot exponential</name>
+      <key>3</key>
+      <opt>hide_reserve:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Reserved time [ms]</name>
+    <key>reserved_time_ms</key>
+    <value>0</value>
+    <type>float</type>
+    <hide>$timer_type.hide_reserve</hide>
+  </param>
+
+  <param>
+    <name>Duration [ms]</name>
+    <key>duration_ms</key>
+    <value>1000</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>System time granularity [us]</name>
+    <key>system_time_granularity_us</key>
+    <value>10</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>Enable suspend timer</name>
+    <key>suspend_timer</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Enable resume timer</name>
+    <key>resume_timer</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Enable disable timer</name>
+    <key>disable_timer</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Enable address check</name>
+    <key>address_check</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Disable</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Enable</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show reset duration port</name>
+    <key>reset_duration</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>5</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>active_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>suspend_timer_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$suspend_timer</hide>
+  </sink>
+
+  <sink>
+    <name>resume_timer_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$resume_timer</hide>
+  </sink>
+
+  <sink>
+    <name>disable_timer_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$disable_timer</hide>
+  </sink>
+
+  <sink>
+    <name>reset_duration_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset_duration</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>expire_signal_out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>address_check_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$address_check</hide>
+  </source>
+</block>
