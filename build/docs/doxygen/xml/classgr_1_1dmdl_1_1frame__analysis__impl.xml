@@ -1,0 +1,525 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dmdl_1_1frame__analysis__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dmdl::frame_analysis_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dmdl_1_1frame__analysis" prot="public" virt="non-virtual">gr::dmdl::frame_analysis</basecompoundref>
+    <includes refid="frame__analysis__impl_8h" local="no">frame_analysis_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a493a9bc1a735dfa9bffd6730fc308259" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_develop_mode</definition>
+        <argsstring></argsstring>
+        <name>_develop_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="35" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a8784660dbb75a8389e5dba5ec56544e0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_block_id</definition>
+        <argsstring></argsstring>
+        <name>_block_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="36" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1abdf6d749e3bb730697fa831de6e954b4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_frame_type</definition>
+        <argsstring></argsstring>
+        <name>_frame_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="37" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ad613213c7236b5a49fc841986bb2e327" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_frame_type</definition>
+        <argsstring></argsstring>
+        <name>_len_frame_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="38" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ac0a11220ff63c9041a4e09491a9d79b8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_frame_index</definition>
+        <argsstring></argsstring>
+        <name>_frame_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="39" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ac141e722c1079345e86b3ba3bb1ffc8d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_frame_index</definition>
+        <argsstring></argsstring>
+        <name>_len_frame_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="40" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ab42f7d7770e966363e1903f26ed48860" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_destination_address</definition>
+        <argsstring></argsstring>
+        <name>_destination_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="41" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a8657f2e35d872acbd4d4bea53d6a5a43" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_destination_address</definition>
+        <argsstring></argsstring>
+        <name>_len_destination_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="42" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a78c02ade2b9ae1fad57c2cd6d2161220" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_source_address</definition>
+        <argsstring></argsstring>
+        <name>_source_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="43" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a7088837923a7bc81176bcbefd5db10db" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_source_address</definition>
+        <argsstring></argsstring>
+        <name>_len_source_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="44" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1af5a6972e7a525d83efd813499912f216" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_num_transmission</definition>
+        <argsstring></argsstring>
+        <name>_len_num_transmission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="45" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a037bbe66fc91fca76508c0614f2e6397" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_reserved_field_I</definition>
+        <argsstring></argsstring>
+        <name>_reserved_field_I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="46" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a2123640075e86f8d126a93f96a050031" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_reserved_field_I</definition>
+        <argsstring></argsstring>
+        <name>_len_reserved_field_I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="47" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a8da0e6da9c1580aa8c55ccb47d491dd2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_reserved_field_II</definition>
+        <argsstring></argsstring>
+        <name>_reserved_field_II</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="48" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a4404a30fc1fba5beadd056ad6ab2e6fe" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_reserved_field_II</definition>
+        <argsstring></argsstring>
+        <name>_len_reserved_field_II</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="49" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a67ba05e161ba334d5e7f9698987c0813" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_payload_length</definition>
+        <argsstring></argsstring>
+        <name>_payload_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="50" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a1fdd373fd44c304eab847d411795913f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_len_payload_length</definition>
+        <argsstring></argsstring>
+        <name>_len_payload_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="51" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1abb8bbafc10399eebbea9560b5dbbec05" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_apply_self_address_check</definition>
+        <argsstring></argsstring>
+        <name>_apply_self_address_check</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="52" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a8ca15b5fe82481604100c981f4f91930" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::_my_address</definition>
+        <argsstring></argsstring>
+        <name>_my_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="53" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ae6c51c22121d62be07741beab989c382" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::frame_analysis_impl::frame_analysis</definition>
+        <argsstring>(pmt::pmt_t rx_frame)</argsstring>
+        <name>frame_analysis</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a96efa39161939a021d9f9056bd410523" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::get_frame_header_length</definition>
+        <argsstring>()</argsstring>
+        <name>get_frame_header_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1af22b32a34d282cec78c12b1b748c1188" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::get_ampdu_delimiter_length</definition>
+        <argsstring>()</argsstring>
+        <name>get_ampdu_delimiter_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ad18e662de55f5ecc688ae0f1990c8f28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dmdl::frame_analysis_impl::BytesToint</definition>
+        <argsstring>(std::vector&lt; unsigned char &gt; bytes)</argsstring>
+        <name>BytesToint</name>
+        <param>
+          <type>std::vector&lt; unsigned char &gt;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1aceea74f6b979a32874dd0c89fc0bce2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::frame_analysis_impl::frame_decompose</definition>
+        <argsstring>(pmt::pmt_t frame_pmt, int frame_type)</argsstring>
+        <name>frame_decompose</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>frame_pmt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ad6823cb69ac8b5e5fcf2ad50a652b1bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::frame_analysis_impl::ampdu_decompose</definition>
+        <argsstring>(pmt::pmt_t frame_pmt, int frame_type)</argsstring>
+        <name>ampdu_decompose</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>frame_pmt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1aaa3735a6f6dbcf8f60072f9fdfbb6adf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::frame_analysis_impl::disp_vec</definition>
+        <argsstring>(std::vector&lt; unsigned char &gt; vec)</argsstring>
+        <name>disp_vec</name>
+        <param>
+          <type>std::vector&lt; unsigned char &gt;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="60" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1ae55f7252cc611ce125c0747887ac5dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::frame_analysis_impl::frame_analysis_impl</definition>
+        <argsstring>(int develop_mode, int block_id, int len_frame_type, int len_frame_index, int len_destination_address, int len_source_address, int len_num_transmission, int len_reserved_field_I, int len_reserved_field_II, int len_payload_length, int apply_self_address_check, int my_address)</argsstring>
+        <name>frame_analysis_impl</name>
+        <param>
+          <type>int</type>
+          <declname>develop_mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>block_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_frame_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_frame_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_destination_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_source_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_num_transmission</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_reserved_field_I</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_reserved_field_II</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_payload_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>apply_self_address_check</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>my_address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1frame__analysis__impl_1a90d3e2d15a603c7eabda45fa1865cdee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::frame_analysis_impl::~frame_analysis_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~frame_analysis_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="64" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>block</label>
+      </node>
+      <node id="17">
+        <label>gr::dmdl::frame_analysis</label>
+        <link refid="classgr_1_1dmdl_1_1frame__analysis"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>gr::dmdl::frame_analysis_impl</label>
+        <link refid="classgr_1_1dmdl_1_1frame__analysis__impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="21">
+        <label>block</label>
+      </node>
+      <node id="20">
+        <label>gr::dmdl::frame_analysis</label>
+        <link refid="classgr_1_1dmdl_1_1frame__analysis"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>gr::dmdl::frame_analysis_impl</label>
+        <link refid="classgr_1_1dmdl_1_1frame__analysis__impl"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" line="32" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/frame_analysis_impl.h" bodystart="31" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1abb8bbafc10399eebbea9560b5dbbec05" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_apply_self_address_check</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a8784660dbb75a8389e5dba5ec56544e0" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_block_id</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ab42f7d7770e966363e1903f26ed48860" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_destination_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a493a9bc1a735dfa9bffd6730fc308259" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_develop_mode</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ac0a11220ff63c9041a4e09491a9d79b8" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1abdf6d749e3bb730697fa831de6e954b4" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_frame_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a8657f2e35d872acbd4d4bea53d6a5a43" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_destination_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ac141e722c1079345e86b3ba3bb1ffc8d" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ad613213c7236b5a49fc841986bb2e327" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_frame_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1af5a6972e7a525d83efd813499912f216" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_num_transmission</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a1fdd373fd44c304eab847d411795913f" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_payload_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a2123640075e86f8d126a93f96a050031" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_reserved_field_I</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a4404a30fc1fba5beadd056ad6ab2e6fe" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_reserved_field_II</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a7088837923a7bc81176bcbefd5db10db" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_len_source_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a8ca15b5fe82481604100c981f4f91930" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_my_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a67ba05e161ba334d5e7f9698987c0813" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_payload_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a037bbe66fc91fca76508c0614f2e6397" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_reserved_field_I</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a8da0e6da9c1580aa8c55ccb47d491dd2" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_reserved_field_II</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a78c02ade2b9ae1fad57c2cd6d2161220" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>_source_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ad6823cb69ac8b5e5fcf2ad50a652b1bf" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>ampdu_decompose</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ad18e662de55f5ecc688ae0f1990c8f28" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>BytesToint</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1aaa3735a6f6dbcf8f60072f9fdfbb6adf" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>disp_vec</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ae6c51c22121d62be07741beab989c382" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>frame_analysis</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1ae55f7252cc611ce125c0747887ac5dfb" prot="public" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>frame_analysis_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1aceea74f6b979a32874dd0c89fc0bce2f" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>frame_decompose</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1af22b32a34d282cec78c12b1b748c1188" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>get_ampdu_delimiter_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a96efa39161939a021d9f9056bd410523" prot="private" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>get_frame_header_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis_1a7ff73e9c265d6ab527d632e81cc67586" prot="public" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis_1a0af98a2341c76a37c774aa2048508e78" prot="public" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dmdl_1_1frame__analysis__impl_1a90d3e2d15a603c7eabda45fa1865cdee" prot="public" virt="non-virtual"><scope>gr::dmdl::frame_analysis_impl</scope><name>~frame_analysis_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

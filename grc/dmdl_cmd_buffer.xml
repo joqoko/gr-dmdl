@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<block>
+  <name>cmd_buffer</name>
+  <key>dmdl_cmd_buffer</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.cmd_buffer($develop_mode, $block_id, $buffer_size, $auto_dequeue_first, $keep_dequeue_state, $auto_dequeue_full)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Buffer size</name>
+    <key>buffer_size</key>
+    <value>10</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Enqueue</name>
+    <key>enqueue</key>
+    <value>0</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Auto-dq 1st element</name>
+    <key>auto_dequeue_first</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Auto-dq when full</name>
+    <key>auto_dequeue_full</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Dequeue</name>
+    <key>dequeue</key>
+    <value>0</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:part</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Dequeue when available</name>
+    <key>keep_dequeue_state</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Show "not full" port</name>
+    <key>output_empty</key>
+    <type>enum</type>
+    <hide>$output_empty.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Indicate buffer empty</name>
+    <key>show_empty</key>
+    <type>enum</type>
+    <hide>$show_empty.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Indicate buffer full</name>
+    <key>show_full</key>
+    <type>enum</type>
+    <hide>$show_full.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+<!--  <param>
+    <name>Output?</name>
+    <key>output_dequeue_element</key>
+    <value>0</value>
+    <hide>$dequeue.hide_control</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param> 
+  <param>
+    <name>Preview</name>
+    <key>preview</key>
+    <value>0</value>
+    <type>enum</type>
+    <hide>$preivew.hide</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param> -->
+  <param>
+    <name>Flush</name>
+    <key>flush</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Indicate empty at start</name>
+    <key>indicate</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show reset size port</name>
+    <key>reset_size</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>16</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>enQueue</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$enqueue</hide>
+  </sink>
+
+  <sink>
+    <name>Dequeue</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$dequeue</hide>
+  </sink>
+
+<!--  <sink>
+    <name>preview</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$preview</hide>
+  </sink> -->
+
+  <sink>
+    <name>flusH</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$flush</hide>
+  </sink>
+
+  <sink>
+    <name>indicate_empty</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$indicate</hide>
+  </sink>
+
+  <sink>
+    <name>reconfiGure</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset_size</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>deqUeued</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>Not_full</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_empty</hide>
+  </source>
+  <source>
+    <name>fuLl</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_full</hide>
+  </source>
+  <source>
+    <name>eMpty</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_empty</hide>
+  </source>
+</block>

@@ -180,13 +180,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>active_in</name>
+    <name>Begin</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>suspend_timer_in</name>
+    <name>hAlt</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$suspend_timer</hide>
@@ -200,14 +200,14 @@
   </sink>
 
   <sink>
-    <name>disable_timer_in</name>
+    <name>Stop</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$disable_timer</hide>
   </sink>
 
   <sink>
-    <name>reset_duration_in</name>
+    <name>reconfiGure</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset_duration</hide>
@@ -219,7 +219,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>expire_signal_out</name>
+    <name>End</name>
     <type>message</type>
     <optional>1</optional>
   </source>

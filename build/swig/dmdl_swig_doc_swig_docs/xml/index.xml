@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1dmdl_1_1backoff" kind="class"><name>gr::dmdl::backoff</name>
+    <member refid="classgr_1_1dmdl_1_1backoff_1a4a5f06a4702a9c11d8fa9dd7d318112c" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1dmdl_1_1backoff_1a61426074b115a8851bd1ff6ba84a0057" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1dmdl_1_1frame__analysis" kind="class"><name>gr::dmdl::frame_analysis</name>
+    <member refid="classgr_1_1dmdl_1_1frame__analysis_1a0af98a2341c76a37c774aa2048508e78" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1dmdl_1_1frame__analysis_1a7ff73e9c265d6ab527d632e81cc67586" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1dmdl_1_1framing" kind="class"><name>gr::dmdl::framing</name>
+    <member refid="classgr_1_1dmdl_1_1framing_1a15e3c706b0377be12b3d990ee844a081" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1dmdl_1_1framing_1a42db41cc46c98478c492a236f18a7c71" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1dmdl_1_1timeout" kind="class"><name>gr::dmdl::timeout</name>
+    <member refid="classgr_1_1dmdl_1_1timeout_1a0f6997314ed91318ac087546960b1252" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1dmdl_1_1timeout_1afc5c58fe279f98882ced04409fffc0cc" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1dmdl_1_1timer" kind="class"><name>gr::dmdl::timer</name>
+    <member refid="classgr_1_1dmdl_1_1timer_1a6536f3dbb7e8b375974a30e03abbf60b" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1dmdl_1_1timer_1a92be28e464b2f8a0ce381155c605caca" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1dmdl" kind="namespace"><name>gr::dmdl</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1a7174c6e61177103f802a0b575cd6c299" kind="define"><name>DMDL_API</name></member>
+  </compound>
+  <compound refid="backoff_8h" kind="file"><name>backoff.h</name>
+  </compound>
+  <compound refid="frame__analysis_8h" kind="file"><name>frame_analysis.h</name>
+  </compound>
+  <compound refid="framing_8h" kind="file"><name>framing.h</name>
+  </compound>
+  <compound refid="timeout_8h" kind="file"><name>timeout.h</name>
+  </compound>
+  <compound refid="timer_8h" kind="file"><name>timer.h</name>
+  </compound>
+  <compound refid="dir_e843ca7c230c566d53ed6a06ffe69350" kind="dir"><name>/home/pwa/Source/gr-dmdl/include/dmdl</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/pwa/Source/gr-dmdl/include</name>
+  </compound>
+</doxygenindex>

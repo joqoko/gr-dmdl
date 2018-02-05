@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<block>
+  <name>address_check</name>
+  <key>dmdl_address_check</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.address_check($develop_mode, $block_id, $my_address, $mode)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Address to check</name>
+    <key>my_address</key>
+    <value>source_address</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Type</name>
+    <key>mode</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Destination</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Source</name>
+      <key>1</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Show not pass</name>
+    <key>show_not_pass</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>hide</name>
+      <key>1</key>
+      <opt>hide:all</opt>
+    </option>
+  </param>
+  <param>
+    <name>Output payload pmt</name>
+    <key>output_payload_pmt</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>17</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>Pass</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+
+  <source>
+    <name>payload_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_payload_pmt</hide>
+  </source>
+
+  <source>
+    <name>Fail</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_not_pass</hide>
+  </source>
+</block>

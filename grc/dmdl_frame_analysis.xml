@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<block>
+  <name>frame_analysis</name>
+  <key>dmdl_frame_analysis</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.frame_analysis($develop_mode, $block_id, $len_frame_type, $len_frame_index, $len_destination_address, $len_source_address, $len_num_transmission, $len_reserved_field_I, $len_reserved_field_II, $len_payload_length, $apply_self_address_check, $my_address)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>7</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Default framing settings</name>
+    <key>default_framing_setting</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Default</name>
+      <key>default</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Customized</name>
+      <key>customized</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Length of frame type</name>
+    <key>len_frame_type</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of frame index</name>
+    <key>len_frame_index</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of destination address</name>
+    <key>len_destination_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of source address</name>
+    <key>len_source_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of number of transmissions</name>
+    <key>len_num_transmission</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field I</name>
+    <key>len_reserved_field_I</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field II</name>
+    <key>len_reserved_field_II</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of payload length field</name>
+    <key>len_payload_length</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+
+  <param>
+    <name>Apply self address check?</name>
+    <key>apply_self_address_check</key>
+    <type>enum</type>
+    <hide>$default_framing_setting.hide</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>My address</name>
+    <key>my_address</key>
+    <value>source_address</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+  <source>
+    <name>frame_type_out</name>
+    <type>message</type>
+  </source>
+
+  <source>
+    <name>frame_index_out</name>
+    <type>message</type>
+  </source>
+
+  <source>
+    <name>destination_address_out</name>
+    <type>message</type>
+  </source>
+
+  <source>
+    <name>source_address_out</name>
+    <type>message</type>
+  </source>
+
+  <source>
+    <name>payload_length_out</name>
+    <type>message</type>
+  </source>
+
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>Pass</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dmdl_1_1timer__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dmdl::timer_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dmdl_1_1timer" prot="public" virt="non-virtual">gr::dmdl::timer</basecompoundref>
+    <includes refid="timer__impl_8h" local="no">timer_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1af0f6913b85ae5b4c750fc9c2345a3e80" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timer_impl::_develop_mode</definition>
+        <argsstring></argsstring>
+        <name>_develop_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="32" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a47fc77014a63e5e8a27c5d5faca14aaf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timer_impl::_block_id</definition>
+        <argsstring></argsstring>
+        <name>_block_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="33" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a6c9be0b79c438130efdc7142201b87f0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timer_impl::_timer_type</definition>
+        <argsstring></argsstring>
+        <name>_timer_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="34" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a8688d85f73904a94b6eb5be0d8db737d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timer_impl::_disable_timer</definition>
+        <argsstring></argsstring>
+        <name>_disable_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="35" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a2dee9de76d6edba192c10297c299d1f1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dmdl::timer_impl::_in_active</definition>
+        <argsstring></argsstring>
+        <name>_in_active</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="36" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1aeda6d475d3f96cda92a8a34c822a483f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::timer_impl::_duration_ms</definition>
+        <argsstring></argsstring>
+        <name>_duration_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="37" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a1f2e311d1f2430fe5b85e4e14c7575dd" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::timer_impl::_frame_info</definition>
+        <argsstring></argsstring>
+        <name>_frame_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="38" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1ae254afd319327136a41bce5298645c5b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::timer_impl::_timer_bias_s</definition>
+        <argsstring></argsstring>
+        <name>_timer_bias_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="39" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a77b98deb5ae09ec49776f0fb19097724" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::timer_impl::_start_time</definition>
+        <argsstring></argsstring>
+        <name>_start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="40" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a2d259a6d692b27d2b1ddeebdbdb8b59a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timer_impl::_system_time_granularity_us</definition>
+        <argsstring></argsstring>
+        <name>_system_time_granularity_us</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="41" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a81b1c36c5f4b9b77b2281fadf1250006" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::timer_impl::_reserved_time_ms</definition>
+        <argsstring></argsstring>
+        <name>_reserved_time_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="42" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a2d837e6d6495b4125192cb23dc26ab01" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint32_t &gt;</type>
+        <definition>std::vector&lt;uint32_t&gt; gr::dmdl::timer_impl::_duration_list_ms</definition>
+        <argsstring></argsstring>
+        <name>_duration_list_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="43" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a195ccb3a5dbb5dde4585326bf2ab3661" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; gr::dmdl::timer_impl::_node_id_list</definition>
+        <argsstring></argsstring>
+        <name>_node_id_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="44" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timer__impl_1a9196be704fca0c036561c293497ae760" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; gr::dmdl::timer_impl::_address_check_list</definition>
+        <argsstring></argsstring>
+        <name>_address_check_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="45" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a54632ad31ec396de1b8e92895af39938" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::start_timer</definition>
+        <argsstring>(pmt::pmt_t trigger)</argsstring>
+        <name>start_timer</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a9c690ced1727445bcefb45f1ce18307c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::suspend_timer</definition>
+        <argsstring>(pmt::pmt_t trigger)</argsstring>
+        <name>suspend_timer</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a0dbb3a8e7de3d68d2d95a75153799d44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::resume_timer</definition>
+        <argsstring>(pmt::pmt_t trigger)</argsstring>
+        <name>resume_timer</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a2c6f5d7e4ac1713428df0a936089aab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::reset_duration</definition>
+        <argsstring>(pmt::pmt_t cmd_in)</argsstring>
+        <name>reset_duration</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>cmd_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a53b9896b4a9beedf2286179ed234086c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::disable_timer</definition>
+        <argsstring>(pmt::pmt_t trigger)</argsstring>
+        <name>disable_timer</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>trigger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a66d8f50c5902e15278bafadcd6d0ed41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::countdown_oneshot_timer</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_oneshot_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a6f7bfd2d150e1b5ef2e1248758526294" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::countdown_oneshot_exp_timer</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_oneshot_exp_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a7ae5b367b3595b2d18d9bfafad5736d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::countdown_periodic_timer</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_periodic_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1af2012062ebf46cc2ad5665b4ba4b0d2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timer_impl::countdown_continual_timer</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_continual_timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="54" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1a95fc8e40892bcf0ef12c9205db8c8dc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::timer_impl::timer_impl</definition>
+        <argsstring>(int develop_mode, int block_id, int timer_type, double duration_ms, int system_time_granularity_us, double reserved_time_ms)</argsstring>
+        <name>timer_impl</name>
+        <param>
+          <type>int</type>
+          <declname>develop_mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>block_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timer_type</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>duration_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>system_time_granularity_us</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>reserved_time_ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timer__impl_1ac4551b76f37512c5ec83e448d37f5ebc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::timer_impl::~timer_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~timer_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="58" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="51">
+        <label>block</label>
+      </node>
+      <node id="49">
+        <label>gr::dmdl::timer_impl</label>
+        <link refid="classgr_1_1dmdl_1_1timer__impl"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>gr::dmdl::timer</label>
+        <link refid="classgr_1_1dmdl_1_1timer"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="54">
+        <label>block</label>
+      </node>
+      <node id="52">
+        <label>gr::dmdl::timer_impl</label>
+        <link refid="classgr_1_1dmdl_1_1timer__impl"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>gr::dmdl::timer</label>
+        <link refid="classgr_1_1dmdl_1_1timer"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" line="30" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timer_impl.h" bodystart="29" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a9196be704fca0c036561c293497ae760" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_address_check_list</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a47fc77014a63e5e8a27c5d5faca14aaf" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_block_id</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1af0f6913b85ae5b4c750fc9c2345a3e80" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_develop_mode</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a8688d85f73904a94b6eb5be0d8db737d" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_disable_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a2d837e6d6495b4125192cb23dc26ab01" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_duration_list_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1aeda6d475d3f96cda92a8a34c822a483f" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_duration_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a1f2e311d1f2430fe5b85e4e14c7575dd" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_frame_info</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a2dee9de76d6edba192c10297c299d1f1" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_in_active</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a195ccb3a5dbb5dde4585326bf2ab3661" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_node_id_list</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a81b1c36c5f4b9b77b2281fadf1250006" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_reserved_time_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a77b98deb5ae09ec49776f0fb19097724" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_start_time</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a2d259a6d692b27d2b1ddeebdbdb8b59a" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_system_time_granularity_us</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1ae254afd319327136a41bce5298645c5b" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_timer_bias_s</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a6c9be0b79c438130efdc7142201b87f0" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>_timer_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1af2012062ebf46cc2ad5665b4ba4b0d2c" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>countdown_continual_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a6f7bfd2d150e1b5ef2e1248758526294" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>countdown_oneshot_exp_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a66d8f50c5902e15278bafadcd6d0ed41" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>countdown_oneshot_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a7ae5b367b3595b2d18d9bfafad5736d5" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>countdown_periodic_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a53b9896b4a9beedf2286179ed234086c" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>disable_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer_1a92be28e464b2f8a0ce381155c605caca" prot="public" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a2c6f5d7e4ac1713428df0a936089aab0" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>reset_duration</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a0dbb3a8e7de3d68d2d95a75153799d44" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>resume_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer_1a6536f3dbb7e8b375974a30e03abbf60b" prot="public" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a54632ad31ec396de1b8e92895af39938" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>start_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a9c690ced1727445bcefb45f1ce18307c" prot="private" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>suspend_timer</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1a95fc8e40892bcf0ef12c9205db8c8dc9" prot="public" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>timer_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1timer__impl_1ac4551b76f37512c5ec83e448d37f5ebc" prot="public" virt="non-virtual"><scope>gr::dmdl::timer_impl</scope><name>~timer_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

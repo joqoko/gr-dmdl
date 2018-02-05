@@ -16,7 +16,15 @@
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-
 install(FILES
-    dmdl_timer.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_timer.xml
+    dmdl_backoff.xml
+    dmdl_timeout.xml
+    dmdl_framing.xml
+    dmdl_frame_analysis.xml
+    dmdl_cmd_buffer.xml
+    dmdl_error_detection.xml
+    dmdl_type_check.xml
+    dmdl_address_check.xml
+    dmdl_resend_check.xml DESTINATION share/gnuradio/grc/blocks
 )

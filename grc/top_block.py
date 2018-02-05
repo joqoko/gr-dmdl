@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Thu Feb  1 17:19:02 2018
+# Generated: Mon Feb  5 12:53:40 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -23,6 +23,7 @@ from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
 import dmdl
+import inets
 import sys
 from gnuradio import qtgui
 
@@ -62,9 +63,21 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
+        self.inets_run_0 = inets.run(5, 10)
+        self.inets_frame_probe_0_0 = inets.frame_probe(2, 101, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.inets_frame_probe_0 = inets.frame_probe(2, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.inets_dummy_source_0 = inets.dummy_source(0, 23, 100, 1, 1)
         self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 1000, 10, 0)
 
 
+
+        ##################################################
+        # Connections
+        ##################################################
+        self.msg_connect((self.dmdl_timer_0, 'End'), (self.inets_frame_probe_0_0, 'info_in'))
+        self.msg_connect((self.inets_dummy_source_0, 'output'), (self.dmdl_timer_0, 'Begin'))
+        self.msg_connect((self.inets_dummy_source_0, 'output'), (self.inets_frame_probe_0, 'info_in'))
+        self.msg_connect((self.inets_run_0, 'trigger_out'), (self.inets_dummy_source_0, 'trigger'))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "top_block")

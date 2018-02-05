@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<block>
+  <name>timeout</name>
+  <key>dmdl_timeout</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.timeout($develop_mode, $block_id, $timeout_duration_ms, $system_time_granularity_us, $llc_protocol)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>DATA-ACK timeout</name>
+    <key>data_ack</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Select</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Not select</name>
+      <key>1</key>
+    </option>
+  </param>
+  <param>
+    <name>RTS-CTS timeout</name>
+    <key>rts_cts</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Select</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Not select</name>
+      <key>1</key>
+    </option>
+  </param>
+  <param>
+    <name>LLC protocol</name>
+    <key>llc_protocol</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Stop and wait</name>
+      <key>0</key>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>Go-Back-N</name>
+      <key>1</key>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>Selective repeat</name>
+      <key>2</key>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Timeout duration [ms]</name>
+    <key>timeout_duration_ms</key>
+    <value>100</value>
+    <type>float</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>System time granularity [us]</name>
+    <key>system_time_granularity_us</key>
+    <value>1000</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>10</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin_DATA</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$data_ack</hide>
+  </sink>
+  <sink>
+    <name>confIrm_ACK</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$data_ack</hide>
+  </sink>
+  <sink>
+    <name>Begin_RTS</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$rts_cts</hide>
+  </sink>
+  <sink>
+    <name>confIrm_CTS</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$rts_cts</hide>
+  </sink>
+
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+
+</block>

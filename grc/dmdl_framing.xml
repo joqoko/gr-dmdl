@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<block>
+  <name>framing</name>
+  <key>dmdl_framing</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.framing($develop_mode, $block_id, $frame_type, $len_frame_type, $frame_index, $len_frame_index, $destination_address, $len_destination_address, $source_address, $len_source_address, $reserved_field_I, $len_reserved_field_I, $reserved_field_II, $len_reserved_field_II, $len_payload_length, $increase_index, $len_num_transmission, $reserved_field_ampdu, $node_list, $slot_list_ms, $len_slot_time_beacon, $default_payload, $default_payload_length, $internal_index)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+      <opt>hide_pmt:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+      <opt>hide_pmt:part</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+      <opt>hide_pmt:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>17</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Use default payload</name>
+    <key>default_payload</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>0</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Default payload length</name>
+    <key>default_payload_length</key>
+    <value>300</value>
+    <type>int</type>
+    <hide>$default_payload.hide</hide>
+  </param>
+
+  <param>
+    <name>Use internal index</name>
+    <key>internal_index</key>
+    <type>enum</type>
+    <hide>$default_payload.hide</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Output frame pmt</name>
+    <key>output_frame_pmt</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide_pmt</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Frame type</name>
+    <key>frame_type</key>
+    <type>enum</type>
+    <hide>none</hide>
+    <option>
+      <name>DATA frame</name>
+      <key>1</key>
+      <opt>hide_data:part</opt>
+      <opt>hide_ack:all</opt>
+      <opt>hide_beacon:all</opt>
+      <opt>hide_ampdu:all</opt>
+    </option>
+    <option>
+      <name>ACK frame</name>
+      <key>2</key>
+      <opt>hide_data:all</opt>
+      <opt>hide_ack:part</opt>
+      <opt>hide_beacon:all</opt>
+      <opt>hide_ampdu:all</opt>
+    </option>
+    <option>
+      <name>BEACON frame</name>
+      <key>3</key>
+      <opt>hide_data:all</opt>
+      <opt>hide_ack:all</opt>
+      <opt>hide_beacon:part</opt>
+      <opt>hide_ampdu:all</opt>
+    </option>
+    <option>
+      <name>AMPDU subframe</name>
+      <key>8</key>
+      <opt>hide_data:all</opt>
+      <opt>hide_ack:all</opt>
+      <opt>hide_beacon:all</opt>
+      <opt>hide_ampdu:part</opt>
+    </option>
+    <option>
+      <name>AMSDU subframe</name>
+      <key>9</key>
+      <opt>hide_data:all</opt>
+      <opt>hide_ack:all</opt>
+      <opt>hide_beacon:all</opt>
+      <opt>hide_ampdu:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Node list</name>
+    <key>node_list</key>
+    <value>[2, 3]</value>
+    <type>int_vector</type>
+    <hide>$frame_type.hide_beacon</hide>
+  </param>
+
+  <param>
+    <name>Slot time [ms]</name>
+    <key>slot_list_ms</key>
+    <value>[1000, 1000]</value>
+    <type>int_vector</type>
+    <hide>$frame_type.hide_beacon</hide>
+  </param>
+
+  <param>
+    <name>Length of slot time</name>
+    <key>len_slot_time_beacon</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$frame_type.hide_beacon</hide>
+  </param>
+
+
+  <param>
+    <name>Reseved field AMPDU</name>
+    <key>reserved_field_ampdu</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$frame_type.hide_ampdu</hide>
+  </param>
+
+  <param>
+    <name>Initial frame index</name>
+    <key>frame_index</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$frame_type.hide_data</hide>
+  </param>
+  <param>
+    <name>Destination address</name>
+    <key>destination_address</key>
+    <value>destination_address</value>
+    <type>int</type>
+    <hide>$frame_type.hide_data</hide>
+  </param>
+  <param>
+    <name>Source address</name>
+    <key>source_address</key>
+    <value>source_address</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>Increase index?</name>
+    <key>increase_index</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>$frame_type.hide_data</hide>
+    <option>
+      <name>increase</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>constant</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>decrease</name>
+      <key>-1</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Set reserved field</name>
+    <key>set_reserved_field</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Reserved field I</name>
+    <key>reserved_field_I</key>
+    <value>318</value>
+    <type>int</type>
+    <hide>$set_reserved_field.hide</hide>
+  </param>
+  <param>
+    <name>Reserved field II</name>
+    <key>reserved_field_II</key>
+    <value>524</value>
+    <type>int</type>
+    <hide>$set_reserved_field.hide</hide>
+  </param>
+
+  <param>
+    <name>Show reset index</name>
+    <key>show_reset_index</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Show reset initial index</name>
+    <key>show_reset_initial_index</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Default framing settings</name>
+    <key>default_framing_setting</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Default</name>
+      <key>default</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Customized</name>
+      <key>customized</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Length of frame type</name>
+    <key>len_frame_type</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of frame index</name>
+    <key>len_frame_index</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of destination address</name>
+    <key>len_destination_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of source address</name>
+    <key>len_source_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field I</name>
+    <key>len_reserved_field_I</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field II</name>
+    <key>len_reserved_field_II</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of payload length field</name>
+    <key>len_payload_length</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of number of transmissions</name>
+    <key>len_num_transmission</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>reset_index</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_reset_index</hide>
+  </sink>
+
+  <sink>
+    <name>reset_initial_index</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_reset_initial_index</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>frame_pmt_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_frame_pmt</hide>
+  </source>
+</block>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="api_8h" kind="file" language="C++">
+    <compoundname>api.h</compoundname>
+    <includes local="no">gnuradio/attributes.h</includes>
+    <includedby refid="backoff_8h" local="no">backoff.h</includedby>
+    <includedby refid="frame__analysis_8h" local="no">frame_analysis.h</includedby>
+    <includedby refid="framing_8h" local="no">framing.h</includedby>
+    <includedby refid="timeout_8h" local="no">timeout.h</includedby>
+    <includedby refid="timer_8h" local="no">timer.h</includedby>
+    <incdepgraph>
+      <node id="0">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gnuradio/attributes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="12">
+        <label>timer_impl.h</label>
+        <link refid="timer__impl_8h"/>
+      </node>
+      <node id="5">
+        <label>frame_analysis.h</label>
+        <link refid="frame__analysis_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>framing.h</label>
+        <link refid="framing_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>timeout.h</label>
+        <link refid="timeout_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>frame_analysis_impl.h</label>
+        <link refid="frame__analysis__impl_8h"/>
+      </node>
+      <node id="8">
+        <label>framing_impl.h</label>
+        <link refid="framing__impl_8h"/>
+      </node>
+      <node id="3">
+        <label>backoff.h</label>
+        <link refid="backoff_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>timeout_impl.h</label>
+        <link refid="timeout__impl_8h"/>
+      </node>
+      <node id="4">
+        <label>backoff_impl.h</label>
+        <link refid="backoff__impl_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="api_8h_1a7174c6e61177103f802a0b575cd6c299" prot="public" static="no">
+        <name>DMDL_API</name>
+        <initializer>__GR_ATTR_IMPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/include/dmdl/api.h" line="30" column="12" bodyfile="/home/pwa/Source/gr-dmdl/include/dmdl/api.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pwa/Source/gr-dmdl/include/dmdl/api.h"/>
+  </compounddef>
+</doxygen>

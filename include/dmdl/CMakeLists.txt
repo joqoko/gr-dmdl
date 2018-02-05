@@ -22,5 +22,14 @@
 ########################################################################
 install(FILES
     api.h
-    timer.h DESTINATION include/dmdl
+    timer.h
+    backoff.h
+    timeout.h
+    framing.h
+    frame_analysis.h
+    cmd_buffer.h
+    error_detection.h
+    type_check.h
+    address_check.h
+    resend_check.h DESTINATION include/dmdl
 )

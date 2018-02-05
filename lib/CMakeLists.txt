@@ -24,9 +24,17 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND dmdl_sources
     timer_impl.cc
+    backoff_impl.cc
+    timeout_impl.cc
+    framing_impl.cc
+    frame_analysis_impl.cc
+    cmd_buffer_impl.cc
+    error_detection_impl.cc
+    type_check_impl.cc
+    address_check_impl.cc
+    resend_check_impl.cc
 )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)

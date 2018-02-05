@@ -1,0 +1,887 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dmdl_1_1framing__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dmdl::framing_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dmdl_1_1framing" prot="public" virt="non-virtual">gr::dmdl::framing</basecompoundref>
+    <includes refid="framing__impl_8h" local="no">framing_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a3a420e1f5d4604dfab775dac81061c17" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_develop_mode</definition>
+        <argsstring></argsstring>
+        <name>_develop_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="35" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1aa1f9017e7aea3dfeb6d2787917ce061f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_block_id</definition>
+        <argsstring></argsstring>
+        <name>_block_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="36" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1abac1e360439d631daaf35ab001ad993b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_frame_type</definition>
+        <argsstring></argsstring>
+        <name>_frame_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="37" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a1f24e3472c782e1b0a2782736f07727b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_frame_type</definition>
+        <argsstring></argsstring>
+        <name>_len_frame_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="38" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a256f46a4aa827b33ae0e4f1382ba39f0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_frame_index</definition>
+        <argsstring></argsstring>
+        <name>_frame_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="39" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a79e429d64d03b07b4560890ff64275c8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_ack_index</definition>
+        <argsstring></argsstring>
+        <name>_ack_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="40" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1ac23f554221ea8c6aa4e2605c0252177b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_frame_index</definition>
+        <argsstring></argsstring>
+        <name>_len_frame_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="41" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1abb813fe4b9399b0fee8a3422f42f01e6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_destination_address</definition>
+        <argsstring></argsstring>
+        <name>_destination_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="42" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a88eac143f4281ff4a103b8d5ecd907e9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_ack_address</definition>
+        <argsstring></argsstring>
+        <name>_ack_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="43" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1ad3cd983bbf932f9e5764d2f6c8581399" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_destination_address</definition>
+        <argsstring></argsstring>
+        <name>_len_destination_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="44" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a9f011a7f49d93ffd406ce81260c2c75e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_source_address</definition>
+        <argsstring></argsstring>
+        <name>_source_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="45" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a12aacc2bf198cc55d641fd0abc870e1f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_source_address</definition>
+        <argsstring></argsstring>
+        <name>_len_source_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="46" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a5915496c46a93b2b387a3cdf9e024e8c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_reserved_field_I</definition>
+        <argsstring></argsstring>
+        <name>_reserved_field_I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="47" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a619f01e3d27858d8659e79b6e365f92c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_reserved_field_I</definition>
+        <argsstring></argsstring>
+        <name>_len_reserved_field_I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="48" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a779509e045ccf37b374b17b49df463d7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_reserved_field_II</definition>
+        <argsstring></argsstring>
+        <name>_reserved_field_II</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="49" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a0d5412a889e9534f86cbfa631149f10a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_reserved_field_II</definition>
+        <argsstring></argsstring>
+        <name>_len_reserved_field_II</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="50" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1ad36f62811b710780643d0eb174fc27d4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_reserved_field_ampdu</definition>
+        <argsstring></argsstring>
+        <name>_reserved_field_ampdu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="51" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a253924339b5e2e8f2ee29a286d12af83" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_payload_length</definition>
+        <argsstring></argsstring>
+        <name>_payload_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="52" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a1f2c2ba18ee2346ea554acc560fa1c20" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_payload_length</definition>
+        <argsstring></argsstring>
+        <name>_len_payload_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="53" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a454626c0112aa716c173ae19d2eabeb8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_increase_index</definition>
+        <argsstring></argsstring>
+        <name>_increase_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="54" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1ab6db24b5a397f602dfa092ae39bdd76f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_num_transmission</definition>
+        <argsstring></argsstring>
+        <name>_len_num_transmission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="55" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a01373371149470d024b404f68cefa43b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_len_slot_time_beacon</definition>
+        <argsstring></argsstring>
+        <name>_len_slot_time_beacon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="56" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a905cce02de6db135c5a4bb5f8c971881" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_default_payload</definition>
+        <argsstring></argsstring>
+        <name>_default_payload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="57" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1afb56569233969eb30fcbcc422d11c966" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_default_index</definition>
+        <argsstring></argsstring>
+        <name>_default_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="58" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a96f2eade352111ba7943c5da17f5d758" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_default_payload_length</definition>
+        <argsstring></argsstring>
+        <name>_default_payload_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="59" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1afb38ae8273ef686e0dcdd862bdc70cbb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::_internal_index</definition>
+        <argsstring></argsstring>
+        <name>_internal_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="60" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a1e270cbec01312d2bd10ff3a8cd69687" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; gr::dmdl::framing_impl::_node_list</definition>
+        <argsstring></argsstring>
+        <name>_node_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="61" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a89faa2db8b0450a53193d90ff4061e10" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt;unsigned int&gt; gr::dmdl::framing_impl::_slot_list_ms</definition>
+        <argsstring></argsstring>
+        <name>_slot_list_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="62" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1framing__impl_1a8d194f0991a606b2ecaee4b9630bea65" prot="private" static="no" mutable="no">
+        <type>boost::crc_optimal&lt; 32, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, true, true &gt;</type>
+        <definition>boost::crc_optimal&lt;32, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, true, true&gt; gr::dmdl::framing_impl::_crc_impl</definition>
+        <argsstring></argsstring>
+        <name>_crc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="63" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1ab2ae2b5ee7c45756868ff4b31a50472d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::crc32_bb_calc</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>crc32_bb_calc</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a2b3e8c433167fd4f1d3ec383e9130564" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::framing_impl::catagorization</definition>
+        <argsstring>(pmt::pmt_t data_in)</argsstring>
+        <name>catagorization</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>data_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1ab8d23e64db841aee868cef71341efd1e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::framing_impl::reset_frame_index</definition>
+        <argsstring>(pmt::pmt_t pmt_in)</argsstring>
+        <name>reset_frame_index</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>pmt_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1af4bfda80114922f4cc2b2b3e9abec6d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::framing_impl::reset_initial_frame_index</definition>
+        <argsstring>(pmt::pmt_t pmt_in)</argsstring>
+        <name>reset_initial_frame_index</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>pmt_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a5107d9b1be0155a1dfeacd4c215375e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::data_frame_formation</definition>
+        <argsstring>(pmt::pmt_t rx_payload)</argsstring>
+        <name>data_frame_formation</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a39c4928be9b14b78e42cb0db3a185361" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::ampdu_subframe_formation</definition>
+        <argsstring>(pmt::pmt_t rx_payload)</argsstring>
+        <name>ampdu_subframe_formation</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a1addded27d76fa93a7d6f1fe129e271e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::amsdu_subframe_formation</definition>
+        <argsstring>(pmt::pmt_t rx_payload)</argsstring>
+        <name>amsdu_subframe_formation</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1abc949451ed92201ab1025c2a23311732" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::ack_frame_formation</definition>
+        <argsstring>(pmt::pmt_t rx_data)</argsstring>
+        <name>ack_frame_formation</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a3ba7f466880a2aaa6fd087eb6fdafaf4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::beacon_frame_formation</definition>
+        <argsstring>(pmt::pmt_t rx_beacon_info)</argsstring>
+        <name>beacon_frame_formation</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rx_beacon_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a2db9c6e88ee44a778d8032c3afd89798" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::frame_header_formation</definition>
+        <argsstring>(std::vector&lt; unsigned char &gt; *frame_header, int frame_type, int frame_index, int destination_address, int source_address, int reserved_field_I, int reserved_field_II, int payload_length, int num_transmission)</argsstring>
+        <name>frame_header_formation</name>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; *</type>
+          <declname>frame_header</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>destination_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_I</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_II</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>payload_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_transmission</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a8af48d3267761f59369c8dcb08b2ba5f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::framing_impl::ampdu_delimiter_formation</definition>
+        <argsstring>(std::vector&lt; unsigned char &gt; *delimiter, int reserved_field_I, int payload_length, int frame_type)</argsstring>
+        <name>ampdu_delimiter_formation</name>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; *</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_I</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>payload_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a4f88ca9730cf33010ca239fc1dddad01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::framing_impl::intToByte</definition>
+        <argsstring>(int i, std::vector&lt; unsigned char &gt; *bytes, int size)</argsstring>
+        <name>intToByte</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned char &gt; *</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a0adc849616601fa52de10011fcc61313" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::framing_impl::disp_vec</definition>
+        <argsstring>(std::vector&lt; unsigned char &gt; vec)</argsstring>
+        <name>disp_vec</name>
+        <param>
+          <type>std::vector&lt; unsigned char &gt;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1ab982f165aa83cc923bfe383a2e48ed7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::dmdl::framing_impl::get_frame_header_length</definition>
+        <argsstring>()</argsstring>
+        <name>get_frame_header_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="77" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a02395071390e3631598c71d4cf844362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::framing_impl::framing_impl</definition>
+        <argsstring>(int develop_mode, int block_id, int frame_type, int len_frame_type, int frame_index, int len_frame_index, int destination_address, int len_destination_address, int source_address, int len_source_address, int reserved_field_I, int len_reserved_field_I, int reserved_field_II, int len_reserved_field_II, int len_payload_length, int increase_index, int len_num_transmission, int reserved_field_ampdu, std::vector&lt; unsigned int &gt; node_list, std::vector&lt; unsigned int &gt; slot_list_ms, int len_slot_time_beacon, int default_payload, int default_payload_length, int internal_index)</argsstring>
+        <name>framing_impl</name>
+        <param>
+          <type>int</type>
+          <declname>develop_mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>block_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_frame_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_frame_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>destination_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_destination_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_source_address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_I</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_reserved_field_I</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_II</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_reserved_field_II</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_payload_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>increase_index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_num_transmission</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reserved_field_ampdu</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned int &gt;</type>
+          <declname>node_list</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; unsigned int &gt;</type>
+          <declname>slot_list_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len_slot_time_beacon</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>default_payload</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>default_payload_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>internal_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1framing__impl_1a9fd7f25c776128d36d645c468daf33d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::framing_impl::~framing_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~framing_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="81" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>block</label>
+      </node>
+      <node id="27">
+        <label>gr::dmdl::framing_impl</label>
+        <link refid="classgr_1_1dmdl_1_1framing__impl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>gr::dmdl::framing</label>
+        <link refid="classgr_1_1dmdl_1_1framing"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="32">
+        <label>block</label>
+      </node>
+      <node id="30">
+        <label>gr::dmdl::framing_impl</label>
+        <link refid="classgr_1_1dmdl_1_1framing__impl"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>gr::dmdl::framing</label>
+        <link refid="classgr_1_1dmdl_1_1framing"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" line="32" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/framing_impl.h" bodystart="31" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a88eac143f4281ff4a103b8d5ecd907e9" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_ack_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a79e429d64d03b07b4560890ff64275c8" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_ack_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1aa1f9017e7aea3dfeb6d2787917ce061f" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_block_id</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a8d194f0991a606b2ecaee4b9630bea65" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_crc_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1afb56569233969eb30fcbcc422d11c966" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_default_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a905cce02de6db135c5a4bb5f8c971881" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_default_payload</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a96f2eade352111ba7943c5da17f5d758" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_default_payload_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1abb813fe4b9399b0fee8a3422f42f01e6" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_destination_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a3a420e1f5d4604dfab775dac81061c17" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_develop_mode</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a256f46a4aa827b33ae0e4f1382ba39f0" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1abac1e360439d631daaf35ab001ad993b" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_frame_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a454626c0112aa716c173ae19d2eabeb8" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_increase_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1afb38ae8273ef686e0dcdd862bdc70cbb" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_internal_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ad3cd983bbf932f9e5764d2f6c8581399" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_destination_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ac23f554221ea8c6aa4e2605c0252177b" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a1f24e3472c782e1b0a2782736f07727b" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_frame_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ab6db24b5a397f602dfa092ae39bdd76f" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_num_transmission</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a1f2c2ba18ee2346ea554acc560fa1c20" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_payload_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a619f01e3d27858d8659e79b6e365f92c" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_reserved_field_I</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a0d5412a889e9534f86cbfa631149f10a" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_reserved_field_II</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a01373371149470d024b404f68cefa43b" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_slot_time_beacon</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a12aacc2bf198cc55d641fd0abc870e1f" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_len_source_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a1e270cbec01312d2bd10ff3a8cd69687" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_node_list</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a253924339b5e2e8f2ee29a286d12af83" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_payload_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ad36f62811b710780643d0eb174fc27d4" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_reserved_field_ampdu</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a5915496c46a93b2b387a3cdf9e024e8c" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_reserved_field_I</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a779509e045ccf37b374b17b49df463d7" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_reserved_field_II</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a89faa2db8b0450a53193d90ff4061e10" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_slot_list_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a9f011a7f49d93ffd406ce81260c2c75e" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>_source_address</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1abc949451ed92201ab1025c2a23311732" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>ack_frame_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a8af48d3267761f59369c8dcb08b2ba5f" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>ampdu_delimiter_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a39c4928be9b14b78e42cb0db3a185361" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>ampdu_subframe_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a1addded27d76fa93a7d6f1fe129e271e" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>amsdu_subframe_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a3ba7f466880a2aaa6fd087eb6fdafaf4" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>beacon_frame_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a2b3e8c433167fd4f1d3ec383e9130564" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>catagorization</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ab2ae2b5ee7c45756868ff4b31a50472d" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>crc32_bb_calc</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a5107d9b1be0155a1dfeacd4c215375e9" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>data_frame_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a0adc849616601fa52de10011fcc61313" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>disp_vec</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a2db9c6e88ee44a778d8032c3afd89798" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>frame_header_formation</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a02395071390e3631598c71d4cf844362" prot="public" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>framing_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ab982f165aa83cc923bfe383a2e48ed7e" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>get_frame_header_length</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a4f88ca9730cf33010ca239fc1dddad01" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>intToByte</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing_1a42db41cc46c98478c492a236f18a7c71" prot="public" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1ab8d23e64db841aee868cef71341efd1e" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>reset_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1af4bfda80114922f4cc2b2b3e9abec6d9" prot="private" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>reset_initial_frame_index</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing_1a15e3c706b0377be12b3d990ee844a081" prot="public" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dmdl_1_1framing__impl_1a9fd7f25c776128d36d645c468daf33d5" prot="public" virt="non-virtual"><scope>gr::dmdl::framing_impl</scope><name>~framing_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

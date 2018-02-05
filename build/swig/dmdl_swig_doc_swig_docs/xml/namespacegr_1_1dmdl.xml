@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacegr_1_1dmdl" kind="namespace" language="C++">
+    <compoundname>gr::dmdl</compoundname>
+    <innerclass refid="classgr_1_1dmdl_1_1backoff" prot="public">gr::dmdl::backoff</innerclass>
+    <innerclass refid="classgr_1_1dmdl_1_1frame__analysis" prot="public">gr::dmdl::frame_analysis</innerclass>
+    <innerclass refid="classgr_1_1dmdl_1_1framing" prot="public">gr::dmdl::framing</innerclass>
+    <innerclass refid="classgr_1_1dmdl_1_1timeout" prot="public">gr::dmdl::timeout</innerclass>
+    <innerclass refid="classgr_1_1dmdl_1_1timer" prot="public">gr::dmdl::timer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pwa/Source/gr-dmdl/include/dmdl/backoff.h" line="32" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,523 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dmdl_1_1backoff__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dmdl::backoff_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dmdl_1_1backoff" prot="public" virt="non-virtual">gr::dmdl::backoff</basecompoundref>
+    <includes refid="backoff__impl_8h" local="no">backoff_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a3789ad72ff1d87433a35c5fe3c43cd6f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_backoff_time_unit_ms</definition>
+        <argsstring></argsstring>
+        <name>_backoff_time_unit_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="36" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a31b9e49b8600758c446eb0d0e2ea8228" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_develop_mode</definition>
+        <argsstring></argsstring>
+        <name>_develop_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="37" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a837b3eb096e67fc833205095c5574090" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_block_id</definition>
+        <argsstring></argsstring>
+        <name>_block_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="38" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a87034b2fbb687c01b1ec1faa418c82f6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_min_backoff_ms</definition>
+        <argsstring></argsstring>
+        <name>_min_backoff_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="39" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a2e7c5d79818dfc10b0e7a48e1e0831d5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_max_backoff_ms</definition>
+        <argsstring></argsstring>
+        <name>_max_backoff_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="40" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a804016fea2d268f5a413eab126e3f1c4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_backoff_type</definition>
+        <argsstring></argsstring>
+        <name>_backoff_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="41" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a04b6d36f1b6fa417cd98716d40aea6cf" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::backoff_impl::_frame_info</definition>
+        <argsstring></argsstring>
+        <name>_frame_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="42" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1ae4735ab46013a02d7271bce0cca0b43d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_n_backoff</definition>
+        <argsstring></argsstring>
+        <name>_n_backoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="43" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1ae56b18c5386ae4650052d0e3058d6c8e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_min_window_size</definition>
+        <argsstring></argsstring>
+        <name>_min_window_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="44" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a067f27b8d3904248fb88c90a06d214c0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_apply_cs</definition>
+        <argsstring></argsstring>
+        <name>_apply_cs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="45" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a7a8000d5b2dd0e946dee0023f1bc7885" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dmdl::backoff_impl::_ch_busy</definition>
+        <argsstring></argsstring>
+        <name>_ch_busy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="46" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a2ce0e607357b882cb266122ddfe84d06" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::backoff_impl::_start_busy</definition>
+        <argsstring></argsstring>
+        <name>_start_busy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="47" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a435de052fab647b212b62f0b859aecab" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::backoff_impl::_end_busy</definition>
+        <argsstring></argsstring>
+        <name>_end_busy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="48" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a6ee63f07e9c917b9a966c94ba9e13bc2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::backoff_impl::_cs_threshold</definition>
+        <argsstring></argsstring>
+        <name>_cs_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="49" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a5f82d79fd6bb0b5fd0efe3ea3ab34f96" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_virtual_cs</definition>
+        <argsstring></argsstring>
+        <name>_virtual_cs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="50" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1abeae2c0905c8275d3913718afa2d4304" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::backoff_impl::_timer_bias_s</definition>
+        <argsstring></argsstring>
+        <name>_timer_bias_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="51" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a8ca4c2744b2d99b7ecebf2690e3e7971" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_nav_us</definition>
+        <argsstring></argsstring>
+        <name>_nav_us</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="52" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1aa533fc933bb129971dae15be64515122" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::backoff_impl::_power</definition>
+        <argsstring></argsstring>
+        <name>_power</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="53" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1af0a776782e6bf1c9b0ab02f4514f288c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::dmdl::backoff_impl::_in_backoff</definition>
+        <argsstring></argsstring>
+        <name>_in_backoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="54" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1backoff__impl_1a82cda1032a2ed1c6b2c7c7a32ab26579" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::backoff_impl::_system_time_granularity_us</definition>
+        <argsstring></argsstring>
+        <name>_system_time_granularity_us</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="55" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a08bbc87186a51614df48cf1dd17e6a46" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::start_backoff</definition>
+        <argsstring>(pmt::pmt_t frame_info)</argsstring>
+        <name>start_backoff</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>frame_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a783337bd7e6f0a3cf773ec3c756fc480" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::countdown_exp_backoff_cs</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_exp_backoff_cs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a35533964429eb60b8e1fc7981ab07c5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::countdown_const_backoff</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_const_backoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a46d46952e9d35bdaf29fbfcd5bd39cd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::countdown_random_backoff</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_random_backoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a2670679b357a3cebabada0523c738cc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::start_virtual_cs</definition>
+        <argsstring>(pmt::pmt_t power_in)</argsstring>
+        <name>start_virtual_cs</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>power_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a9f65fbdb979eaf131e00f25ddad25213" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::carrier_sensing</definition>
+        <argsstring>(pmt::pmt_t rcts)</argsstring>
+        <name>carrier_sensing</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>rcts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a8400db5023bd2a389fdf121c6b56fad4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::backoff_impl::set_cs_threshold</definition>
+        <argsstring>(pmt::pmt_t cs_threshold_in)</argsstring>
+        <name>set_cs_threshold</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>cs_threshold_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="62" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a3eb7ce8a71a88eb89f3756746ce5f344" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::backoff_impl::backoff_impl</definition>
+        <argsstring>(int develop_mode, int block_id, int backoff_type, int backoff_time_unit_ms, int min_backoff_ms, int max_backoff_ms, int apply_cs, double cs_threshold, int system_time_granularity_us, int virtual_cs, int min_window_size)</argsstring>
+        <name>backoff_impl</name>
+        <param>
+          <type>int</type>
+          <declname>develop_mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>block_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>backoff_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>backoff_time_unit_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>min_backoff_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_backoff_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>apply_cs</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cs_threshold</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>system_time_granularity_us</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>virtual_cs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>min_window_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1backoff__impl_1a9ed9a8f73c3573ac6f8adbb5817fa606" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::backoff_impl::~backoff_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~backoff_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="66" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>block</label>
+      </node>
+      <node id="6">
+        <label>gr::dmdl::backoff</label>
+        <link refid="classgr_1_1dmdl_1_1backoff"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>gr::dmdl::backoff_impl</label>
+        <link refid="classgr_1_1dmdl_1_1backoff__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>block</label>
+      </node>
+      <node id="9">
+        <label>gr::dmdl::backoff</label>
+        <link refid="classgr_1_1dmdl_1_1backoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>gr::dmdl::backoff_impl</label>
+        <link refid="classgr_1_1dmdl_1_1backoff__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" line="34" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/backoff_impl.h" bodystart="33" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a067f27b8d3904248fb88c90a06d214c0" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_apply_cs</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a3789ad72ff1d87433a35c5fe3c43cd6f" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_backoff_time_unit_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a804016fea2d268f5a413eab126e3f1c4" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_backoff_type</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a837b3eb096e67fc833205095c5574090" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_block_id</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a7a8000d5b2dd0e946dee0023f1bc7885" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_ch_busy</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a6ee63f07e9c917b9a966c94ba9e13bc2" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_cs_threshold</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a31b9e49b8600758c446eb0d0e2ea8228" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_develop_mode</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a435de052fab647b212b62f0b859aecab" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_end_busy</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a04b6d36f1b6fa417cd98716d40aea6cf" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_frame_info</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1af0a776782e6bf1c9b0ab02f4514f288c" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_in_backoff</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a2e7c5d79818dfc10b0e7a48e1e0831d5" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_max_backoff_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a87034b2fbb687c01b1ec1faa418c82f6" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_min_backoff_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1ae56b18c5386ae4650052d0e3058d6c8e" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_min_window_size</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1ae4735ab46013a02d7271bce0cca0b43d" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_n_backoff</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a8ca4c2744b2d99b7ecebf2690e3e7971" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_nav_us</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1aa533fc933bb129971dae15be64515122" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_power</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a2ce0e607357b882cb266122ddfe84d06" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_start_busy</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a82cda1032a2ed1c6b2c7c7a32ab26579" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_system_time_granularity_us</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1abeae2c0905c8275d3913718afa2d4304" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_timer_bias_s</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a5f82d79fd6bb0b5fd0efe3ea3ab34f96" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>_virtual_cs</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a3eb7ce8a71a88eb89f3756746ce5f344" prot="public" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>backoff_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a9f65fbdb979eaf131e00f25ddad25213" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>carrier_sensing</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a35533964429eb60b8e1fc7981ab07c5a" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>countdown_const_backoff</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a783337bd7e6f0a3cf773ec3c756fc480" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>countdown_exp_backoff_cs</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a46d46952e9d35bdaf29fbfcd5bd39cd3" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>countdown_random_backoff</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff_1a61426074b115a8851bd1ff6ba84a0057" prot="public" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a8400db5023bd2a389fdf121c6b56fad4" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>set_cs_threshold</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff_1a4a5f06a4702a9c11d8fa9dd7d318112c" prot="public" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a08bbc87186a51614df48cf1dd17e6a46" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>start_backoff</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a2670679b357a3cebabada0523c738cc8" prot="private" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>start_virtual_cs</name></member>
+      <member refid="classgr_1_1dmdl_1_1backoff__impl_1a9ed9a8f73c3573ac6f8adbb5817fa606" prot="public" virt="non-virtual"><scope>gr::dmdl::backoff_impl</scope><name>~backoff_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

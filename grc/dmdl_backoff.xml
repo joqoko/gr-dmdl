@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<block>
+  <name>backoff</name>
+  <key>dmdl_backoff</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.backoff($develop_mode, $block_id, $backoff_type, $backoff_time_unit_ms, $min_backoff_ms, $max_backoff_ms, $apply_cs, $cs_threshold, $system_time_granularity_us, $virtual_cs, $min_window_size)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>Type</name>
+    <key>backoff_type</key>
+    <type>enum</type>
+    <option>
+      <name>Binary exp.</name>
+      <key>1</key>
+      <opt>hide_exp:part</opt>
+      <opt>hide_const:all</opt>
+      <opt>hide_random:all</opt>
+      <opt>hide_unlimited:all</opt>
+    </option>
+    <option>
+      <name>Const.</name>
+      <key>2</key>
+      <opt>hide_exp:all</opt>
+      <opt>hide_const:part</opt>
+      <opt>hide_random:all</opt>
+      <opt>hide_unlimited:part</opt>
+    </option>
+    <option>
+      <name>Random</name>
+      <key>3</key>
+      <opt>hide_exp:all</opt>
+      <opt>hide_const:all</opt>
+      <opt>hide_random:part</opt>
+      <opt>hide_unlimited:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Apply carrier sensing</name>
+    <key>apply_cs</key>
+    <type>enum</type>
+    <hide>$backoff_type.hide_exp</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide_app:all</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide_app:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Set CS threshold</name>
+    <key>set_cs</key>
+    <type>enum</type>
+    <hide>$backoff_type.hide_exp</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide_app:all</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide_app:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Threshold (ED)</name>
+    <key>cs_threshold</key>
+    <value>0.005</value>
+    <type>real</type>
+    <hide>$apply_cs.hide_app</hide>
+  </param>
+
+  <param>
+    <name>Backoff time unit [ms]</name>
+    <key>backoff_time_unit_ms</key>
+    <value>10</value>
+    <type>int</type>
+    <hide>$backoff_type.hide_exp</hide>
+  </param>
+
+  <param>
+    <name>Min. backoff time [ms]</name>
+    <key>min_backoff_ms</key>
+    <value>100</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Min window size</name>
+    <key>min_window_size</key>
+    <value>6</value>
+    <type>int</type>
+    <hide>$backoff_type.hide_exp</hide>
+  </param>
+
+  <param>
+    <name>Max. backoff time [ms]</name>
+    <key>max_backoff_ms</key>
+    <value>400</value>
+    <type>int</type>
+    <hide>$backoff_type.hide_random</hide>
+  </param>
+  <param>
+    <name>System time granularity [us]</name>
+    <key>system_time_granularity_us</key>
+    <value>10</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Enable Virtual CS</name>
+    <key>virtual_cs</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>Export busy time</name>
+    <key>export_busy</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>Export backoff time</name>
+    <key>export_bof</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>11</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>Rssi</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$apply_cs</hide>
+  </sink>
+
+  <sink>
+    <name>Virtual_cs</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$virtual_cs</hide>
+  </sink>
+
+  <sink>
+    <name>cs_Threshold</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$set_cs</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>busy_time_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$export_busy</hide>
+  </source>
+  <source>
+    <name>bof_time_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$export_bof</hide>
+  </source>
+</block>

@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1dmdl_1_1timeout__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::dmdl::timeout_impl</compoundname>
+    <basecompoundref refid="classgr_1_1dmdl_1_1timeout" prot="public" virt="non-virtual">gr::dmdl::timeout</basecompoundref>
+    <includes refid="timeout__impl_8h" local="no">timeout_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1af59fdc781b56d3e47937afafaf4428e8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timeout_impl::_develop_mode</definition>
+        <argsstring></argsstring>
+        <name>_develop_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="33" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1a9f8660a63631c104362552d2cfe17a63" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timeout_impl::_block_id</definition>
+        <argsstring></argsstring>
+        <name>_block_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="34" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1af2222d65be2a048d040f8e5fdbfd9627" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timeout_impl::_in_timeout</definition>
+        <argsstring></argsstring>
+        <name>_in_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="35" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1a248d8d9fe364928d112d55feb2665d79" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::dmdl::timeout_impl::_start_time</definition>
+        <argsstring></argsstring>
+        <name>_start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="36" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1af870eea42552c007bb86da98db283f1d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::dmdl::timeout_impl::_timeout_duration_ms</definition>
+        <argsstring></argsstring>
+        <name>_timeout_duration_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="37" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1ad3aef337d7211378e4dfb83cd60b9241" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timeout_impl::_system_time_granularity_us</definition>
+        <argsstring></argsstring>
+        <name>_system_time_granularity_us</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="38" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1a6824c93cd1182e307d68d9e9f06dd0b8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::dmdl::timeout_impl::_llc_protocol</definition>
+        <argsstring></argsstring>
+        <name>_llc_protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="39" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1a06f4c83383f652654c7650857166a086" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; pmt::pmt_t &gt;</type>
+        <definition>std::queue&lt;pmt::pmt_t&gt; gr::dmdl::timeout_impl::_window</definition>
+        <argsstring></argsstring>
+        <name>_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="40" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1dmdl_1_1timeout__impl_1ac38f2b03c706496bcc082d33a4d86efa" prot="private" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::dmdl::timeout_impl::_waiting_frame_info</definition>
+        <argsstring></argsstring>
+        <name>_waiting_frame_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="41" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1ab8ce9a8c6cb98c5b0ab93bc08c6bcfb9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::start_timeout</definition>
+        <argsstring>(pmt::pmt_t tx_frame_info)</argsstring>
+        <name>start_timeout</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>tx_frame_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1a20a320764a53a312d71183137de4bbed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::kill_timeout</definition>
+        <argsstring>(pmt::pmt_t ack_info)</argsstring>
+        <name>kill_timeout</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>ack_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1aba6248578163dfa201d8b3e11d0729d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::reset_timeout</definition>
+        <argsstring>()</argsstring>
+        <name>reset_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1a49c249db60ba6934e24a76af057fb2ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::flush_window</definition>
+        <argsstring>()</argsstring>
+        <name>flush_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1a6eebe9a9e5a3dbdc03113c23a6eb5e33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::countdown_timeout</definition>
+        <argsstring>()</argsstring>
+        <name>countdown_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1ace97dae70c381f781f40a9e30aab9dd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::dmdl::timeout_impl::print_time</definition>
+        <argsstring>()</argsstring>
+        <name>print_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="47" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1a16f7f0b113be1c0ebc3c257c6bd533eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::timeout_impl::timeout_impl</definition>
+        <argsstring>(int develop_mode, int block_id, float timeout_duration_ms, int system_time_granularity_us, int llc_protocol)</argsstring>
+        <name>timeout_impl</name>
+        <param>
+          <type>int</type>
+          <declname>develop_mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>block_id</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timeout_duration_ms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>system_time_granularity_us</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>llc_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1dmdl_1_1timeout__impl_1aa0b20563e7134f38c7a114e3d0ff7460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::dmdl::timeout_impl::~timeout_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~timeout_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="51" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="39">
+        <label>gr::dmdl::timeout</label>
+        <link refid="classgr_1_1dmdl_1_1timeout"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>gr::block</label>
+      </node>
+      <node id="38">
+        <label>gr::dmdl::timeout_impl</label>
+        <link refid="classgr_1_1dmdl_1_1timeout__impl"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="42">
+        <label>gr::dmdl::timeout</label>
+        <link refid="classgr_1_1dmdl_1_1timeout"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>gr::block</label>
+      </node>
+      <node id="41">
+        <label>gr::dmdl::timeout_impl</label>
+        <link refid="classgr_1_1dmdl_1_1timeout__impl"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" line="31" column="1" bodyfile="/home/pwa/Source/gr-dmdl/lib/timeout_impl.h" bodystart="30" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a9f8660a63631c104362552d2cfe17a63" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_block_id</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1af59fdc781b56d3e47937afafaf4428e8" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_develop_mode</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1af2222d65be2a048d040f8e5fdbfd9627" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_in_timeout</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a6824c93cd1182e307d68d9e9f06dd0b8" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_llc_protocol</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a248d8d9fe364928d112d55feb2665d79" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_start_time</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1ad3aef337d7211378e4dfb83cd60b9241" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_system_time_granularity_us</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1af870eea42552c007bb86da98db283f1d" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_timeout_duration_ms</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1ac38f2b03c706496bcc082d33a4d86efa" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_waiting_frame_info</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a06f4c83383f652654c7650857166a086" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>_window</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a6eebe9a9e5a3dbdc03113c23a6eb5e33" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>countdown_timeout</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a49c249db60ba6934e24a76af057fb2ac" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>flush_window</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a20a320764a53a312d71183137de4bbed" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>kill_timeout</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout_1afc5c58fe279f98882ced04409fffc0cc" prot="public" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1ace97dae70c381f781f40a9e30aab9dd3" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>print_time</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1aba6248578163dfa201d8b3e11d0729d1" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>reset_timeout</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout_1a0f6997314ed91318ac087546960b1252" prot="public" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1ab8ce9a8c6cb98c5b0ab93bc08c6bcfb9" prot="private" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>start_timeout</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1a16f7f0b113be1c0ebc3c257c6bd533eb" prot="public" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>timeout_impl</name></member>
+      <member refid="classgr_1_1dmdl_1_1timeout__impl_1aa0b20563e7134f38c7a114e3d0ff7460" prot="public" virt="non-virtual"><scope>gr::dmdl::timeout_impl</scope><name>~timeout_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
