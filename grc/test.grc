@@ -117,11 +117,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_address_check</key>
-    <param>
-      <key>my_address</key>
-      <value>source_address</value>
-    </param>
+    <key>dmdl_framing</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -139,6 +135,18 @@
       <value></value>
     </param>
     <param>
+      <key>default_framing_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>default_payload_length</key>
+      <value>300</value>
+    </param>
+    <param>
+      <key>destination_address</key>
+      <value>1</value>
+    </param>
+    <param>
       <key>develop_mode</key>
       <value>0</value>
     </param>
@@ -147,8 +155,12 @@
       <value>True</value>
     </param>
     <param>
+      <key>frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(864, 568)</value>
+      <value>(640, 316)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -156,7 +168,51 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_address_check_0</value>
+      <value>dmdl_framing_0</value>
+    </param>
+    <param>
+      <key>increase_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>frame_index</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>len_destination_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_num_transmission</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_payload_length</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_I</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_II</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_slot_time_beacon</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_source_address</key>
+      <value>1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -167,27 +223,114 @@
       <value>0</value>
     </param>
     <param>
-      <key>output_payload_pmt</key>
+      <key>node_list</key>
+      <value>[2, 3]</value>
+    </param>
+    <param>
+      <key>output_frame_pmt</key>
       <value>1</value>
     </param>
     <param>
-      <key>show_not_pass</key>
+      <key>reserved_field_I</key>
+      <value>318</value>
+    </param>
+    <param>
+      <key>reserved_field_II</key>
+      <value>524</value>
+    </param>
+    <param>
+      <key>reserved_field_ampdu</key>
       <value>0</value>
     </param>
     <param>
-      <key>mode</key>
+      <key>set_reserved_field</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>show_reset_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>show_reset_initial_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>slot_list_ms</key>
+      <value>[1000, 1000]</value>
+    </param>
+    <param>
+      <key>source_address</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>default_payload</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>internal_index</key>
+      <value>1</value>
     </param>
   </block>
   <block>
-    <key>dmdl_error_detection</key>
+    <key>dmdl_redundancy_remover</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>block_id</key>
-      <value>9</value>
+      <value>49</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(888, 192)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_redundancy_remover_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_re</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_replicate</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>37</value>
     </param>
     <param>
       <key>comment</key>
@@ -207,7 +350,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(912, 264)</value>
+      <value>(840, 320)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -215,7 +358,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_error_detection_0</value>
+      <value>dmdl_replicate_0</value>
+    </param>
+    <param>
+      <key>show_complete</key>
+      <value>1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -226,232 +373,11 @@
       <value>0</value>
     </param>
     <param>
-      <key>output_bad_frame</key>
-      <value>1</value>
+      <key>replicate_number</key>
+      <value>4</value>
     </param>
     <param>
-      <key>output_payload_pmt</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>dmdl_resend_check</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>24</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(624, 136)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dmdl_resend_check_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>max_resend</key>
-      <value>6</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dmdl_timer</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>duration_ms</key>
-      <value>1000</value>
-    </param>
-    <param>
-      <key>address_check</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>disable_timer</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>resume_timer</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>suspend_timer</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(640, 412)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dmdl_timer_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>reserved_time_ms</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>reset_duration</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>system_time_granularity_us</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>timer_type</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>dmdl_type_check</key>
-    <param>
-      <key>ack_frame</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>ampdu_frame</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>ampdu_subframe</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>amsdu_frame</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>amsdu_subframe</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>beacon_frame</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>25</value>
-    </param>
-    <param>
-      <key>cts_frame</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>data_frame</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(496, 280)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dmdl_type_check_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>other_frame</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>rts_frame</key>
+      <key>reset_number_replicate</key>
       <value>1</value>
     </param>
   </block>
@@ -526,7 +452,7 @@
     </param>
     <param>
       <key>block_id</key>
-      <value>100</value>
+      <value>1</value>
     </param>
     <param>
       <key>cs_threshold</key>
@@ -546,7 +472,7 @@
     </param>
     <param>
       <key>develop_mode</key>
-      <value>2</value>
+      <value>1</value>
     </param>
     <param>
       <key>enable_new_name</key>
@@ -562,7 +488,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 520)</value>
+      <value>(856, 468)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -609,7 +535,7 @@
     </param>
     <param>
       <key>block_id</key>
-      <value>101</value>
+      <value>2</value>
     </param>
     <param>
       <key>cs_threshold</key>
@@ -629,7 +555,7 @@
     </param>
     <param>
       <key>develop_mode</key>
-      <value>2</value>
+      <value>1</value>
     </param>
     <param>
       <key>enable_new_name</key>
@@ -645,7 +571,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 412)</value>
+      <value>(1056, 404)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -685,14 +611,22 @@
     </param>
   </block>
   <block>
-    <key>inets_resend_check</key>
+    <key>inets_frame_probe</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>block_id</key>
-      <value>24</value>
+      <value>3</value>
+    </param>
+    <param>
+      <key>cs_threshold</key>
+      <value>0.01</value>
+    </param>
+    <param>
+      <key>cs_mode</key>
+      <value>0</value>
     </param>
     <param>
       <key>comment</key>
@@ -704,15 +638,23 @@
     </param>
     <param>
       <key>develop_mode</key>
-      <value>0</value>
+      <value>1</value>
+    </param>
+    <param>
+      <key>enable_new_name</key>
+      <value>1</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
+      <key>file_name_extension</key>
+      <value>""</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(752, 288)</value>
+      <value>(1088, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -720,19 +662,35 @@
     </param>
     <param>
       <key>id</key>
-      <value>inets_resend_check_0</value>
+      <value>inets_frame_probe_0_0_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
       <value>0</value>
     </param>
     <param>
-      <key>max_resend</key>
-      <value>6</value>
-    </param>
-    <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>output_time_info</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>print_frame</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_path</key>
+      <value>"/home/inets/source/gr-inets/results/"</value>
+    </param>
+    <param>
+      <key>name_with_stamp</key>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -783,22 +741,22 @@
     </param>
   </block>
   <connection>
-    <source_block_id>dmdl_timer_0</source_block_id>
-    <sink_block_id>inets_frame_probe_0_0</sink_block_id>
+    <source_block_id>dmdl_framing_0</source_block_id>
+    <sink_block_id>dmdl_replicate_0</sink_block_id>
     <source_key>End</source_key>
-    <sink_key>info_in</sink_key>
+    <sink_key>Begin</sink_key>
   </connection>
   <connection>
-    <source_block_id>inets_dummy_source_0</source_block_id>
-    <sink_block_id>dmdl_timer_0</sink_block_id>
-    <source_key>output</source_key>
+    <source_block_id>dmdl_replicate_0</source_block_id>
+    <sink_block_id>dmdl_redundancy_remover_0</sink_block_id>
+    <source_key>End</source_key>
     <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>inets_dummy_source_0</source_block_id>
-    <sink_block_id>inets_frame_probe_0</sink_block_id>
+    <sink_block_id>dmdl_framing_0</sink_block_id>
     <source_key>output</source_key>
-    <sink_key>info_in</sink_key>
+    <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>inets_run_0</source_block_id>

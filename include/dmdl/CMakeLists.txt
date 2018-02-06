@@ -31,5 +31,8 @@ install(FILES
     error_detection.h
     type_check.h
     address_check.h
-    resend_check.h DESTINATION include/dmdl
+    resend_check.h
+    replicate.h
+    redundancy_remover.h
+    frame_filter.h DESTINATION include/dmdl
 )

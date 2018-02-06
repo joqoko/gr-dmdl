@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<block>
+  <name>frame_filter</name>
+  <key>dmdl_frame_filter</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.frame_filter($develop_mode, $block_id, $drop_type, $frame_type, $source_address, $destination_address, $frame_index, $reserved_field_I, $reserved_field_II, $number_of_filtering)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>Drop type</name>
+    <key>drop_type</key>
+    <type>enum</type>
+    <option>
+      <name>Frame index</name>
+      <key>0</key>
+      <opt>hide_index:part</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+    <option>
+      <name>Frame type</name>
+      <key>1</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:part</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+    <option>
+      <name>Source address</name>
+      <key>2</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:part</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+    <option>
+      <name>Destination address</name>
+      <key>3</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:part</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+    <option>
+      <name>Reserved_field_I</name>
+      <key>4</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:part</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+    <option>
+      <name>Reserved_field_II</name>
+      <key>5</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:part</opt>
+    </option>
+    <option>
+      <name>No filtering</name>
+      <key>100</key>
+      <opt>hide_index:all</opt>
+      <opt>hide_type:all</opt>
+      <opt>hide_src:all</opt>
+      <opt>hide_dest:all</opt>
+      <opt>hide_reI:all</opt>
+      <opt>hide_reII:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Number of filtering</name>
+    <key>number_of_filtering</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+
+  <param>
+    <name>Frame index</name>
+    <key>frame_index</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_index</hide>
+  </param>
+
+
+  <param>
+    <name>Frame type</name>
+    <key>frame_type</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_type</hide>
+  </param>
+
+  <param>
+    <name>Source address</name>
+    <key>source_address</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_src</hide>
+  </param>
+
+  <param>
+    <name>Destination address</name>
+    <key>destination_address</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_dest</hide>
+  </param>
+  <param>
+    <name>Reserved field I</name>
+    <key>reserved_field_I</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_reI</hide>
+  </param>
+
+  <param>
+    <name>Reserved field II</name>
+    <key>reserved_field_II</key>
+    <value>0</value>
+    <type>int</type>
+    <hide>$drop_type.hide_reII</hide>
+  </param>
+
+  <param>
+    <name>Output unfiltered frame</name>
+    <key>output_unfiltered_frame</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>26</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>End_unfiltered</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_unfiltered_frame</hide>
+  </source>
+</block>

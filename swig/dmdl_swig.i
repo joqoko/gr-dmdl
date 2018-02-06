@@ -18,6 +18,9 @@
 #include "dmdl/type_check.h"
 #include "dmdl/address_check.h"
 #include "dmdl/resend_check.h"
+#include "dmdl/replicate.h"
+#include "dmdl/redundancy_remover.h"
+#include "dmdl/frame_filter.h"
 %}
 
 
@@ -42,3 +45,10 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, type_check);
 GR_SWIG_BLOCK_MAGIC2(dmdl, address_check);
 %include "dmdl/resend_check.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, resend_check);
+%include "dmdl/replicate.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, replicate);
+%include "dmdl/redundancy_remover.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, redundancy_remover);
+
+%include "dmdl/frame_filter.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, frame_filter);

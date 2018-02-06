@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Mon Feb  5 12:53:40 2018
+# Generated: Tue Feb  6 10:16:34 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -64,19 +64,22 @@ class top_block(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
         self.inets_run_0 = inets.run(5, 10)
-        self.inets_frame_probe_0_0 = inets.frame_probe(2, 101, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
-        self.inets_frame_probe_0 = inets.frame_probe(2, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.inets_frame_probe_0_0_0 = inets.frame_probe(1, 3, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.inets_frame_probe_0_0 = inets.frame_probe(1, 2, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.inets_frame_probe_0 = inets.frame_probe(1, 1, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
         self.inets_dummy_source_0 = inets.dummy_source(0, 23, 100, 1, 1)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 1000, 10, 0)
+        self.dmdl_replicate_0 = dmdl.replicate(0, 37, 4)
+        self.dmdl_redundancy_remover_0 = dmdl.redundancy_remover(1, 49)
+        self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 0, 1, 1, 1, 2, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
 
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.dmdl_timer_0, 'End'), (self.inets_frame_probe_0_0, 'info_in'))
-        self.msg_connect((self.inets_dummy_source_0, 'output'), (self.dmdl_timer_0, 'Begin'))
-        self.msg_connect((self.inets_dummy_source_0, 'output'), (self.inets_frame_probe_0, 'info_in'))
+        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_replicate_0, 'Begin'))
+        self.msg_connect((self.dmdl_replicate_0, 'End'), (self.dmdl_redundancy_remover_0, 'Begin'))
+        self.msg_connect((self.inets_dummy_source_0, 'output'), (self.dmdl_framing_0, 'Begin'))
         self.msg_connect((self.inets_run_0, 'trigger_out'), (self.inets_dummy_source_0, 'trigger'))
 
     def closeEvent(self, event):
