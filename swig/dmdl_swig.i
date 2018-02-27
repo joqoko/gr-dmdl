@@ -20,7 +20,6 @@
 #include "dmdl/resend_check.h"
 #include "dmdl/replicate.h"
 #include "dmdl/redundancy_remover.h"
-#include "dmdl/frame_filter.h"
 %}
 
 
@@ -50,5 +49,3 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, replicate);
 %include "dmdl/redundancy_remover.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, redundancy_remover);
 
-%include "dmdl/frame_filter.h"
-GR_SWIG_BLOCK_MAGIC2(dmdl, frame_filter);

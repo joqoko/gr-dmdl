@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<block>
+  <name>receiving</name>
+  <key>dmdl_receiving</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.receiving($self, $develop_mode, $block_id, $constellation, $matched_filter_coeff, $mu, $preamble, $rx_gain, $samp_rate, $sps, $threshold, $usrp_device_address, $center_frequency)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>21</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Enable reconfiguration</name>
+    <key>reset</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Enable RF switch</name>
+    <key>reset_rf</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Output received frame</name>
+    <key>output_rx_frame</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Output RSS</name>
+    <key>output_rss</key>
+    <type>enum</type>
+    <hide>$output_rss.hide</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Output SNR</name>
+    <key>output_snr</key>
+    <type>enum</type>
+    <hide>$output_snr.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Output Rx switch</name>
+    <key>output_rx_switch</key>
+    <type>enum</type>
+    <hide>$output_rx_switch.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>constellation</name>
+    <key>constellation</key>
+    <value>gnuradio.digital.constellation_qpsk().base()</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>matched_filter</name>
+    <key>matched_filter_coeff</key>
+    <value>rrc</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Mu</name>
+    <key>mu</key>
+    <value>mu</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>preamble</name>
+    <key>preamble</key>
+    <value>diff_preamble_128</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Receiving gain</name>
+    <key>rx_gain</key>
+    <value>rx_gain</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Sample rate</name>
+    <key>samp_rate</key>
+    <value>samp_rate</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>sps</name>
+    <key>sps</key>
+    <value>sps</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Threshold</name>
+    <key>threshold</key>
+    <value>30</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>usrp_device_address</name>
+    <key>usrp_device_address</key>
+    <value>usrp_device_address</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Center frequency</name>
+    <key>center_frequency</key>
+    <value>rx_center_frequency</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>rx_switch_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset_rf</hide>
+  </sink>
+
+
+  <sink>
+    <name>reconfig_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>rx_power_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_rss</hide>
+  </source>
+  <source>
+    <name>rx_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_rx_frame</hide>
+  </source>
+  <source>
+    <name>snr_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_snr</hide>
+  </source>
+  <source>
+    <name>rx_switch_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_rx_switch</hide>
+  </source>
+</block>

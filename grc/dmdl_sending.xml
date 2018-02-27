@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<block>
+  <name>sending</name>
+  <key>dmdl_sending</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.sending(develop_mode=$develop_mode, block_id=$block_id, constellation=$constellation, preamble=$preamble, samp_rate=$samp_rate, sps=$sps, system_time_granularity_us=$system_time_granularity_us, usrp_device_address=$usrp_device_address, center_frequency=$center_frequency, interframe_interval_s=$interframe_interval_s, t_pretx_interval_s=$t_pretx_interval_s, file_name_extension_t_control=$file_name_extension_t_control, file_name_extension_pending=$file_name_extension_pending, record_on=$record_on, name_with_timestamp=$name_with_timestamp, tx_gain=$tx_gain)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>11</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Enable reconfiguration</name>
+    <key>reset</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>constellation</name>
+    <key>constellation</key>
+    <value>gnuradio.digital.constellation_qpsk().base()</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>preamble</name>
+    <key>preamble</key>
+    <value>diff_preamble_128</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Sample rate</name>
+    <key>samp_rate</key>
+    <value>samp_rate</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>sps</name>
+    <key>sps</key>
+    <value>sps</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>system_time_granularity_us</name>
+    <key>system_time_granularity_us</key>
+    <value>system_time_granularity_us</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>usrp_device_address</name>
+    <key>usrp_device_address</key>
+    <value>usrp_device_address</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>TX gain</name>
+    <key>tx_gain</key>
+    <value>0</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Center frequency</name>
+    <key>center_frequency</key>
+    <value>tx_center_frequency</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Interframe interval [s]</name>
+    <key>interframe_interval_s</key>
+    <value>0.005</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Pre tx interval [s]</name>
+    <key>t_pretx_interval_s</key>
+    <value>0.05</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Record on</name>
+    <key>record_on</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Name with timestamp</name>
+    <key>name_with_timestamp</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Log name ex. t_control</name>
+    <key>file_name_extension_t_control</key>
+    <value>"t1TXs"</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Log name ex. pending</name>
+    <key>file_name_extension_pending</key>
+    <value>"Tfr"</value>
+    <type>raw</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Show DATA frame</name>
+    <key>data_frame</key>
+    <type>enum</type>
+    <hide>$data_frame.hide</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show ACK frame</name>
+    <key>ack_frame</key>
+    <type>enum</type>
+    <hide>$ack_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show Beacon frame</name>
+    <key>beacon_frame</key>
+    <type>enum</type>
+    <hide>$beacon_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show RTS frame</name>
+    <key>rts_frame</key>
+    <type>enum</type>
+    <hide>$rts_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show CTS frame</name>
+    <key>cts_frame</key>
+    <type>enum</type>
+    <hide>$cts_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show AMPDU frame</name>
+    <key>ampdu_frame</key>
+    <type>enum</type>
+    <hide>$ampdu_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show AMSDU frame</name>
+    <key>amsdu_frame</key>
+    <type>enum</type>
+    <hide>$amsdu_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show unknown frame</name>
+    <key>unknown_frame</key>
+    <type>enum</type>
+    <hide>$unknown_frame.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Show receiving control</name>
+    <key>rx_control</key>
+    <type>enum</type>
+    <hide>$rx_control.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>reconfig_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>data_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$data_frame</hide>
+  </source>
+  <source>
+    <name>ack_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$ack_frame</hide>
+  </source>
+  <source>
+    <name>beacon_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$beacon_frame</hide>
+  </source>
+  <source>
+    <name>rts_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$rts_frame</hide>
+  </source>
+  <source>
+    <name>cts_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$cts_frame</hide>
+  </source>
+  <source>
+    <name>ampdu_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$ampdu_frame</hide>
+  </source>
+  <source>
+    <name>amsdu_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$amsdu_frame</hide>
+  </source>
+  <source>
+    <name>unknown_frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$unknown_frame</hide>
+  </source>
+  <source>
+    <name>rx_control_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$rx_control</hide>
+  </source>
+</block>
