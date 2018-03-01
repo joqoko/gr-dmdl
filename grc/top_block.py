@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Thu Mar  1 16:35:46 2018
+# Generated: Thu Mar  1 18:24:02 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -88,15 +88,19 @@ class top_block(gr.top_block, Qt.QWidget):
         self.inets_dummy_source_0 = inets.dummy_source(0, 23, 100, 1, 1)
         self.dmdl_timer_0 = dmdl.timer(0, 5, 1, 500, 10, 0)
         self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 0, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
-        self.dmdl_attribute_filter_0 = dmdl.attribute_filter(1, 16, "frame_index", 2)
+        self.dmdl_attribute_splitter_0 = dmdl.attribute_splitter(0, 16, "frame_index")
+        self.dmdl_attribute_filter_0 = dmdl.attribute_filter(0, 16, "frame_index", 4)
+        self.dmdl_attribute_editor_0 = dmdl.attribute_editor(0, 16, "frame_index", 4)
 
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.dmdl_attribute_filter_0, 'Pass'), (self.inets_frame_probe_0, 'info_in'))
-        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_attribute_filter_0, 'Begin'))
+        self.msg_connect((self.dmdl_attribute_editor_0, 'End'), (self.dmdl_attribute_filter_0, 'Begin'))
+        self.msg_connect((self.dmdl_attribute_editor_0, 'End'), (self.dmdl_attribute_splitter_0, 'Begin'))
+        self.msg_connect((self.dmdl_attribute_splitter_0, 'End'), (self.inets_frame_probe_0, 'info_in'))
+        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_attribute_editor_0, 'Begin'))
         self.msg_connect((self.dmdl_timer_0, 'End'), (self.inets_dummy_source_0, 'trigger'))
         self.msg_connect((self.inets_dummy_source_0, 'output'), (self.dmdl_framing_0, 'Begin'))
         self.msg_connect((self.inets_run_0, 'trigger_out'), (self.dmdl_timer_0, 'Begin'))

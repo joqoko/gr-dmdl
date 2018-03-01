@@ -592,6 +592,65 @@
     </param>
   </block>
   <block>
+    <key>dmdl_attribute_editor</key>
+    <param>
+      <key>field_name</key>
+      <value>"frame_index"</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>16</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(664, 444)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_attribute_editor_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>show_reset</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>4</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_attribute_filter</key>
     <param>
       <key>field_name</key>
@@ -615,7 +674,7 @@
     </param>
     <param>
       <key>develop_mode</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -623,7 +682,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 432)</value>
+      <value>(896, 444)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -642,8 +701,67 @@
       <value>0</value>
     </param>
     <param>
+      <key>show_reset</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>show_fail</key>
+      <value>1</value>
+    </param>
+    <param>
       <key>value</key>
-      <value>2</value>
+      <value>4</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_attribute_splitter</key>
+    <param>
+      <key>command_name</key>
+      <value>"frame_index"</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>16</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(904, 556)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_attribute_splitter_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -690,7 +808,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 372)</value>
+      <value>(448, 452)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -849,7 +967,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 372)</value>
+      <value>(104, 452)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -943,7 +1061,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 376)</value>
+      <value>(288, 456)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1109,14 +1227,26 @@
     </param>
   </block>
   <connection>
-    <source_block_id>dmdl_attribute_filter_0</source_block_id>
+    <source_block_id>dmdl_attribute_editor_0</source_block_id>
+    <sink_block_id>dmdl_attribute_filter_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>Begin</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_attribute_editor_0</source_block_id>
+    <sink_block_id>dmdl_attribute_splitter_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>Begin</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_attribute_splitter_0</source_block_id>
     <sink_block_id>inets_frame_probe_0</sink_block_id>
-    <source_key>Pass</source_key>
+    <source_key>End</source_key>
     <sink_key>info_in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_framing_0</source_block_id>
-    <sink_block_id>dmdl_attribute_filter_0</sink_block_id>
+    <sink_block_id>dmdl_attribute_editor_0</sink_block_id>
     <source_key>End</source_key>
     <sink_key>Begin</sink_key>
   </connection>

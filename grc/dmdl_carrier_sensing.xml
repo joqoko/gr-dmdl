@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<block>
+  <name>carrier_sensing</name>
+  <key>dmdl_carrier_sensing</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.carrier_sensing($develop_mode, $block_id, $cs_mode, $cs_duration, $cs_threshold, $system_time_granularity_us, $nf_initial_n, $rx_sensitivity_dB)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <value>develop_mode</value>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>CCA</name>
+      <key>3</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>11</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+  <param>
+    <name>CS sensitivity [dB]</name>
+    <key>rx_sensitivity_dB</key>
+    <value>20</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>Mode</name>
+    <key>cs_mode</key>
+    <type>enum</type>
+    <option>
+      <name>Oneshot</name>
+      <key>1</key>
+      <opt>hide_oneshot:part</opt>
+      <opt>hide_fix:all</opt>
+      <opt>hide_until:all</opt>
+    </option>
+    <option>
+      <name>Fix duration</name>
+      <key>2</key>
+      <opt>hide_oneshot:all</opt>
+      <opt>hide_fix:part</opt>
+      <opt>hide_until:all</opt>
+    </option>
+    <option>
+      <name>Until channel free</name>
+      <key>3</key>
+      <opt>hide_oneshot:all</opt>
+      <opt>hide_fix:all</opt>
+      <opt>hide_until:part</opt>
+    </option>
+    <option>
+      <name>Continuous</name>
+      <key>4</key>
+      <opt>hide_oneshot:all</opt>
+      <opt>hide_fix:all</opt>
+      <opt>hide_until:all</opt>
+    </option>
+  </param>
+  <param>
+    <name>CS threshold mode</name>
+    <key>nf_initial_n</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Adaptive</name>
+      <key>100</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Fixed threshold</name>
+      <key>-1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Threshold (ED)</name>
+    <key>cs_threshold</key>
+    <value>cs_threshold</value>
+    <type>float</type>
+    <hide>$nf_initial_n.hide</hide>
+  </param>
+  <param>
+    <name>Duration [ms]</name>
+    <key>cs_duration</key>
+    <value>100</value>
+    <type>real</type>
+    <hide>$cs_mode.hide_fix</hide>
+  </param>
+  <param>
+    <name>System time granularity [us]</name>
+    <key>system_time_granularity_us</key>
+    <value>system_time_granularity_us</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Show failed CS port</name>
+    <key>show_fail</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Not show</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show stop CS port</name>
+    <key>show_stop</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Not show</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show reset duration port</name>
+    <key>reset_duration</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Not show</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show threshold output port</name>
+    <key>show_thre</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Not show</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Rssi</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>Stop</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_stop</hide>
+  </sink>
+
+  <sink>
+    <name>reconfiGure</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset_duration</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>Pass</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>Fail</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_fail</hide>
+  </source>
+  <source>
+    <name>cs_Threshold</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_thre</hide>
+  </source>
+</block>

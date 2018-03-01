@@ -21,6 +21,10 @@
 #include "dmdl/replicate.h"
 #include "dmdl/redundancy_remover.h"
 #include "dmdl/attribute_filter.h"
+#include "dmdl/carrier_sensing.h"
+#include "dmdl/random.h"
+#include "dmdl/attribute_editor.h"
+#include "dmdl/attribute_splitter.h"
 %}
 
 
@@ -52,3 +56,11 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, redundancy_remover);
 
 %include "dmdl/attribute_filter.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_filter);
+%include "dmdl/carrier_sensing.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, carrier_sensing);
+%include "dmdl/random.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, random);
+%include "dmdl/attribute_editor.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_editor);
+%include "dmdl/attribute_splitter.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_splitter);
