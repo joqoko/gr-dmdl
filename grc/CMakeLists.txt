@@ -29,5 +29,5 @@ install(FILES
     dmdl_resend_check.xml
     dmdl_replicate.xml
     dmdl_redundancy_remover.xml
-    DESTINATION share/gnuradio/grc/blocks
+    dmdl_attribute_filter.xml DESTINATION share/gnuradio/grc/blocks
 )

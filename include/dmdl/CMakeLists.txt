@@ -34,5 +34,5 @@ install(FILES
     resend_check.h
     replicate.h
     redundancy_remover.h
-    DESTINATION include/dmdl
+    attribute_filter.h DESTINATION include/dmdl
 )

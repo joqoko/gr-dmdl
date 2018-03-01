@@ -37,7 +37,7 @@ list(APPEND dmdl_sources
     resend_check_impl.cc
     replicate_impl.cc
     redundancy_remover_impl.cc
-    )
+    attribute_filter_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

@@ -592,6 +592,216 @@
     </param>
   </block>
   <block>
+    <key>dmdl_attribute_filter</key>
+    <param>
+      <key>field_name</key>
+      <value>"frame_index"</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>16</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(904, 432)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_attribute_filter_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_framing</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>17</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>default_framing_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>default_payload_length</key>
+      <value>300</value>
+    </param>
+    <param>
+      <key>destination_address</key>
+      <value>destination_address</value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(688, 372)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_framing_0</value>
+    </param>
+    <param>
+      <key>increase_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>frame_index</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>len_destination_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_num_transmission</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_payload_length</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_I</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_II</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_slot_time_beacon</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_source_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>node_list</key>
+      <value>[2, 3]</value>
+    </param>
+    <param>
+      <key>output_frame_pmt</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>reserved_field_I</key>
+      <value>318</value>
+    </param>
+    <param>
+      <key>reserved_field_II</key>
+      <value>524</value>
+    </param>
+    <param>
+      <key>reserved_field_ampdu</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>set_reserved_field</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>show_reset_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>show_reset_initial_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>slot_list_ms</key>
+      <value>[1000, 1000]</value>
+    </param>
+    <param>
+      <key>source_address</key>
+      <value>source_address</value>
+    </param>
+    <param>
+      <key>default_payload</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>internal_index</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_timer</key>
     <param>
       <key>alias</key>
@@ -615,7 +825,7 @@
     </param>
     <param>
       <key>duration_ms</key>
-      <value>1000</value>
+      <value>500</value>
     </param>
     <param>
       <key>address_check</key>
@@ -639,7 +849,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 368)</value>
+      <value>(336, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -671,7 +881,7 @@
     </param>
     <param>
       <key>timer_type</key>
-      <value>0</value>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -703,6 +913,69 @@
     <param>
       <key>import</key>
       <value>import gnuradio</value>
+    </param>
+  </block>
+  <block>
+    <key>inets_dummy_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>23</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(520, 376)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>inets_dummy_source_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>packet_rate</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>payload_length</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>show</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>source_type</key>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -749,7 +1022,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(672, 408)</value>
+      <value>(1104, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -836,10 +1109,28 @@
     </param>
   </block>
   <connection>
-    <source_block_id>dmdl_timer_0</source_block_id>
+    <source_block_id>dmdl_attribute_filter_0</source_block_id>
     <sink_block_id>inets_frame_probe_0</sink_block_id>
-    <source_key>End</source_key>
+    <source_key>Pass</source_key>
     <sink_key>info_in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_framing_0</source_block_id>
+    <sink_block_id>dmdl_attribute_filter_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>Begin</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_timer_0</source_block_id>
+    <sink_block_id>inets_dummy_source_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>trigger</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>inets_dummy_source_0</source_block_id>
+    <sink_block_id>dmdl_framing_0</sink_block_id>
+    <source_key>output</source_key>
+    <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>inets_run_0</source_block_id>
