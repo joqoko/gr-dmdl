@@ -25,6 +25,7 @@
 #include "dmdl/random.h"
 #include "dmdl/attribute_editor.h"
 #include "dmdl/attribute_splitter.h"
+#include "dmdl/divider.h"
 %}
 
 
@@ -64,3 +65,5 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, random);
 GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_editor);
 %include "dmdl/attribute_splitter.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_splitter);
+%include "dmdl/divider.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, divider);

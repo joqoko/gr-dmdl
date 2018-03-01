@@ -41,7 +41,8 @@ list(APPEND dmdl_sources
     carrier_sensing_impl.cc
     random_impl.cc
     attribute_editor_impl.cc
-    attribute_splitter_impl.cc )
+    attribute_splitter_impl.cc
+    divider_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

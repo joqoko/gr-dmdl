@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<block>
+  <name>divider</name>
+  <key>dmdl_divider</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.divider($develop_mode, $block_id, $counts, $mode)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Divisor</name>
+    <key>counts</key>
+    <value>4</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Show Stop port</name>
+    <key>reset</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Show reconfiGure port</name>
+    <key>set</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Show non-divisable port</name>
+    <key>unselect</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Mode</name>
+    <key>mode</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Arrival</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>Frame index</name>
+      <key>1</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>36</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>Stop</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset</hide>
+  </sink>
+
+  <sink>
+    <name>reconfiGure</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$set</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>picK</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+
+  <source>
+    <name>staY</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$unselect</hide>
+  </source>
+
+</block>

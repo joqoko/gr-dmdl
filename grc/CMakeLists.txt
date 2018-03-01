@@ -33,5 +33,6 @@ install(FILES
     dmdl_carrier_sensing.xml
     dmdl_random.xml
     dmdl_attribute_editor.xml
-    dmdl_attribute_splitter.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_attribute_splitter.xml
+    dmdl_divider.xml DESTINATION share/gnuradio/grc/blocks
 )

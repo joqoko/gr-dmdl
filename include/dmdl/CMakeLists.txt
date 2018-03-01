@@ -38,5 +38,6 @@ install(FILES
     carrier_sensing.h
     random.h
     attribute_editor.h
-    attribute_splitter.h DESTINATION include/dmdl
+    attribute_splitter.h
+    divider.h DESTINATION include/dmdl
 )
