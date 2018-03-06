@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<block>
+  <name>counter</name>
+  <key>dmdl_counter</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.counter($develop_mode, $counter_id, $interval_mode, $counter_name, $record_on, $record_path, $name_with_timestamp)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+
+  <param>
+    <name>Display mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>Record</name>
+      <key>3</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Display mode</name>
+    <key>show_id</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>show name</name>
+      <key>0</key>
+      <opt>hide_id:part</opt>
+      <opt>hide_name:none</opt>
+    </option>
+    <option>
+      <name>show ID</name>
+      <key>1</key>
+      <opt>hide_id:none</opt>
+      <opt>hide_name:part</opt>
+    </option>
+  </param>
+
+
+  <param>
+    <name>ID</name>
+    <key>counter_id</key>
+    <value>100</value>
+    <type>int</type>
+    <hide>$show_id.hide_id</hide>
+  </param>
+
+  <param>
+    <name>Name</name>
+    <key>counter_name</key>
+    <value>""</value>
+    <type>string</type>
+    <hide>$show_id.hide_name</hide>
+  </param>
+
+
+  <param>
+    <name>Interval mode</name>
+    <key>interval_mode</key>
+    <type>enum</type>
+    <hide>$interval_mode.hide</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Show reset port</name>
+    <key>reset</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Record on</name>
+    <key>record_on</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:all</opt>
+      <opt>hide_path:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_path:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Records path</name>
+    <key>record_path</key>
+    <value>"/home/pwa/Source/gr-dmdl/result"</value>
+    <type>string</type>
+    <hide>$record_on.hide_path</hide>
+  </param>
+
+  <param>
+    <name>filename with timestamp</name>
+    <key>name_with_timestamp</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>message_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>reset_counter</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$reset</hide>
+  </sink>
+
+  <sink>
+    <name>start_counter_in</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$interval_mode</hide>
+  </sink>
+
+  <sink>
+    <name>stop_counter_in</name>
+    <type>message</type>
+    <optional>1</optional> <hide>$interval_mode</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+</block>

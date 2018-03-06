@@ -42,7 +42,8 @@ list(APPEND dmdl_sources
     random_impl.cc
     attribute_editor_impl.cc
     attribute_splitter_impl.cc
-    divider_impl.cc )
+    divider_impl.cc
+    counter_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

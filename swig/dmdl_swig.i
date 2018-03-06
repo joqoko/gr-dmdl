@@ -26,6 +26,7 @@
 #include "dmdl/attribute_editor.h"
 #include "dmdl/attribute_splitter.h"
 #include "dmdl/divider.h"
+#include "dmdl/counter.h"
 %}
 
 
@@ -67,3 +68,5 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_editor);
 GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_splitter);
 %include "dmdl/divider.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, divider);
+%include "dmdl/counter.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, counter);

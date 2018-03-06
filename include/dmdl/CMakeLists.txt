@@ -39,5 +39,6 @@ install(FILES
     random.h
     attribute_editor.h
     attribute_splitter.h
-    divider.h DESTINATION include/dmdl
+    divider.h
+    counter.h DESTINATION include/dmdl
 )
