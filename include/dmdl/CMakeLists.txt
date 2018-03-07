@@ -43,5 +43,7 @@ install(FILES
     counter.h
     dummy_source.h
     path.h
-    start_pending.h DESTINATION include/dmdl
+    start_pending.h
+    rts_framing.h
+    cts_framing.h DESTINATION include/dmdl
 )

@@ -832,14 +832,14 @@
     </param>
   </block>
   <block>
-    <key>dmdl_divider</key>
+    <key>dmdl_cts_framing</key>
     <param>
       <key>alias</key>
       <value></value>
     </param>
     <param>
       <key>block_id</key>
-      <value>36</value>
+      <value>31</value>
     </param>
     <param>
       <key>comment</key>
@@ -850,12 +850,24 @@
       <value></value>
     </param>
     <param>
-      <key>develop_mode</key>
-      <value>0</value>
+      <key>default_ifs_setting</key>
+      <value>default</value>
     </param>
     <param>
-      <key>counts</key>
-      <value>3</value>
+      <key>default_PHY_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>default_framing_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>destination_address</key>
+      <value>destination_address</value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -863,15 +875,51 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 352)</value>
+      <value>(664, 592)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_divider_0</value>
+      <value>dmdl_cts_framing_0</value>
+    </param>
+    <param>
+      <key>len_rts_cts_payload</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>len_destination_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_num_transmission</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_payload_length</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_I</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_II</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_source_address</key>
+      <value>1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -882,20 +930,44 @@
       <value>0</value>
     </param>
     <param>
-      <key>mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>reset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>unselect</key>
+      <key>output_frame_pmt</key>
       <value>1</value>
     </param>
     <param>
-      <key>set</key>
+      <key>padding</key>
+      <value>64</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>diff_preamble_128</value>
+    </param>
+    <param>
+      <key>reserved_field_I</key>
+      <value>318</value>
+    </param>
+    <param>
+      <key>reserved_field_II</key>
+      <value>524</value>
+    </param>
+    <param>
+      <key>SIFS</key>
+      <value>1000</value>
+    </param>
+    <param>
+      <key>set_reserved_field</key>
       <value>1</value>
+    </param>
+    <param>
+      <key>slot_time</key>
+      <value>800</value>
+    </param>
+    <param>
+      <key>source_address</key>
+      <value>source_address</value>
+    </param>
+    <param>
+      <key>bps</key>
+      <value>gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps)</value>
     </param>
   </block>
   <block>
@@ -1117,6 +1189,145 @@
     </param>
   </block>
   <block>
+    <key>dmdl_rts_framing</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>30</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>default_ifs_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>default_PHY_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>default_framing_setting</key>
+      <value>default</value>
+    </param>
+    <param>
+      <key>destination_address</key>
+      <value>destination_address</value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(656, 352)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_rts_framing_0</value>
+    </param>
+    <param>
+      <key>len_rts_cts_payload</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>len_destination_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_index</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_frame_type</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_num_transmission</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>len_payload_length</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_I</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_reserved_field_II</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>len_source_address</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_frame_pmt</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>padding</key>
+      <value>64</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>diff_preamble_128</value>
+    </param>
+    <param>
+      <key>reserved_field_I</key>
+      <value>318</value>
+    </param>
+    <param>
+      <key>reserved_field_II</key>
+      <value>524</value>
+    </param>
+    <param>
+      <key>SIFS</key>
+      <value>1000</value>
+    </param>
+    <param>
+      <key>set_reserved_field</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>slot_time</key>
+      <value>800</value>
+    </param>
+    <param>
+      <key>source_address</key>
+      <value>source_address</value>
+    </param>
+    <param>
+      <key>bps</key>
+      <value>gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps)</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_start</key>
     <param>
       <key>alias</key>
@@ -1243,7 +1454,90 @@
     </param>
     <param>
       <key>timer_type</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_timer</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>duration_ms</key>
+      <value>1000</value>
+    </param>
+    <param>
+      <key>address_check</key>
       <value>1</value>
+    </param>
+    <param>
+      <key>disable_timer</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>resume_timer</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>suspend_timer</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(760, 268)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_timer_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>reserved_time_ms</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>reset_duration</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>system_time_granularity_us</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>timer_type</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1367,22 +1661,10 @@
     <sink_key>Begin</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_divider_0</source_block_id>
-    <sink_block_id>dmdl_counter_0</sink_block_id>
-    <source_key>picK</source_key>
-    <sink_key>Begin</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_divider_0</source_block_id>
-    <sink_block_id>dmdl_divider_0</sink_block_id>
-    <source_key>picK</source_key>
-    <sink_key>Stop</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_divider_0</source_block_id>
-    <sink_block_id>inets_frame_probe_0</sink_block_id>
-    <source_key>picK</source_key>
-    <sink_key>info_in</sink_key>
+    <source_block_id>dmdl_cts_framing_0</source_block_id>
+    <sink_block_id>dmdl_rts_framing_0</sink_block_id>
+    <source_key>frame_out</source_key>
+    <sink_key>cts_frame_in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_dummy_source_0</source_block_id>
@@ -1392,9 +1674,21 @@
   </connection>
   <connection>
     <source_block_id>dmdl_framing_0</source_block_id>
-    <sink_block_id>dmdl_divider_0</sink_block_id>
+    <sink_block_id>dmdl_rts_framing_0</sink_block_id>
     <source_key>End</source_key>
-    <sink_key>Begin</sink_key>
+    <sink_key>data_frame_in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_rts_framing_0</source_block_id>
+    <sink_block_id>dmdl_cts_framing_0</sink_block_id>
+    <source_key>frame_out</source_key>
+    <sink_key>rts_frame_info_in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_rts_framing_0</source_block_id>
+    <sink_block_id>inets_frame_probe_0</sink_block_id>
+    <source_key>frame_out</source_key>
+    <sink_key>info_in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_start_0</source_block_id>

@@ -30,6 +30,8 @@
 #include "dmdl/dummy_source.h"
 #include "dmdl/path.h"
 #include "dmdl/start_pending.h"
+#include "dmdl/rts_framing.h"
+#include "dmdl/cts_framing.h"
 %}
 
 
@@ -79,3 +81,8 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, dummy_source);
 GR_SWIG_BLOCK_MAGIC2(dmdl, path);
 %include "dmdl/start_pending.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, start_pending);
+
+%include "dmdl/rts_framing.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, rts_framing);
+%include "dmdl/cts_framing.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, cts_framing);

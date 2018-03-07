@@ -46,7 +46,9 @@ list(APPEND dmdl_sources
     counter_impl.cc
     dummy_source_impl.cc
     path_impl.cc
-    start_pending_impl.cc )
+    start_pending_impl.cc
+    rts_framing_impl.cc
+    cts_framing_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

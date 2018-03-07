@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<block>
+  <name>rts_framing</name>
+  <key>dmdl_rts_framing</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.rts_framing($develop_mode, $block_id, $len_frame_type, $len_frame_index, $destination_address, $len_destination_address, $source_address, $len_source_address, $reserved_field_I, $len_reserved_field_I, $reserved_field_II, $len_reserved_field_II, $len_payload_length, $len_num_transmission, $len_rts_cts_payload, $padding, $preamble, $bps, $SIFS, $slot_time)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+      <opt>hide_pmt:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+      <opt>hide_pmt:part</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+      <opt>hide_pmt:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>30</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Output frame pmt</name>
+    <key>output_frame_pmt</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide_pmt</hide>
+    <option>
+      <name>No</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Destination address</name>
+    <key>destination_address</key>
+    <value>destination_address</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>Source address</name>
+    <key>source_address</key>
+    <value>source_address</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+  <param>
+    <name>Set reserved field</name>
+    <key>set_reserved_field</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>On</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Off</name>
+      <key>1</key>
+      <opt>hide:all</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Reserved field I</name>
+    <key>reserved_field_I</key>
+    <value>318</value>
+    <type>int</type>
+    <hide>$set_reserved_field.hide</hide>
+  </param>
+  <param>
+    <name>Reserved field II</name>
+    <key>reserved_field_II</key>
+    <value>524</value>
+    <type>int</type>
+    <hide>$set_reserved_field.hide</hide>
+  </param>
+
+  <param>
+    <name>Default framing settings</name>
+    <key>default_framing_setting</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Default</name>
+      <key>default</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Customized</name>
+      <key>customized</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Length of frame type</name>
+    <key>len_frame_type</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of frame index</name>
+    <key>len_frame_index</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of destination address</name>
+    <key>len_destination_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of source address</name>
+    <key>len_source_address</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field I</name>
+    <key>len_reserved_field_I</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of reserved field II</name>
+    <key>len_reserved_field_II</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of payload length field</name>
+    <key>len_payload_length</key>
+    <value>2</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of number of transmissions</name>
+    <key>len_num_transmission</key>
+    <value>1</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Length of RTS/CTS payload</name>
+    <key>len_rts_cts_payload</key>
+    <value>3</value>
+    <type>int</type>
+    <hide>$default_framing_setting.hide</hide>
+  </param>
+  <param>
+    <name>Default PHY settings</name>
+    <key>default_PHY_setting</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Default</name>
+      <key>default</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Customized</name>
+      <key>customized</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>Padding</name>
+    <key>padding</key>
+    <value>64</value>
+    <type>int</type>
+    <hide>$default_PHY_setting.hide</hide>
+  </param>
+  <param>
+    <name>Preamble</name>
+    <key>preamble</key>
+    <value>diff_preamble_128</value>
+    <type>raw</type>
+    <hide>$default_PHY_setting.hide</hide>
+  </param>
+  <param>
+    <name>bitrate</name>
+    <key>bps</key>
+    <value>gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps)</value>
+    <type>real</type>
+    <hide>$default_PHY_setting.hide</hide>
+  </param>
+
+  <param>
+    <name>Default IFS settings</name>
+    <key>default_ifs_setting</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Default</name>
+      <key>default</key>
+      <opt>hide:all</opt>
+    </option>
+    <option>
+      <name>Customized</name>
+      <key>customized</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+  <param>
+    <name>SIFS [us]</name>
+    <key>SIFS</key>
+    <value>1000</value>
+    <type>int</type>
+    <hide>$default_ifs_setting.hide</hide>
+  </param>
+  <param>
+    <name>Slot time [us]</name>
+    <key>slot_time</key>
+    <value>800</value>
+    <type>int</type>
+    <hide>$default_ifs_setting.hide</hide>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>data_frame_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <sink>
+    <name>cts_frame_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>frame_out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  <source>
+    <name>frame_pmt_out</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_frame_pmt</hide>
+  </source>
+</block>
