@@ -35,5 +35,9 @@ install(FILES
     dmdl_attribute_editor.xml
     dmdl_attribute_splitter.xml
     dmdl_divider.xml
-    dmdl_counter.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_counter.xml
+    dmdl_dummy_source.xml
+    dmdl_path.xml
+    dmdl_start.xml
+    dmdl_start_pending.xml DESTINATION share/gnuradio/grc/blocks
 )

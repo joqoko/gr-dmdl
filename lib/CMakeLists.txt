@@ -43,7 +43,10 @@ list(APPEND dmdl_sources
     attribute_editor_impl.cc
     attribute_splitter_impl.cc
     divider_impl.cc
-    counter_impl.cc )
+    counter_impl.cc
+    dummy_source_impl.cc
+    path_impl.cc
+    start_pending_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

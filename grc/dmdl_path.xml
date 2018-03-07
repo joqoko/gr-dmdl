@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<block>
+  <name>path</name>
+  <key>dmdl_path</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.path($develop_mode, $block_id, $switch_s, $display)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Switch</name>
+    <key>switch_s</key>
+    <type>enum</type>
+    <hide>$switch_s.hide</hide>
+    <option>
+      <name>Pass</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>Block</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Hide display text</name>
+    <key>disp</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Yes</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+    </option>
+    <option>
+      <name>No</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Display text</name>
+    <key>display</key>
+    <value>""</value>
+    <type>raw</type>
+    <hide>$disp.hide</hide>
+  </param>
+
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>44</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

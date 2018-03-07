@@ -27,6 +27,9 @@
 #include "dmdl/attribute_splitter.h"
 #include "dmdl/divider.h"
 #include "dmdl/counter.h"
+#include "dmdl/dummy_source.h"
+#include "dmdl/path.h"
+#include "dmdl/start_pending.h"
 %}
 
 
@@ -70,3 +73,9 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_splitter);
 GR_SWIG_BLOCK_MAGIC2(dmdl, divider);
 %include "dmdl/counter.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, counter);
+%include "dmdl/dummy_source.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, dummy_source);
+%include "dmdl/path.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, path);
+%include "dmdl/start_pending.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, start_pending);

@@ -56,10 +56,10 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "the " << _counter_id << "th message counter is activated." << std::endl;
-      message_port_register_in(pmt::mp("message_in"));
-      set_msg_handler(pmt::mp("message_in"), boost::bind(&counter_impl::counting, this, _1 ));
-      message_port_register_in(pmt::mp("reset_counter"));
-      set_msg_handler(pmt::mp("reset_counter"), boost::bind(&counter_impl::reset, this, _1 ));
+      message_port_register_in(pmt::mp("Begin"));
+      set_msg_handler(pmt::mp("Begin"), boost::bind(&counter_impl::counting, this, _1 ));
+      message_port_register_in(pmt::mp("Reset"));
+      set_msg_handler(pmt::mp("Reset"), boost::bind(&counter_impl::reset, this, _1 ));
       message_port_register_in(pmt::mp("start_counter_in"));
       set_msg_handler(pmt::mp("start_counter_in"), boost::bind(&counter_impl::start_counting, this, _1 ));
       message_port_register_in(pmt::mp("stop_counter_in"));

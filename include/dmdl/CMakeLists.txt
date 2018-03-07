@@ -40,5 +40,8 @@ install(FILES
     attribute_editor.h
     attribute_splitter.h
     divider.h
-    counter.h DESTINATION include/dmdl
+    counter.h
+    dummy_source.h
+    path.h
+    start_pending.h DESTINATION include/dmdl
 )

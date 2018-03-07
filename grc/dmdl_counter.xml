@@ -159,13 +159,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>message_in</name>
+    <name>Begin</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>reset_counter</name>
+    <name>Reset</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset</hide>

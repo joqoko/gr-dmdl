@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<block>
+  <name>dummy_source</name>
+  <key>dmdl_dummy_source</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.dummy_source($develop_mode, $block_id, $payload_length, $source_type, $packet_rate)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <type>enum</type>
+    <hide>$develop_mode.hide</hide>
+    <option>
+      <name>off</name>
+      <key>0</key>
+      <opt>hide:part</opt>
+      <opt>hide_control:all</opt>
+    </option>
+    <option>
+      <name>on</name>
+      <key>1</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+      <opt>hide:none</opt>
+      <opt>hide_control:none</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>23</value>
+    <type>int</type>
+    <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Payload length</name>
+    <key>payload_length</key>
+    <value>100</value>
+    <type>int</type>
+    <hide>part</hide>
+  </param>
+
+  <param>
+    <name>Show stop port</name>
+    <key>show</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>hide</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Source type</name>
+    <key>source_type</key>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>Infinite</name>
+      <key>1</key>
+      <opt>hide:all</opt>
+    </option>
+
+    <option>
+      <name>Constant rate</name>
+      <key>2</key>
+      <opt>hide:part</opt>
+    </option>
+
+    <option>
+      <name>Oneshot</name>
+      <key>3</key>
+      <opt>hide:part</opt>
+    </option>
+  </param>
+
+  <param>
+    <name>Packet rate</name>
+    <key>packet_rate</key>
+    <value>1</value>
+    <type>float</type>
+    <hide>$source_type.hide</hide>
+  </param>
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>Stop</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show</hide>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>End</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

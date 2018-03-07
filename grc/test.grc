@@ -792,7 +792,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 308)</value>
+      <value>(456, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -820,14 +820,14 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>"/home/pwa/Source/gr-dmdl/result"</value>
     </param>
     <param>
       <key>reset</key>
       <value>1</value>
     </param>
     <param>
-      <key>name_with_stamp</key>
+      <key>name_with_timestamp</key>
       <value>1</value>
     </param>
   </block>
@@ -895,6 +895,69 @@
     </param>
     <param>
       <key>set</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_dummy_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>23</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(280, 456)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_dummy_source_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>packet_rate</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>payload_length</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>show</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>source_type</key>
       <value>1</value>
     </param>
   </block>
@@ -1054,6 +1117,53 @@
     </param>
   </block>
   <block>
+    <key>dmdl_start</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(64, 400)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_start_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>start_next_time_s</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>system_time_granularity_us</key>
+      <value>10</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_timer</key>
     <param>
       <key>alias</key>
@@ -1168,136 +1278,6 @@
     </param>
   </block>
   <block>
-    <key>inets_counter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>show_id</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(728, 236)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>counter_id</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>inets_counter_0</value>
-    </param>
-    <param>
-      <key>interval_mode</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>counter_name</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>record_on</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
-    </param>
-    <param>
-      <key>reset</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name_with_stamp</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>inets_dummy_source</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>23</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(288, 456)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>inets_dummy_source_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>packet_rate</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>payload_length</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>show</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>source_type</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>inets_frame_probe</key>
     <param>
       <key>alias</key>
@@ -1380,53 +1360,6 @@
       <value>1</value>
     </param>
   </block>
-  <block>
-    <key>inets_run</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(112, 320)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>inets_run_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>start_next_time_s</key>
-      <value>5</value>
-    </param>
-    <param>
-      <key>system_time_granularity_us</key>
-      <value>10</value>
-    </param>
-  </block>
   <connection>
     <source_block_id>dmdl_attribute_editor_0</source_block_id>
     <sink_block_id>dmdl_attribute_filter_0</sink_block_id>
@@ -1437,7 +1370,7 @@
     <source_block_id>dmdl_divider_0</source_block_id>
     <sink_block_id>dmdl_counter_0</sink_block_id>
     <source_key>picK</source_key>
-    <sink_key>message_in</sink_key>
+    <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_divider_0</source_block_id>
@@ -1447,15 +1380,15 @@
   </connection>
   <connection>
     <source_block_id>dmdl_divider_0</source_block_id>
-    <sink_block_id>inets_counter_0</sink_block_id>
-    <source_key>picK</source_key>
-    <sink_key>message_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_divider_0</source_block_id>
     <sink_block_id>inets_frame_probe_0</sink_block_id>
     <source_key>picK</source_key>
     <sink_key>info_in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_dummy_source_0</source_block_id>
+    <sink_block_id>dmdl_framing_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_framing_0</source_block_id>
@@ -1464,21 +1397,15 @@
     <sink_key>Begin</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_timer_0</source_block_id>
-    <sink_block_id>inets_dummy_source_0</sink_block_id>
-    <source_key>End</source_key>
-    <sink_key>trigger</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>inets_dummy_source_0</source_block_id>
-    <sink_block_id>dmdl_framing_0</sink_block_id>
-    <source_key>output</source_key>
+    <source_block_id>dmdl_start_0</source_block_id>
+    <sink_block_id>dmdl_timer_0</sink_block_id>
+    <source_key>Begin</source_key>
     <sink_key>Begin</sink_key>
   </connection>
   <connection>
-    <source_block_id>inets_run_0</source_block_id>
-    <sink_block_id>dmdl_timer_0</sink_block_id>
-    <source_key>trigger_out</source_key>
+    <source_block_id>dmdl_timer_0</source_block_id>
+    <sink_block_id>dmdl_dummy_source_0</sink_block_id>
+    <source_key>End</source_key>
     <sink_key>Begin</sink_key>
   </connection>
 </flow_graph>
