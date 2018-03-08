@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Wed Mar  7 14:07:09 2018
+# Generated: Thu Mar  8 10:32:37 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -90,7 +90,6 @@ class top_block(gr.top_block, Qt.QWidget):
         self.dmdl_rts_framing_0 = dmdl.rts_framing(0, 30, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 3, 64, diff_preamble_128, gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps), 1000, 800)
         self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
         self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
-        self.dmdl_cts_framing_0 = dmdl.cts_framing(0, 31, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 3, 64, diff_preamble_128, gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps), 1000, 800)
         self.dmdl_counter_0 = dmdl.counter(0, 100, 1, "", 0, "/home/pwa/Source/gr-dmdl/result", 1)
         self.dmdl_attribute_splitter_0 = dmdl.attribute_splitter(0, 16, "frame_index")
         self.dmdl_attribute_filter_0 = dmdl.attribute_filter(0, 16, "frame_index", 4)
@@ -102,10 +101,8 @@ class top_block(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.msg_connect((self.dmdl_attribute_editor_0, 'End'), (self.dmdl_attribute_filter_0, 'Begin'))
-        self.msg_connect((self.dmdl_cts_framing_0, 'frame_out'), (self.dmdl_rts_framing_0, 'cts_frame_in'))
         self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
         self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_rts_framing_0, 'data_frame_in'))
-        self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.dmdl_cts_framing_0, 'rts_frame_info_in'))
         self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.inets_frame_probe_0, 'info_in'))
         self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
         self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))

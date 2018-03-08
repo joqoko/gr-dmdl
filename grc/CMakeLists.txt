@@ -41,5 +41,6 @@ install(FILES
     dmdl_start.xml
     dmdl_start_pending.xml
     dmdl_rts_framing.xml
-    dmdl_cts_framing.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_cts_framing.xml
+    dmdl_probe.xml DESTINATION share/gnuradio/grc/blocks
 )

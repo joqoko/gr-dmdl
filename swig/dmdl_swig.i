@@ -32,6 +32,7 @@
 #include "dmdl/start_pending.h"
 #include "dmdl/rts_framing.h"
 #include "dmdl/cts_framing.h"
+#include "dmdl/probe.h"
 %}
 
 
@@ -86,3 +87,6 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, start_pending);
 GR_SWIG_BLOCK_MAGIC2(dmdl, rts_framing);
 %include "dmdl/cts_framing.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, cts_framing);
+
+%include "dmdl/probe.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, probe);

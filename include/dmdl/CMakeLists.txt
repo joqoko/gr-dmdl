@@ -45,5 +45,6 @@ install(FILES
     path.h
     start_pending.h
     rts_framing.h
-    cts_framing.h DESTINATION include/dmdl
+    cts_framing.h
+    probe.h DESTINATION include/dmdl
 )
