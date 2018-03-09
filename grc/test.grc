@@ -1050,6 +1050,89 @@
     </param>
   </block>
   <block>
+    <key>dmdl_probe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>cs_threshold</key>
+      <value>0.01</value>
+    </param>
+    <param>
+      <key>cs_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>enable_new_name</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file_name_extension</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(896, 376)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_probe_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_time_info</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>print_frame</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_path</key>
+      <value>"/home/inets/source/gr-inets/results/"</value>
+    </param>
+    <param>
+      <key>name_with_timestamp</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_rts_framing</key>
     <param>
       <key>alias</key>
@@ -1073,7 +1156,7 @@
     </param>
     <param>
       <key>default_PHY_setting</key>
-      <value>default</value>
+      <value>customized</value>
     </param>
     <param>
       <key>default_framing_setting</key>
@@ -1093,7 +1176,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 352)</value>
+      <value>(664, 360)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1208,7 +1291,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(64, 400)</value>
+      <value>(8, 360)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1425,94 +1508,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>import_0</value>
+      <value>import_0_0</value>
     </param>
     <param>
       <key>import</key>
-      <value>import gnuradio</value>
-    </param>
-  </block>
-  <block>
-    <key>inets_frame_probe</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>cs_threshold</key>
-      <value>0.01</value>
-    </param>
-    <param>
-      <key>cs_mode</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>enable_new_name</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>file_name_extension</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1104, 312)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>inets_frame_probe_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>output_time_info</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>print_frame</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>record_on</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
-    </param>
-    <param>
-      <key>name_with_stamp</key>
-      <value>1</value>
+      <value>import gnuradio.digital</value>
     </param>
   </block>
   <connection>
@@ -1535,7 +1535,7 @@
   </connection>
   <connection>
     <source_block_id>dmdl_rts_framing_0</source_block_id>
-    <sink_block_id>inets_frame_probe_0</sink_block_id>
+    <sink_block_id>dmdl_probe_0</sink_block_id>
     <source_key>frame_out</source_key>
     <sink_key>info_in</sink_key>
   </connection>

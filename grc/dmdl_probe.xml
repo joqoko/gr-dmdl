@@ -141,7 +141,7 @@
 
   <param>
     <name>filename with timestamp</name>
-    <key>name_with_stamp</key>
+    <key>name_with_timestamp</key>
     <type>enum</type>
     <hide>part</hide>
     <option>

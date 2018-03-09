@@ -1,9 +1,8 @@
 /* -*- c++ -*- */
 
 #define DMDL_API
-
+#define DIGITAL_API
 %include "gnuradio.i"			// the common stuff
-
 //load generated python docstrings
 %include "dmdl_swig_doc.i"
 
@@ -33,6 +32,7 @@
 #include "dmdl/rts_framing.h"
 #include "dmdl/cts_framing.h"
 #include "dmdl/probe.h"
+#include "dmdl/baseband_derotation_simphy.h"
 %}
 
 
@@ -90,3 +90,5 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, cts_framing);
 
 %include "dmdl/probe.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, probe);
+%include "dmdl/baseband_derotation_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, baseband_derotation_simphy);

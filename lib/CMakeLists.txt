@@ -49,7 +49,8 @@ list(APPEND dmdl_sources
     start_pending_impl.cc
     rts_framing_impl.cc
     cts_framing_impl.cc
-    probe_impl.cc )
+    probe_impl.cc
+    baseband_derotation_simphy_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

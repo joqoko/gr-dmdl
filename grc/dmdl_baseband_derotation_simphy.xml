@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<block>
+  <name>baseband_derotation_simphy</name>
+  <key>dmdl_baseband_derotation_simphy</key>
+  <category>[dmdl]</category>
+  <import>import dmdl</import>
+  <make>dmdl.baseband_derotation_simphy($mu, $con)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <callback>set_mu($mu)</callback>
+  <param>
+    <name>Mu</name>
+    <key>mu</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Con</name>
+    <key>con</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

@@ -46,5 +46,6 @@ install(FILES
     start_pending.h
     rts_framing.h
     cts_framing.h
-    probe.h DESTINATION include/dmdl
+    probe.h
+    baseband_derotation_simphy.h DESTINATION include/dmdl
 )
