@@ -92,6 +92,8 @@ if(NOT Boost_FOUND)
     message(FATAL_ERROR "Boost required to compile dmdl")
 endif()
 
+find_package(UHD)
+
 ########################################################################
 # Install directories
 ########################################################################

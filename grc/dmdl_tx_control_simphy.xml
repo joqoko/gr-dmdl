@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<block>
+  <name>tx_control_simphy</name>
+  <key>dmdl_tx_control_simphy</key>
+  <category>[dmdl.simphy]</category>
+  <import>import dmdl</import>
+  <make>dmdl.tx_control_simphy($develop_mode, $block_id, $bps, $t_pretx_interval_s, $record_on, $file_name_extension, $name_with_timestamp)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <value>develop_mode</value>
+    <type>int</type>
+    <option>
+      <name>on</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>off</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>time</name>
+      <key>2</key>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>4</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>bitrate</name>
+    <key>bps</key>
+    <value>constellation.bits_per_symbol() * (samp_rate / sps)</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Pre-tx interval</name>
+    <key>t_pretx_interval_s</key>
+    <value>t_pretx_interval_s</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Record on</name>
+    <key>record_on</key>
+    <value>record_on</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>File name extension</name>
+    <key>file_name_extension</key>
+    <value>""</value>
+    <type>string</type>
+    <hide>none</hide>
+  </param>
+
+  <param>
+    <name>filename with timestamp</name>
+    <key>name_with_timestamp</key>
+    <value>name_with_timestamp</value>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

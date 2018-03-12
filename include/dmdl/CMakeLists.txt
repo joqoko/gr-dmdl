@@ -49,5 +49,6 @@ install(FILES
     probe.h
     baseband_derotation_simphy.h
     packetizer_simphy.h
-    tx_pending_simphy.h DESTINATION include/dmdl
+    tx_pending_simphy.h
+    tx_control_simphy.h DESTINATION include/dmdl
 )

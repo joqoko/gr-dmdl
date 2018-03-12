@@ -45,5 +45,7 @@ install(FILES
     dmdl_probe.xml
     dmdl_baseband_derotation_simphy.xml
     dmdl_packetizer_simphy.xml
-    dmdl_tx_pending_simphy.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_tx_pending_simphy.xml
+    dmdl_sending.xml
+    dmdl_tx_control_simphy.xml DESTINATION share/gnuradio/grc/blocks
 )

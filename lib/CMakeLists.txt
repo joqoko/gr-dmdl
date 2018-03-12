@@ -53,7 +53,8 @@ list(APPEND dmdl_sources
     baseband_derotation_simphy_impl.cc
 #    packetizer_impl.cc
     packetizer_simphy_impl.cc
-    tx_pending_simphy_impl.cc )
+    tx_pending_simphy_impl.cc
+    tx_control_simphy_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

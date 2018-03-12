@@ -35,6 +35,7 @@
 #include "dmdl/baseband_derotation_simphy.h"
 #include "dmdl/packetizer_simphy.h"
 #include "dmdl/tx_pending_simphy.h"
+#include "dmdl/tx_control_simphy.h"
 %}
 
 
@@ -101,3 +102,6 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, packetizer_simphy);
 
 %include "dmdl/tx_pending_simphy.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, tx_pending_simphy);
+
+%include "dmdl/tx_control_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, tx_control_simphy);

@@ -4,7 +4,7 @@
   <key>dmdl_sending</key>
   <category>[dmdl]</category>
   <import>import dmdl</import>
-  <make>dmdl.sending(develop_mode=$develop_mode, block_id=$block_id, constellation=$constellation, preamble=$preamble, samp_rate=$samp_rate, sps=$sps, system_time_granularity_us=$system_time_granularity_us, usrp_device_address=$usrp_device_address, center_frequency=$center_frequency, interframe_interval_s=$interframe_interval_s, t_pretx_interval_s=$t_pretx_interval_s, file_name_extension_t_control=$file_name_extension_t_control, file_name_extension_pending=$file_name_extension_pending, record_on=$record_on, name_with_timestamp=$name_with_timestamp, tx_gain=$tx_gain)</make>
+  <make>dmdl.sending($develop_mode, $block_id, $constellation, $preamble, $samp_rate, $sps, $system_time_granularity_us, $usrp_device_address, $center_frequency, $interframe_interval_s, $t_pretx_interval_s, $file_name_extension_t_control, $file_name_extension_pending, $record_on, $name_with_timestamp, $tx_gain)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name

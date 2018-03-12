@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # 
-# Copyright 2017 <RWTH INETS & KTH RSLAB>.
+# Copyright 2017 <RWTH INETS & KTH RSLAB>
 # 
 # This is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ from gnuradio import gr
 from gnuradio import uhd
 from gnuradio.filter import firdes
 import gnuradio
-from sending_hier import sending_hier # grc-generated hier_block
+from sending_hier import sending_hier  # grc-generated hier_block
 import dmdl
 import numpy
 import time

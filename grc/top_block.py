@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Mon Mar 12 09:14:25 2018
+# Generated: Mon Mar 12 15:37:01 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -24,7 +24,6 @@ from gnuradio.filter import firdes
 from optparse import OptionParser
 import dmdl
 import gnuradio.digital
-import inets
 import sys
 from gnuradio import qtgui
 
@@ -89,11 +88,10 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.inets_sending_0 = inets.sending(develop_mode=0, block_id=11, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=diff_preamble_128, samp_rate=samp_rate, sps=sps, system_time_granularity_us=system_time_granularity_us, usrp_device_address=usrp_device_address, center_frequency=tx_center_frequency, interframe_interval_s=0.005, t_pretx_interval_s=0.05, file_name_extension_t_control="t1TXs", file_name_extension_pending="Tfr", record_on=0, name_with_timestamp=1, tx_gain=0)
         self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
+        self.dmdl_timer_0 = dmdl.timer(0, 5, 1, 500, 10, 0)
         self.dmdl_start_0 = dmdl.start(5, 10)
-        self.dmdl_rts_framing_0 = dmdl.rts_framing(0, 30, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 3, 64, diff_preamble_128, gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps), 1000, 800)
+        self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 0, 0)
         self.dmdl_probe_0 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
         self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
         self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
@@ -109,9 +107,8 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         self.msg_connect((self.dmdl_attribute_editor_0, 'End'), (self.dmdl_attribute_filter_0, 'Begin'))
         self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
-        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_rts_framing_0, 'data_frame_in'))
-        self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.dmdl_probe_0, 'info_in'))
-        self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.inets_sending_0, 'in'))
+        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_sending_0, 'in'))
+        self.msg_connect((self.dmdl_sending_0, 'data_frame_out'), (self.dmdl_probe_0, 'info_in'))
         self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
         self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
 
