@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<block>
+  <name>packetizer_simphy</name>
+  <key>dmdl_packetizer_simphy</key>
+  <category>[dmdl.simphy]</category>
+  <import>import dmdl</import>
+  <make>dmdl.packetizer_simphy($develop_mode, $block_id, $preamble, $padding, $bps)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Preamble</name>
+    <key>preamble</key>
+    <value>preamble</value>
+    <type>int_vector</type>
+  </param>
+  <param>
+    <name>Padding</name>
+    <key>padding</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Bitrate</name>
+    <key>bps</key>
+    <type>real</type>
+  </param>
+  <param>
+    <name>Develop mode</name>
+    <key>develop_mode</key>
+    <value>develop_mode</value>
+    <type>int</type>
+    <option>
+      <name>on</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>off</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>Block id</name>
+    <key>block_id</key>
+    <value>block_id</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>payload_in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <source>
+    <name>packet_out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

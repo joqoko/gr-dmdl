@@ -141,6 +141,7 @@ find_package(Doxygen)
 # API compatible version required.
 #set(GR_REQUIRED_COMPONENTS RUNTIME)
 set(GR_REQUIRED_COMPONENTS RUNTIME DIGITAL)
+#set(GR_REQUIRED_COMPONENTS RUNTIME OTHER_COMPONENTS)
 find_package(Gnuradio "3.7.2" REQUIRED)
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
 include(GrVersion)

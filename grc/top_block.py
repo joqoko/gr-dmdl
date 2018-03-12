@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Thu Mar  8 17:27:10 2018
+# Generated: Mon Mar 12 09:14:25 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -24,13 +24,14 @@ from gnuradio.filter import firdes
 from optparse import OptionParser
 import dmdl
 import gnuradio.digital
+import inets
 import sys
 from gnuradio import qtgui
 
 
 class top_block(gr.top_block, Qt.QWidget):
 
-    def __init__(self):
+    def __init__(self, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=[]):
         gr.top_block.__init__(self, "Top Block")
         Qt.QWidget.__init__(self)
         self.setWindowTitle("Top Block")
@@ -54,6 +55,12 @@ class top_block(gr.top_block, Qt.QWidget):
         self.settings = Qt.QSettings("GNU Radio", "top_block")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
+
+        ##################################################
+        # Parameters
+        ##################################################
+        self.constellation = constellation
+        self.preamble = preamble
 
         ##################################################
         # Variables
@@ -82,6 +89,7 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
+        self.inets_sending_0 = inets.sending(develop_mode=0, block_id=11, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=diff_preamble_128, samp_rate=samp_rate, sps=sps, system_time_granularity_us=system_time_granularity_us, usrp_device_address=usrp_device_address, center_frequency=tx_center_frequency, interframe_interval_s=0.005, t_pretx_interval_s=0.05, file_name_extension_t_control="t1TXs", file_name_extension_pending="Tfr", record_on=0, name_with_timestamp=1, tx_gain=0)
         self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
         self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
         self.dmdl_start_0 = dmdl.start(5, 10)
@@ -103,6 +111,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
         self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_rts_framing_0, 'data_frame_in'))
         self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.dmdl_probe_0, 'info_in'))
+        self.msg_connect((self.dmdl_rts_framing_0, 'frame_out'), (self.inets_sending_0, 'in'))
         self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
         self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
 
@@ -110,6 +119,18 @@ class top_block(gr.top_block, Qt.QWidget):
         self.settings = Qt.QSettings("GNU Radio", "top_block")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
+
+    def get_constellation(self):
+        return self.constellation
+
+    def set_constellation(self, constellation):
+        self.constellation = constellation
+
+    def get_preamble(self):
+        return self.preamble
+
+    def set_preamble(self, preamble):
+        self.preamble = preamble
 
     def get_sps(self):
         return self.sps
@@ -220,7 +241,14 @@ class top_block(gr.top_block, Qt.QWidget):
         self.SIFS = SIFS
 
 
+def argument_parser():
+    parser = OptionParser(usage="%prog: [options]", option_class=eng_option)
+    return parser
+
+
 def main(top_block_cls=top_block, options=None):
+    if options is None:
+        options, _ = argument_parser().parse_args()
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

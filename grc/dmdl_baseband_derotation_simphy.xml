@@ -2,7 +2,7 @@
 <block>
   <name>baseband_derotation_simphy</name>
   <key>dmdl_baseband_derotation_simphy</key>
-  <category>[dmdl]</category>
+  <category>[dmdl.simphy]</category>
   <import>import dmdl</import>
   <make>dmdl.baseband_derotation_simphy($mu, $con)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.

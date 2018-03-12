@@ -592,6 +592,53 @@
     </param>
   </block>
   <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 188)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>constellation</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Constellation</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>gnuradio.digital.constellation_qpsk().base()</value>
+    </param>
+  </block>
+  <block>
     <key>dmdl_attribute_editor</key>
     <param>
       <key>field_name</key>
@@ -1513,6 +1560,53 @@
     <param>
       <key>import</key>
       <value>import gnuradio.digital</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(192, 196)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>preamble</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>preamble</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>[]</value>
     </param>
   </block>
   <connection>

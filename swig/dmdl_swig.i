@@ -33,6 +33,8 @@
 #include "dmdl/cts_framing.h"
 #include "dmdl/probe.h"
 #include "dmdl/baseband_derotation_simphy.h"
+#include "dmdl/packetizer_simphy.h"
+#include "dmdl/tx_pending_simphy.h"
 %}
 
 
@@ -92,3 +94,10 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, cts_framing);
 GR_SWIG_BLOCK_MAGIC2(dmdl, probe);
 %include "dmdl/baseband_derotation_simphy.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, baseband_derotation_simphy);
+
+%include "dmdl/packetizer_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, packetizer_simphy);
+
+
+%include "dmdl/tx_pending_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, tx_pending_simphy);

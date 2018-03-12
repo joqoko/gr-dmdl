@@ -47,5 +47,7 @@ install(FILES
     rts_framing.h
     cts_framing.h
     probe.h
-    baseband_derotation_simphy.h DESTINATION include/dmdl
+    baseband_derotation_simphy.h
+    packetizer_simphy.h
+    tx_pending_simphy.h DESTINATION include/dmdl
 )

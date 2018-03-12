@@ -14,7 +14,7 @@
     </param>
     <param>
       <key>category</key>
-      <value>dmdl</value>
+      <value>dmdl.simphy</value>
     </param>
     <param>
       <key>comment</key>
@@ -921,7 +921,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_phy_packetizer</key>
+    <key>dmdl_packetizer_simphy</key>
     <param>
       <key>bps</key>
       <value>constellation.bits_per_symbol() * (samp_rate / sps)</value>
@@ -932,7 +932,7 @@
     </param>
     <param>
       <key>block_id</key>
-      <value>32</value>
+      <value>block_id</value>
     </param>
     <param>
       <key>comment</key>
@@ -948,11 +948,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 16)</value>
+      <value>(432, 32)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -960,7 +960,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_phy_packetizer_0</value>
+      <value>dmdl_packetizer_simphy_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -980,74 +980,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_phy_time_control</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>block_id</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>develop_mode</key>
-      <value>develop_mode</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>file_name_extension</key>
-      <value>"a"</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1240, 232)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>dmdl_phy_time_control_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>t_pretx_interval_s</key>
-      <value>t_pretx_interval_s</value>
-    </param>
-    <param>
-      <key>record_on</key>
-      <value>record_on</value>
-    </param>
-    <param>
-      <key>bps</key>
-      <value>constellation.bits_per_symbol() * (samp_rate / sps)</value>
-    </param>
-    <param>
-      <key>name_with_timestamp</key>
-      <value>name_with_timestamp</value>
-    </param>
-  </block>
-  <block>
-    <key>dmdl_phy_tx_pending</key>
+    <key>dmdl_tx_pending_simphy</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1078,7 +1011,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 472)</value>
+      <value>(440, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1086,7 +1019,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_phy_tx_pending_0</value>
+      <value>dmdl_tx_pending_simphy_0</value>
     </param>
     <param>
       <key>interframe_interval_s</key>
@@ -1119,6 +1052,73 @@
     <param>
       <key>sample_rate</key>
       <value>samp_rate</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_tx_time_control_simphy</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>4</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>develop_mode</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>file_name_extension</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1256, 256)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_tx_time_control_simphy_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>t_pretx_interval_s</key>
+      <value>t_pretx_interval_s</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>record_on</value>
+    </param>
+    <param>
+      <key>bps</key>
+      <value>constellation.bits_per_symbol() * (samp_rate / sps)</value>
+    </param>
+    <param>
+      <key>name_with_timestamp</key>
+      <value>name_with_timestamp</value>
     </param>
   </block>
   <block>
@@ -1243,7 +1243,7 @@
     </param>
     <param>
       <key>import</key>
-      <value>import gnuradio</value>
+      <value>import gnuradio.digital</value>
     </param>
   </block>
   <block>
@@ -2882,7 +2882,13 @@
   </connection>
   <connection>
     <source_block_id>digital_burst_shaper_xx_0</source_block_id>
-    <sink_block_id>dmdl_phy_time_control_0</sink_block_id>
+    <sink_block_id>dmdl_tx_pending_simphy_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>digital_burst_shaper_xx_0</source_block_id>
+    <sink_block_id>dmdl_tx_time_control_simphy_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2894,81 +2900,75 @@
   </connection>
   <connection>
     <source_block_id>dmdl_attribute_splitter_0</source_block_id>
-    <sink_block_id>dmdl_phy_packetizer_0</sink_block_id>
+    <sink_block_id>dmdl_packetizer_simphy_0</sink_block_id>
     <source_key>End</source_key>
-    <sink_key>Begin</sink_key>
+    <sink_key>payload_in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_packetizer_0</source_block_id>
+    <source_block_id>dmdl_packetizer_simphy_0</source_block_id>
     <sink_block_id>blocks_pdu_to_tagged_stream_0</sink_block_id>
-    <source_key>End</source_key>
+    <source_key>packet_out</source_key>
     <sink_key>pdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_time_control_0</source_block_id>
-    <sink_block_id>dmdl_phy_tx_pending_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_phy_time_control_0</source_block_id>
-    <sink_block_id>uhd_usrp_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>ack_frame_out</sink_block_id>
     <source_key>ack_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>ampdu_frame_out</sink_block_id>
     <source_key>ampdu_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>amsdu_frame_out</sink_block_id>
     <source_key>amsdu_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>beacon_frame_out</sink_block_id>
     <source_key>beacon_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>cts_frame_out</sink_block_id>
     <source_key>cts_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>data_frame_out</sink_block_id>
     <source_key>data_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>rts_frame_out</sink_block_id>
     <source_key>rts_frame_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>rx_control_out</sink_block_id>
     <source_key>rx_control_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_tx_pending_0</source_block_id>
+    <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>unknown_frame_out</sink_block_id>
     <source_key>unknown_frame_out</source_key>
     <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_tx_time_control_simphy_0</source_block_id>
+    <sink_block_id>uhd_usrp_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>pad_source_0</source_block_id>
@@ -2978,7 +2978,7 @@
   </connection>
   <connection>
     <source_block_id>pad_source_0</source_block_id>
-    <sink_block_id>dmdl_phy_tx_pending_0</sink_block_id>
+    <sink_block_id>dmdl_tx_pending_simphy_0</sink_block_id>
     <source_key>out</source_key>
     <sink_key>tx_frame_info_in</sink_key>
   </connection>
