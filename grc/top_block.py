@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Mon Mar 12 15:37:01 2018
+# Generated: Tue Mar 13 16:56:03 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -89,7 +89,7 @@ class top_block(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
         self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 1, 500, 10, 0)
+        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
         self.dmdl_start_0 = dmdl.start(5, 10)
         self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 0, 0)
         self.dmdl_probe_0 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)

@@ -30,7 +30,6 @@
 #include "tx_control_simphy_impl.h"
 #include <uhd/types/time_spec.hpp>
 #include <sys/time.h>
-#include <boost/config.hpp>
 
 namespace gr {
   namespace dmdl {
@@ -134,14 +133,18 @@ namespace gr {
         // update the tx_time to the current packet
         _last_tx_time = tx_time;
         // question 1: why add 0.05?
-        uhd::time_spec_t now = uhd::time_spec_t(tx_time) + uhd::time_spec_t(_t_pretx_interval_s);
-//        uhd::time_spec_t now;
+//        uhd::time_spec_t now = uhd::time_spec_t(tx_time) + uhd::time_spec_t(_t_pretx_interval_s);
         // the value of the tag is a tuple
+//        double show_time = t.tv_sec - double(int(t.tv_sec/100)*100) + t.tv_usec / 1000000.0;
+        double sending_time = tx_time + _t_pretx_interval_s;
+        unsigned int time_full_sec = sending_time;
+        double time_frac_sec = sending_time - time_full_sec;
+//        std::cout << " FN->" << show_time << " N->" << time_full_sec << " N->" << time_frac_sec << std::endl;
         const pmt::pmt_t time_value = pmt::make_tuple(
-          pmt::from_uint64(now.get_full_secs()),
-          pmt::from_double(now.get_frac_secs())
+          pmt::from_uint64(time_full_sec),
+          pmt::from_double(time_frac_sec)
         );
-        
+ //       
         add_item_tag(0, _packet_len_tag.offset, time_key, time_value);
         
         if(_record_on)
@@ -201,7 +204,6 @@ namespace gr {
           break;
         }
       }
-
       return tag_detected;
     }
 

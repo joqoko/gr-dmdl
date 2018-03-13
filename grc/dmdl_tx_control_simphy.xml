@@ -86,5 +86,6 @@
   <source>
     <name>out</name>
     <type>complex</type>
+    <optional>1</optional>
   </source>
 </block>

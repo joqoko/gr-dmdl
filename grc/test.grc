@@ -792,7 +792,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 556)</value>
+      <value>(912, 556)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1211,11 +1211,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(664, 348)</value>
+      <value>(688, 380)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1449,7 +1449,7 @@
     </param>
     <param>
       <key>timer_type</key>
-      <value>1</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -1567,6 +1567,149 @@
     </param>
   </block>
   <block>
+    <key>inets_sending</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>11</value>
+    </param>
+    <param>
+      <key>center_frequency</key>
+      <value>tx_center_frequency</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>reset</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(712, 328)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>inets_sending_0</value>
+    </param>
+    <param>
+      <key>interframe_interval_s</key>
+      <value>0.005</value>
+    </param>
+    <param>
+      <key>file_name_extension_pending</key>
+      <value>"Tfr"</value>
+    </param>
+    <param>
+      <key>file_name_extension_t_control</key>
+      <value>"t1TXs"</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>name_with_timestamp</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>t_pretx_interval_s</key>
+      <value>0.05</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>ack_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>ampdu_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>amsdu_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>beacon_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>cts_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>data_frame</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>rts_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>rx_control</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>unknown_frame</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>tx_gain</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>constellation</key>
+      <value>gnuradio.digital.constellation_qpsk().base()</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>diff_preamble_128</value>
+    </param>
+    <param>
+      <key>sps</key>
+      <value>sps</value>
+    </param>
+    <param>
+      <key>system_time_granularity_us</key>
+      <value>system_time_granularity_us</value>
+    </param>
+    <param>
+      <key>usrp_device_address</key>
+      <value>usrp_device_address</value>
+    </param>
+  </block>
+  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -1628,6 +1771,12 @@
   <connection>
     <source_block_id>dmdl_framing_0</source_block_id>
     <sink_block_id>dmdl_sending_0</sink_block_id>
+    <source_key>End</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_framing_0</source_block_id>
+    <sink_block_id>inets_sending_0</sink_block_id>
     <source_key>End</source_key>
     <sink_key>in</sink_key>
   </connection>
