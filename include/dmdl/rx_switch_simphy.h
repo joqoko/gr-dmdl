@@ -676,11 +676,11 @@
  */
 
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
+#ifndef INCLUDED_DMDL_RX_SWITCH_SIMPHY_H
+#define INCLUDED_DMDL_RX_SWITCH_SIMPHY_H
 
 #include <dmdl/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace dmdl {
@@ -690,24 +690,24 @@ namespace gr {
      * \ingroup dmdl
      *
      */
-    class DMDL_API attribute_editor : virtual public gr::block
+    class DMDL_API rx_switch_simphy : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<attribute_editor> sptr;
+      typedef boost::shared_ptr<rx_switch_simphy> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dmdl::attribute_editor.
+       * \brief Return a shared_ptr to a new instance of dmdl::rx_switch_simphy.
        *
-       * To avoid accidental use of raw pointers, dmdl::attribute_editor's
+       * To avoid accidental use of raw pointers, dmdl::rx_switch_simphy's
        * constructor is in a private implementation
-       * class. dmdl::attribute_editor::make is the public interface for
+       * class. dmdl::rx_switch_simphy::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int develop_mode, int block_id, std::string field_name, int operation, double value);
+      static sptr make(int develop_mode, int block_id, int num_fetch_per_cs);
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_H */
+#endif /* INCLUDED_DMDL_RX_SWITCH_SIMPHY_H */
 

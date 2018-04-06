@@ -676,8 +676,8 @@
  */
 
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
+#ifndef INCLUDED_DMDL_ABSOLUTE_TIMER_H
+#define INCLUDED_DMDL_ABSOLUTE_TIMER_H
 
 #include <dmdl/api.h>
 #include <gnuradio/block.h>
@@ -690,24 +690,24 @@ namespace gr {
      * \ingroup dmdl
      *
      */
-    class DMDL_API attribute_editor : virtual public gr::block
+    class DMDL_API absolute_timer : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<attribute_editor> sptr;
+      typedef boost::shared_ptr<absolute_timer> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dmdl::attribute_editor.
+       * \brief Return a shared_ptr to a new instance of dmdl::absolute_timer.
        *
-       * To avoid accidental use of raw pointers, dmdl::attribute_editor's
+       * To avoid accidental use of raw pointers, dmdl::absolute_timer's
        * constructor is in a private implementation
-       * class. dmdl::attribute_editor::make is the public interface for
+       * class. dmdl::absolute_timer::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int develop_mode, int block_id, std::string field_name, int operation, double value);
+      static sptr make(int develop_mode, int block_id, double duration_ms, int system_time_granularity_us);
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_H */
+#endif /* INCLUDED_DMDL_ABSOLUTE_TIMER_H */
 

@@ -7,6 +7,7 @@
 %include "dmdl_swig_doc.i"
 
 %{
+#include "gnuradio/digital/constellation.h"
 #include "dmdl/timer.h"
 #include "dmdl/backoff.h"
 #include "dmdl/timeout.h"
@@ -22,7 +23,6 @@
 #include "dmdl/attribute_filter.h"
 #include "dmdl/carrier_sensing.h"
 #include "dmdl/random.h"
-#include "dmdl/attribute_editor.h"
 #include "dmdl/attribute_splitter.h"
 #include "dmdl/divider.h"
 #include "dmdl/counter.h"
@@ -36,7 +36,15 @@
 #include "dmdl/packetizer_simphy.h"
 #include "dmdl/tx_pending_simphy.h"
 #include "dmdl/tx_control_simphy.h"
+#include "dmdl/rx_switch_simphy.h"
+#include "dmdl/variable_rotator_simphy.h"
+#include "dmdl/frame_sync_simphy.h"
+#include "dmdl/attribute_assignment.h"
+#include "dmdl/attribute_editor.h"
+#include "dmdl/absolute_timer.h"
+#include "dmdl/cmd_switch.h"
 %}
+%include "gnuradio/digital/constellation.h"
 
 
 %include "dmdl/timer.h"
@@ -71,8 +79,7 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_filter);
 GR_SWIG_BLOCK_MAGIC2(dmdl, carrier_sensing);
 %include "dmdl/random.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, random);
-%include "dmdl/attribute_editor.h"
-GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_editor);
+
 %include "dmdl/attribute_splitter.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_splitter);
 %include "dmdl/divider.h"
@@ -105,3 +112,21 @@ GR_SWIG_BLOCK_MAGIC2(dmdl, tx_pending_simphy);
 
 %include "dmdl/tx_control_simphy.h"
 GR_SWIG_BLOCK_MAGIC2(dmdl, tx_control_simphy);
+%include "dmdl/rx_switch_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, rx_switch_simphy);
+
+%include "dmdl/variable_rotator_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, variable_rotator_simphy);
+
+%include "dmdl/frame_sync_simphy.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, frame_sync_simphy);
+%include "dmdl/attribute_assignment.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_assignment);
+%include "dmdl/attribute_editor.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, attribute_editor);
+
+%include "dmdl/absolute_timer.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, absolute_timer);
+
+%include "dmdl/cmd_switch.h"
+GR_SWIG_BLOCK_MAGIC2(dmdl, cmd_switch);

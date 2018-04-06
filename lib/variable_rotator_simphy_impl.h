@@ -18,33 +18,32 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
+#ifndef INCLUDED_DMDL_VARIABLE_ROTATOR_SIMPHY_IMPL_H
+#define INCLUDED_DMDL_VARIABLE_ROTATOR_SIMPHY_IMPL_H
 
-#include <dmdl/attribute_editor.h>
+#include <gnuradio/blocks/rotator.h>
+#include <dmdl/variable_rotator_simphy.h>
 
 namespace gr {
   namespace dmdl {
 
-    class attribute_editor_impl : public attribute_editor
+    class variable_rotator_simphy_impl : public variable_rotator_simphy
     {
      private:
-      int _develop_mode;
-      int _block_id;
-      int _operation;
-      double _value;
-      std::string _field_name;
-      void catagorizing(pmt::pmt_t cmd_in);
-      int operating(int n);
-
+      gr::blocks::rotator _rot;
+      int _num_delay;
      public:
-      attribute_editor_impl(int develop_mode, int block_id, std::string field_name, int operation, double value);
-      ~attribute_editor_impl();
-
+      variable_rotator_simphy_impl(int num_delay);
+      ~variable_rotator_simphy_impl();
+      void set_num_delay(int n);
+      // Where all the action really happens
+      int work(int noutput_items,
+	       gr_vector_const_void_star &input_items,
+	       gr_vector_void_star &output_items);
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H */
+#endif /* INCLUDED_DMDL_VARIABLE_ROTATOR_SIMPHY_IMPL_H */
 

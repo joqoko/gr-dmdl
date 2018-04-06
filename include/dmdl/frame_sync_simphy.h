@@ -676,11 +676,12 @@
  */
 
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_H
+#ifndef INCLUDED_DMDL_FRAME_SYNC_SIMPHY_H
+#define INCLUDED_DMDL_FRAME_SYNC_SIMPHY_H
 
 #include <dmdl/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/sync_block.h>
+#include <gnuradio/digital/constellation.h>
 
 namespace gr {
   namespace dmdl {
@@ -690,24 +691,26 @@ namespace gr {
      * \ingroup dmdl
      *
      */
-    class DMDL_API attribute_editor : virtual public gr::block
+    class DMDL_API frame_sync_simphy : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<attribute_editor> sptr;
+      typedef boost::shared_ptr<frame_sync_simphy> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of dmdl::attribute_editor.
+       * \brief Return a shared_ptr to a new instance of dmdl::frame_sync_simphy.
        *
-       * To avoid accidental use of raw pointers, dmdl::attribute_editor's
+       * To avoid accidental use of raw pointers, dmdl::frame_sync_simphy's
        * constructor is in a private implementation
-       * class. dmdl::attribute_editor::make is the public interface for
+       * class. dmdl::frame_sync_simphy::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int develop_mode, int block_id, std::string field_name, int operation, double value);
+      static sptr make(const std::vector<int> &preamble, gr::digital::constellation_sptr constellation, float threshold, const std::string &len_tag_key);
+
+      virtual void set_constellation(gr::digital::constellation_sptr constellation) = 0;
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_H */
+#endif /* INCLUDED_DMDL_FRAME_SYNC_SIMPHY_H */
 

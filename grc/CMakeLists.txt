@@ -32,7 +32,6 @@ install(FILES
     dmdl_attribute_filter.xml
     dmdl_carrier_sensing.xml
     dmdl_random.xml
-    dmdl_attribute_editor.xml
     dmdl_attribute_splitter.xml
     dmdl_divider.xml
     dmdl_counter.xml
@@ -47,5 +46,13 @@ install(FILES
     dmdl_packetizer_simphy.xml
     dmdl_tx_pending_simphy.xml
     dmdl_sending.xml
-    dmdl_tx_control_simphy.xml DESTINATION share/gnuradio/grc/blocks
+    dmdl_tx_control_simphy.xml
+    dmdl_rx_switch_simphy.xml
+    dmdl_receiving.xml
+    dmdl_variable_rotator_simphy.xml
+    dmdl_frame_sync_simphy.xml
+    dmdl_attribute_assignment.xml
+    dmdl_attribute_editor.xml
+    dmdl_absolute_timer.xml
+    dmdl_cmd_switch.xml DESTINATION share/gnuradio/grc/blocks
 )

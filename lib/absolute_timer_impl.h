@@ -18,33 +18,39 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
+#ifndef INCLUDED_DMDL_ABSOLUTE_TIMER_IMPL_H
+#define INCLUDED_DMDL_ABSOLUTE_TIMER_IMPL_H
 
-#include <dmdl/attribute_editor.h>
+#include <dmdl/absolute_timer.h>
 
 namespace gr {
   namespace dmdl {
 
-    class attribute_editor_impl : public attribute_editor
+    class absolute_timer_impl : public absolute_timer
     {
      private:
       int _develop_mode;
       int _block_id;
-      int _operation;
-      double _value;
-      std::string _field_name;
-      void catagorizing(pmt::pmt_t cmd_in);
-      int operating(int n);
+      int _disable_timer;
+      bool _in_active;
+      double _duration_ms;
+      pmt::pmt_t _frame_info;
+      int _system_time_granularity_us;
+      void start_timer(pmt::pmt_t trigger);
+      void suspend_timer(pmt::pmt_t trigger);
+      void resume_timer(pmt::pmt_t trigger);
+      void reset_duration(pmt::pmt_t cmd_in);
+      void disable_timer(pmt::pmt_t trigger);
+      void countdown_absolute_timer();
 
      public:
-      attribute_editor_impl(int develop_mode, int block_id, std::string field_name, int operation, double value);
-      ~attribute_editor_impl();
+      absolute_timer_impl(int develop_mode, int block_id, double duration, int system_time_granularity_us);
+      ~absolute_timer_impl();
 
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H */
+#endif /* INCLUDED_DMDL_ABSOLUTE_TIMER_IMPL_H */
 

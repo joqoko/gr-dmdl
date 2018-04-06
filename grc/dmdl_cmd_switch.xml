@@ -1,23 +1,15 @@
 <?xml version="1.0"?>
 <block>
-  <name>resend_check</name>
-  <key>dmdl_resend_check</key>
+  <name>cmd_switch</name>
+  <key>dmdl_cmd_switch</key>
   <category>[dmdl]</category>
   <import>import dmdl</import>
-  <make>dmdl.resend_check($develop_mode, $block_id, $max_resend)</make>
+  <make>dmdl.cmd_switch($develop_mode, $block_id)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
-  <param>
-    <name>Maximal resend</name>
-    <key>max_resend</key>
-    <value>6</value>
-    <type>int</type>
-    <hide>none</hide>
-  </param>
-
   <param>
     <name>Develop mode</name>
     <key>develop_mode</key>
@@ -46,13 +38,30 @@
   <param>
     <name>Block id</name>
     <key>block_id</key>
-    <value>24</value>
+    <value>47</value>
     <type>int</type>
     <hide>$develop_mode.hide_control</hide>
   </param>
 
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
   <sink>
     <name>Begin</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>ON</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>OFF</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -63,15 +72,8 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Fail</name>
+    <name>END</name>
     <type>message</type>
     <optional>1</optional>
   </source>
-  <source>
-    <name>Pass</name>
-    <type>message</type>
-    <optional>1</optional>
-  </source>
-
-
 </block>

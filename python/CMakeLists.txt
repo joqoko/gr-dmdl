@@ -32,7 +32,8 @@ GR_PYTHON_INSTALL(
     FILES
     __init__.py
     start.py
-    sending.py DESTINATION ${GR_PYTHON_DIR}/dmdl
+    sending.py
+    receiving.py DESTINATION ${GR_PYTHON_DIR}/dmdl
 )
 
 ########################################################################

@@ -37,7 +37,6 @@ install(FILES
     attribute_filter.h
     carrier_sensing.h
     random.h
-    attribute_editor.h
     attribute_splitter.h
     divider.h
     counter.h
@@ -50,5 +49,12 @@ install(FILES
     baseband_derotation_simphy.h
     packetizer_simphy.h
     tx_pending_simphy.h
-    tx_control_simphy.h DESTINATION include/dmdl
+    tx_control_simphy.h
+    rx_switch_simphy.h
+    variable_rotator_simphy.h
+    frame_sync_simphy.h
+    attribute_assignment.h
+    attribute_editor.h
+    absolute_timer.h
+    cmd_switch.h DESTINATION include/dmdl
 )

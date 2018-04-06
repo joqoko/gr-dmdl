@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Top Block
-# Generated: Wed Mar 14 11:21:59 2018
+# Title: Top Test Rx
+# Generated: Thu Mar 15 11:37:07 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -23,17 +23,17 @@ from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
 import dmdl
-import gnuradio.digital
+import gnuradio
 import sys
 from gnuradio import qtgui
 
 
-class top_block(gr.top_block, Qt.QWidget):
+class top_test_rx(gr.top_block, Qt.QWidget):
 
     def __init__(self, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=[]):
-        gr.top_block.__init__(self, "Top Block")
+        gr.top_block.__init__(self, "Top Test Rx")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Top Block")
+        self.setWindowTitle("Top Test Rx")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -51,7 +51,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "top_test_rx")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
 
@@ -88,28 +88,21 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
-        self.dmdl_start_0 = dmdl.start(5, 10)
-        self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 0, 0)
-        self.dmdl_probe_0 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
-        self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
-        self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
-        self.dmdl_counter_0 = dmdl.counter(0, 100, 1, "", 0, "/home/pwa/Source/gr-dmdl/result", 1)
+        self.dmdl_receiving_0 = dmdl.receiving(1, 21, gnuradio.digital.constellation_qpsk().base(), rrc, mu, diff_preamble_128, rx_gain, samp_rate, sps, 30, usrp_device_address, rx_center_frequency)
+        self.dmdl_probe_0_0 = dmdl.probe(1, 100, 0, 0, 0.001, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.dmdl_probe_0 = dmdl.probe(1, 100, 0, 1, 0.001, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.dmdl_frame_analysis_0 = dmdl.frame_analysis(1, 7, 1, 1, 1, 1, 1, 2, 2, 2, 1, source_address)
 
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
-        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_sending_0, 'in'))
-        self.msg_connect((self.dmdl_sending_0, 'data_frame_out'), (self.dmdl_probe_0, 'info_in'))
-        self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
-        self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
+        self.msg_connect((self.dmdl_frame_analysis_0, 'Pass'), (self.dmdl_probe_0_0, 'info_in'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_frame_out'), (self.dmdl_frame_analysis_0, 'Begin'))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "top_test_rx")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -239,7 +232,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=top_block, options=None):
+def main(top_block_cls=top_test_rx, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

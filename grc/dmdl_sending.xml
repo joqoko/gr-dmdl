@@ -357,43 +357,43 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>data_frame_out</name>
+    <name>DATA</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$data_frame</hide>
   </source>
   <source>
-    <name>ack_frame_out</name>
+    <name>ACK</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$ack_frame</hide>
   </source>
   <source>
-    <name>beacon_frame_out</name>
+    <name>BEACON</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$beacon_frame</hide>
   </source>
   <source>
-    <name>rts_frame_out</name>
+    <name>RTS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$rts_frame</hide>
   </source>
   <source>
-    <name>cts_frame_out</name>
+    <name>CTS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$cts_frame</hide>
   </source>
   <source>
-    <name>ampdu_frame_out</name>
+    <name>AMPDU</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$ampdu_frame</hide>
   </source>
   <source>
-    <name>amsdu_frame_out</name>
+    <name>AMSDU</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$amsdu_frame</hide>

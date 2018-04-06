@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<block>
+  <name>variable_rotator_simphy</name>
+  <key>dmdl_variable_rotator_simphy</key>
+  <category>[dmdl.simphy]</category>
+  <import>import dmdl</import>
+  <make>dmdl.variable_rotator_simphy($num_delay)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Num_delay</name>
+    <key>num_delay</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

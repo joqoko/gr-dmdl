@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Top Block
-# Generated: Wed Mar 14 11:21:59 2018
+# Title: Top Test Tx
+# Generated: Thu Mar 22 08:28:28 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -28,12 +28,12 @@ import sys
 from gnuradio import qtgui
 
 
-class top_block(gr.top_block, Qt.QWidget):
+class top_test_tx(gr.top_block, Qt.QWidget):
 
     def __init__(self, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=[]):
-        gr.top_block.__init__(self, "Top Block")
+        gr.top_block.__init__(self, "Top Test Tx")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Top Block")
+        self.setWindowTitle("Top Test Tx")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -51,7 +51,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "top_test_tx")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
 
@@ -65,7 +65,7 @@ class top_block(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.sps = sps = 4
-        self.usrp_device_address = usrp_device_address = "addr=192.168.10.2"
+        self.usrp_device_address = usrp_device_address = "addr=192.168.10.3"
         self.tx_center_frequency = tx_center_frequency = 3.9e8
         self.timeout_duration_ms = timeout_duration_ms = 100
         self.system_time_granularity_us = system_time_granularity_us = 10
@@ -88,14 +88,11 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
+        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 1500, 10, 0)
         self.dmdl_start_0 = dmdl.start(5, 10)
-        self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 0, 0)
         self.dmdl_probe_0 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
         self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
-        self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
-        self.dmdl_counter_0 = dmdl.counter(0, 100, 1, "", 0, "/home/pwa/Source/gr-dmdl/result", 1)
+        self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 3, 1)
 
 
 
@@ -103,13 +100,12 @@ class top_block(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
-        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_sending_0, 'in'))
-        self.msg_connect((self.dmdl_sending_0, 'data_frame_out'), (self.dmdl_probe_0, 'info_in'))
+        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_probe_0, 'info_in'))
         self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
         self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "top_test_tx")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -239,7 +235,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=top_block, options=None):
+def main(top_block_cls=top_test_tx, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

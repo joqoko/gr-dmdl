@@ -40,7 +40,6 @@ list(APPEND dmdl_sources
     attribute_filter_impl.cc
     carrier_sensing_impl.cc
     random_impl.cc
-    attribute_editor_impl.cc
     attribute_splitter_impl.cc
     divider_impl.cc
     counter_impl.cc
@@ -54,7 +53,14 @@ list(APPEND dmdl_sources
 #    packetizer_impl.cc
     packetizer_simphy_impl.cc
     tx_pending_simphy_impl.cc
-    tx_control_simphy_impl.cc )
+    tx_control_simphy_impl.cc
+    rx_switch_simphy_impl.cc
+    variable_rotator_simphy_impl.cc
+    frame_sync_simphy_impl.cc
+    attribute_assignment_impl.cc
+    attribute_editor_impl.cc
+    absolute_timer_impl.cc
+    cmd_switch_impl.cc )
 
 set(dmdl_sources "${dmdl_sources}" PARENT_SCOPE)
 if(NOT dmdl_sources)

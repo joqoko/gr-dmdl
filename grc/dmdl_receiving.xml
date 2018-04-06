@@ -4,7 +4,7 @@
   <key>dmdl_receiving</key>
   <category>[dmdl]</category>
   <import>import dmdl</import>
-  <make>dmdl.receiving($self, $develop_mode, $block_id, $constellation, $matched_filter_coeff, $mu, $preamble, $rx_gain, $samp_rate, $sps, $threshold, $usrp_device_address, $center_frequency)</make>
+  <make>dmdl.receiving($develop_mode, $block_id, $constellation, $matched_filter_coeff, $mu, $preamble, $rx_gain, $samp_rate, $sps, $threshold, $usrp_device_address, $center_frequency)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name

@@ -14,7 +14,7 @@
     </param>
     <param>
       <key>category</key>
-      <value>inets_dmf_phy</value>
+      <value>[dmdl.simphy]</value>
     </param>
     <param>
       <key>comment</key>
@@ -198,7 +198,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(600, 200)</value>
+      <value>(616, 200)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -304,7 +304,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1288, 152)</value>
+      <value>(1480, 168)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -351,7 +351,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1288, 192)</value>
+      <value>(1320, 232)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1070,7 +1070,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_baseband_derotation</key>
+    <key>dmdl_baseband_derotation_simphy</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1093,7 +1093,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1424, 92)</value>
+      <value>(1456, 84)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1101,7 +1101,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_baseband_derotation_0</value>
+      <value>dmdl_baseband_derotation_simphy_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1117,7 +1117,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_frame_sync</key>
+    <key>dmdl_frame_sync_simphy</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1136,11 +1136,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 136)</value>
+      <value>(1024, 136)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1148,7 +1148,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_frame_sync_0</value>
+      <value>dmdl_frame_sync_simphy_0</value>
     </param>
     <param>
       <key>len_tag_key</key>
@@ -1172,7 +1172,7 @@
     </param>
   </block>
   <block>
-    <key>dmdl_phy_rx_switch</key>
+    <key>dmdl_rx_switch_simphy</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1207,7 +1207,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_phy_rx_switch_0</value>
+      <value>dmdl_rx_switch_simphy_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1220,6 +1220,49 @@
     <param>
       <key>num_fetch_per_cs</key>
       <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_variable_rotator_simphy</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1224, 68)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_variable_rotator_simphy_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_delay</key>
+      <value>len(preamble) // constellation.bits_per_symbol()</value>
     </param>
   </block>
   <block>
@@ -1285,7 +1328,7 @@
     </param>
   </block>
   <block>
-    <key>inets_variable_rotator</key>
+    <key>import</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1295,16 +1338,12 @@
       <value></value>
     </param>
     <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1248, 100)</value>
+      <value>(8, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1312,19 +1351,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>inets_variable_rotator_0</value>
+      <value>import_0_1</value>
     </param>
     <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_delay</key>
-      <value>len(preamble) // constellation.bits_per_symbol()</value>
+      <key>import</key>
+      <value>import dmdl</value>
     </param>
   </block>
   <block>
@@ -1562,7 +1593,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(232, 388)</value>
+      <value>(224, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3368,7 +3399,7 @@
   </connection>
   <connection>
     <source_block_id>digital_pfb_clock_sync_xxx_0</source_block_id>
-    <sink_block_id>dmdl_frame_sync_0</sink_block_id>
+    <sink_block_id>dmdl_frame_sync_simphy_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3379,56 +3410,56 @@
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_baseband_derotation_0</source_block_id>
+    <source_block_id>dmdl_baseband_derotation_simphy_0</source_block_id>
     <sink_block_id>digital_header_payload_demux_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_frame_sync_0</source_block_id>
-    <sink_block_id>inets_variable_rotator_0</sink_block_id>
+    <source_block_id>dmdl_frame_sync_simphy_0</source_block_id>
+    <sink_block_id>dmdl_variable_rotator_simphy_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_frame_sync_0</source_block_id>
+    <source_block_id>dmdl_frame_sync_simphy_0</source_block_id>
     <sink_block_id>blocks_null_sink_0</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_frame_sync_0</source_block_id>
+    <source_block_id>dmdl_frame_sync_simphy_0</source_block_id>
     <sink_block_id>digital_header_payload_demux_0</sink_block_id>
     <source_key>2</source_key>
     <sink_key>1</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_frame_sync_0</source_block_id>
+    <source_block_id>dmdl_frame_sync_simphy_0</source_block_id>
     <sink_block_id>blocks_null_sink_0_0</sink_block_id>
     <source_key>3</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_rx_switch_0</source_block_id>
-    <sink_block_id>rx_switch_out</sink_block_id>
-    <source_key>End</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_phy_rx_switch_0</source_block_id>
+    <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
     <sink_block_id>rx_power_out</sink_block_id>
     <source_key>power_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>dmdl_phy_rx_switch_0</source_block_id>
+    <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
     <sink_block_id>analog_agc2_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>inets_variable_rotator_0</source_block_id>
-    <sink_block_id>dmdl_baseband_derotation_0</sink_block_id>
+    <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
+    <sink_block_id>rx_switch_out</sink_block_id>
+    <source_key>rx_switch_out</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_variable_rotator_simphy_0</source_block_id>
+    <sink_block_id>dmdl_baseband_derotation_simphy_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3440,13 +3471,13 @@
   </connection>
   <connection>
     <source_block_id>pad_source_rx_switch</source_block_id>
-    <sink_block_id>dmdl_phy_rx_switch_0</sink_block_id>
+    <sink_block_id>dmdl_rx_switch_simphy_0</sink_block_id>
     <source_key>out</source_key>
-    <sink_key>Begin</sink_key>
+    <sink_key>rx_switch_in</sink_key>
   </connection>
   <connection>
     <source_block_id>uhd_usrp_source_0_0</source_block_id>
-    <sink_block_id>dmdl_phy_rx_switch_0</sink_block_id>
+    <sink_block_id>dmdl_rx_switch_simphy_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

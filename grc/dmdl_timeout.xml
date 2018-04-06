@@ -118,13 +118,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin_DATA</name>
+    <name>confIrm_ACK</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$data_ack</hide>
   </sink>
   <sink>
-    <name>confIrm_ACK</name>
+    <name>Begin_DATA</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$data_ack</hide>

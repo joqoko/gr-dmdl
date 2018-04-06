@@ -4,44 +4,12 @@
   <key>dmdl_attribute_editor</key>
   <category>[dmdl]</category>
   <import>import dmdl</import>
-  <make>dmdl.attribute_editor($develop_mode, $block_id, $field_name, $value)</make>
+  <make>dmdl.attribute_editor($develop_mode, $block_id, $field_name, $operation, $value)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
-  <param>
-    <name>Attribute name</name>
-    <key>field_name</key>
-    <value>""</value>
-    <type>string</type>
-  </param>
-
-  <param>
-    <name>Value</name>
-    <key>value</key>
-    <value>1</value>
-    <type>int</type>
-  </param>
-
-  <param>
-    <name>Show reconfiGure port</name>
-    <key>show_reset</key>
-    <value>1</value>
-    <type>enum</type>
-    <hide>part</hide>
-    <option>
-      <name>show</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-    <option>
-      <name>Not show</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-  </param>
-
   <param>
     <name>Develop mode</name>
     <key>develop_mode</key>
@@ -70,9 +38,40 @@
   <param>
     <name>Block id</name>
     <key>block_id</key>
-    <value>16</value>
+    <value>52</value>
     <type>int</type>
     <hide>$develop_mode.hide_control</hide>
+  </param>
+
+  <param>
+    <name>Field name</name>
+    <key>field_name</key>
+    <value>""</value>
+    <type>string</type>
+    <hide>none</hide>
+  </param>
+
+  <param>
+    <name>Operation</name>
+    <key>operation</key>
+    <type>enum</type>
+    <hide>none</hide>
+    <option>
+      <name>+</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>-</name>
+      <key>2</key>
+    </option>
+  </param>
+
+  <param>
+    <name>Value</name>
+    <key>value</key>
+    <value>1</value>
+    <type>raw</type>
+    <hide>none</hide>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:
@@ -81,16 +80,9 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>cmd_in</name>
     <type>message</type>
     <optional>1</optional>
-  </sink>
-
-  <sink>
-    <name>reconfiGure</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$show_reset</hide>
   </sink>
 
   <!-- Make one 'source' node per output. Sub-nodes:
@@ -99,7 +91,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>End</name>
+    <name>cmd_out</name>
     <type>message</type>
     <optional>1</optional>
   </source>

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Top Block
-# Generated: Wed Mar 14 11:21:59 2018
+# Title: Test Tx
+# Generated: Fri Apr  6 14:54:50 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -28,12 +28,12 @@ import sys
 from gnuradio import qtgui
 
 
-class top_block(gr.top_block, Qt.QWidget):
+class Test_TX(gr.top_block, Qt.QWidget):
 
     def __init__(self, constellation=gnuradio.digital.constellation_qpsk().base(), preamble=[]):
-        gr.top_block.__init__(self, "Top Block")
+        gr.top_block.__init__(self, "Test Tx")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Top Block")
+        self.setWindowTitle("Test Tx")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -51,7 +51,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "Test_TX")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
 
@@ -88,28 +88,69 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.dmdl_timer_1 = dmdl.timer(0, 5, 0, 1000, 10, 0)
-        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 500, 10, 0)
-        self.dmdl_start_0 = dmdl.start(5, 10)
-        self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 0, 0)
-        self.dmdl_probe_0 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
-        self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 1, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
+        self.dmdl_type_check_0_0 = dmdl.type_check(0, 25, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+        self.dmdl_type_check_0 = dmdl.type_check(0, 25, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+        self.dmdl_timer_0_0 = dmdl.timer(0, 5, 0, 20, 10, 0)
+        self.dmdl_timer_0 = dmdl.timer(0, 5, 0, 50, 10, 0)
+        self.dmdl_timeout_0 = dmdl.timeout(0, 10, 100, 1000, 0)
+        self.dmdl_start_0 = dmdl.start(1, 10)
+        self.dmdl_sending_0 = dmdl.sending(0, 11, gnuradio.digital.constellation_qpsk().base(), diff_preamble_128, samp_rate, sps, system_time_granularity_us, usrp_device_address, tx_center_frequency, 0.005, 0.05, "t1TXs", "Tfr", 0, 1, 0)
+        self.dmdl_resend_check_0 = dmdl.resend_check(0, 24, 6)
+        self.dmdl_receiving_0 = dmdl.receiving(1, 21, gnuradio.digital.constellation_qpsk().base(), rrc, mu, diff_preamble_128, rx_gain, samp_rate, sps, 30, usrp_device_address, rx_center_frequency)
+        self.dmdl_probe_0_0 = dmdl.probe(1, 2, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
+        self.dmdl_path_0 = dmdl.path(0, 44, 1, "")
+        self.dmdl_framing_0_0 = dmdl.framing(0, 17, 2, 1, 0, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
+        self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 0, 1, destination_address, 1, source_address, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
+        self.dmdl_frame_analysis_0 = dmdl.frame_analysis(0, 7, 1, 1, 1, 1, 1, 2, 2, 2, 1, source_address)
+        self.dmdl_error_detection_0 = dmdl.error_detection(0, 9)
         self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
-        self.dmdl_counter_0 = dmdl.counter(0, 100, 1, "", 0, "/home/pwa/Source/gr-dmdl/result", 1)
+        self.dmdl_carrier_sensing_0 = dmdl.carrier_sensing(0, 11, 2, 100, cs_threshold, system_time_granularity_us, 100, 20)
+        self.dmdl_backoff_0_0 = dmdl.backoff(0, 11, 1, 10, 100, 400, 0, 0.005, 10, 1, 6)
+        self.dmdl_backoff_0 = dmdl.backoff(1, 3, 1, 10, 100, 400, 0, 0.005, 10, 1, 6)
+        self.dmdl_attribute_editor_0 = dmdl.attribute_editor(0, 16, "num_transmission", 1, 1)
+        self.dmdl_address_check_0 = dmdl.address_check(0, 17, source_address, 0)
 
 
 
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.dmdl_address_check_0, 'Pass'), (self.dmdl_type_check_0, 'Begin'))
+        self.msg_connect((self.dmdl_attribute_editor_0, 'cmd_out'), (self.dmdl_path_0, 'Begin'))
+        self.msg_connect((self.dmdl_backoff_0, 'End'), (self.dmdl_probe_0_0, 'info_in'))
+        self.msg_connect((self.dmdl_backoff_0, 'End'), (self.dmdl_resend_check_0, 'Begin'))
+        self.msg_connect((self.dmdl_backoff_0_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
+        self.msg_connect((self.dmdl_carrier_sensing_0, 'Fail'), (self.dmdl_backoff_0, 'Begin'))
+        self.msg_connect((self.dmdl_carrier_sensing_0, 'cs_Threshold'), (self.dmdl_backoff_0, 'cs_Threshold'))
+        self.msg_connect((self.dmdl_carrier_sensing_0, 'cs_Threshold'), (self.dmdl_backoff_0_0, 'cs_Threshold'))
+        self.msg_connect((self.dmdl_carrier_sensing_0, 'Pass'), (self.dmdl_receiving_0, 'rx_switch_in'))
         self.msg_connect((self.dmdl_dummy_source_0, 'End'), (self.dmdl_framing_0, 'Begin'))
-        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_sending_0, 'in'))
-        self.msg_connect((self.dmdl_sending_0, 'data_frame_out'), (self.dmdl_probe_0, 'info_in'))
-        self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_timer_0, 'Begin'))
-        self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_dummy_source_0, 'Begin'))
+        self.msg_connect((self.dmdl_error_detection_0, 'Pass'), (self.dmdl_address_check_0, 'Begin'))
+        self.msg_connect((self.dmdl_frame_analysis_0, 'Pass'), (self.dmdl_error_detection_0, 'Begin'))
+        self.msg_connect((self.dmdl_framing_0, 'End'), (self.dmdl_path_0, 'Begin'))
+        self.msg_connect((self.dmdl_framing_0_0, 'End'), (self.dmdl_timer_0_0, 'Begin'))
+        self.msg_connect((self.dmdl_path_0, 'End'), (self.dmdl_carrier_sensing_0, 'Begin'))
+        self.msg_connect((self.dmdl_path_0, 'End'), (self.dmdl_timer_0, 'Begin'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_power_out'), (self.dmdl_backoff_0, 'Rssi'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_power_out'), (self.dmdl_backoff_0_0, 'Rssi'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_power_out'), (self.dmdl_carrier_sensing_0, 'Rssi'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_frame_out'), (self.dmdl_frame_analysis_0, 'Begin'))
+        self.msg_connect((self.dmdl_receiving_0, 'rx_switch_out'), (self.dmdl_sending_0, 'in'))
+        self.msg_connect((self.dmdl_resend_check_0, 'Pass'), (self.dmdl_attribute_editor_0, 'cmd_in'))
+        self.msg_connect((self.dmdl_resend_check_0, 'Fail'), (self.dmdl_dummy_source_0, 'Begin'))
+        self.msg_connect((self.dmdl_sending_0, 'rx_control_out'), (self.dmdl_receiving_0, 'rx_switch_in'))
+        self.msg_connect((self.dmdl_sending_0, 'DATA'), (self.dmdl_timeout_0, 'Begin_DATA'))
+        self.msg_connect((self.dmdl_start_0, 'Begin'), (self.dmdl_dummy_source_0, 'Begin'))
+        self.msg_connect((self.dmdl_timeout_0, 'End'), (self.dmdl_type_check_0_0, 'Begin'))
+        self.msg_connect((self.dmdl_timer_0, 'End'), (self.dmdl_carrier_sensing_0, 'Stop'))
+        self.msg_connect((self.dmdl_timer_0_0, 'End'), (self.dmdl_receiving_0, 'rx_switch_in'))
+        self.msg_connect((self.dmdl_type_check_0, 'DATA'), (self.dmdl_framing_0_0, 'Begin'))
+        self.msg_connect((self.dmdl_type_check_0, 'ACK'), (self.dmdl_timeout_0, 'confIrm_ACK'))
+        self.msg_connect((self.dmdl_type_check_0_0, 'DATA'), (self.dmdl_backoff_0, 'Begin'))
+        self.msg_connect((self.dmdl_type_check_0_0, 'ACK'), (self.dmdl_backoff_0_0, 'Begin'))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "top_block")
+        self.settings = Qt.QSettings("GNU Radio", "Test_TX")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -239,7 +280,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=top_block, options=None):
+def main(top_block_cls=Test_TX, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

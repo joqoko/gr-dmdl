@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<block>
+  <name>frame_sync_simphy</name>
+  <key>dmdl_frame_sync_simphy</key>
+  <category>[dmdl.simphy]</category>
+  <import>import dmdl</import>
+  <make>dmdl.frame_sync_simphy($preamble, $constellation, $threshold, $len_tag_key)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <callback>set_constellation($constellation)</callback>
+  <param>
+    <name>Preamble</name>
+    <key>preamble</key>
+    <type>int_vector</type>
+  </param>
+  <param>
+    <name>Constellation</name>
+    <key>constellation</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Threshold</name>
+    <key>threshold</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Len_tag_key</name>
+    <key>len_tag_key</key>
+    <value>"packet_len"</value>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

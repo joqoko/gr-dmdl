@@ -1,21 +1,45 @@
 <?xml version="1.0"?>
 <block>
-  <name>resend_check</name>
-  <key>dmdl_resend_check</key>
+  <name>attribute_assignment</name>
+  <key>dmdl_attribute_assignment</key>
   <category>[dmdl]</category>
   <import>import dmdl</import>
-  <make>dmdl.resend_check($develop_mode, $block_id, $max_resend)</make>
+  <make>dmdl.attribute_assignment($develop_mode, $block_id, $field_name, $value)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
   <param>
-    <name>Maximal resend</name>
-    <key>max_resend</key>
-    <value>6</value>
+    <name>Attribute name</name>
+    <key>field_name</key>
+    <value>""</value>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Value</name>
+    <key>value</key>
+    <value>1</value>
     <type>int</type>
-    <hide>none</hide>
+  </param>
+
+  <param>
+    <name>Show reconfiGure port</name>
+    <key>show_reset</key>
+    <value>1</value>
+    <type>enum</type>
+    <hide>part</hide>
+    <option>
+      <name>show</name>
+      <key>0</key>
+      <opt>hide:none</opt>
+    </option>
+    <option>
+      <name>Not show</name>
+      <key>1</key>
+      <opt>hide:part</opt>
+    </option>
   </param>
 
   <param>
@@ -46,15 +70,27 @@
   <param>
     <name>Block id</name>
     <key>block_id</key>
-    <value>24</value>
+    <value>16</value>
     <type>int</type>
     <hide>$develop_mode.hide_control</hide>
   </param>
 
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
   <sink>
     <name>Begin</name>
     <type>message</type>
     <optional>1</optional>
+  </sink>
+
+  <sink>
+    <name>reconfiGure</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$show_reset</hide>
   </sink>
 
   <!-- Make one 'source' node per output. Sub-nodes:
@@ -63,15 +99,8 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Fail</name>
+    <name>End</name>
     <type>message</type>
     <optional>1</optional>
   </source>
-  <source>
-    <name>Pass</name>
-    <type>message</type>
-    <optional>1</optional>
-  </source>
-
-
 </block>

@@ -18,33 +18,33 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
-#define INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H
+#ifndef INCLUDED_DMDL_ATTRIBUTE_ASSIGNMENT_IMPL_H
+#define INCLUDED_DMDL_ATTRIBUTE_ASSIGNMENT_IMPL_H
 
-#include <dmdl/attribute_editor.h>
+#include <dmdl/attribute_assignment.h>
 
 namespace gr {
   namespace dmdl {
 
-    class attribute_editor_impl : public attribute_editor
+    class attribute_assignment_impl : public attribute_assignment
     {
      private:
+      // Nothing to declare in this block.
       int _develop_mode;
       int _block_id;
-      int _operation;
-      double _value;
+      int _value;
       std::string _field_name;
-      void catagorizing(pmt::pmt_t cmd_in);
-      int operating(int n);
+      void reassign(pmt::pmt_t cmd_in);
+      void reset(pmt::pmt_t cmd_in);
 
      public:
-      attribute_editor_impl(int develop_mode, int block_id, std::string field_name, int operation, double value);
-      ~attribute_editor_impl();
+      attribute_assignment_impl(int develop_mode, int block_id, std::string field_name, int value);
+      ~attribute_assignment_impl();
 
     };
 
   } // namespace dmdl
 } // namespace gr
 
-#endif /* INCLUDED_DMDL_ATTRIBUTE_EDITOR_IMPL_H */
+#endif /* INCLUDED_DMDL_ATTRIBUTE_ASSIGNMENT_IMPL_H */
 
