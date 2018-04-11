@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Tx
-# Generated: Fri Apr  6 14:54:50 2018
+# Generated: Fri Apr  6 15:22:11 2018
 ##################################################
 
 if __name__ == '__main__':
@@ -106,7 +106,7 @@ class Test_TX(gr.top_block, Qt.QWidget):
         self.dmdl_dummy_source_0 = dmdl.dummy_source(0, 23, 100, 1, 1)
         self.dmdl_carrier_sensing_0 = dmdl.carrier_sensing(0, 11, 2, 100, cs_threshold, system_time_granularity_us, 100, 20)
         self.dmdl_backoff_0_0 = dmdl.backoff(0, 11, 1, 10, 100, 400, 0, 0.005, 10, 1, 6)
-        self.dmdl_backoff_0 = dmdl.backoff(1, 3, 1, 10, 100, 400, 0, 0.005, 10, 1, 6)
+        self.dmdl_backoff_0 = dmdl.backoff(1, 3, 1, 10, 100, 400, 0, 0.005, 10, 1, 2)
         self.dmdl_attribute_editor_0 = dmdl.attribute_editor(0, 16, "num_transmission", 1, 1)
         self.dmdl_address_check_0 = dmdl.address_check(0, 17, source_address, 0)
 

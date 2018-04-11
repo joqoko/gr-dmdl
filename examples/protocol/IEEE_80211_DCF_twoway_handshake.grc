@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>top_test_2</value>
+      <value>IEEE_80211_DCF_twoway_handshake</value>
     </param>
     <param>
       <key>max_nouts</key>

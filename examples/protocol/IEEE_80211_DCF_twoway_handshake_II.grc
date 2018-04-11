@@ -10,7 +10,7 @@
     </param>
     <param>
       <key>window_size</key>
-      <value>1920, 1080</value>
+      <value>1920,1080</value>
     </param>
     <param>
       <key>category</key>
@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>Test_TX</value>
+      <value>IEEE_80211_DCF_twoway_handshake_II</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -194,7 +194,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>100</value>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -372,7 +372,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>25</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -453,7 +453,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1</value>
+      <value>2</value>
     </param>
   </block>
   <block>
@@ -588,7 +588,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>"addr=192.168.10.2"</value>
+      <value>"addr=192.168.10.3"</value>
     </param>
   </block>
   <block>
@@ -670,7 +670,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 568)</value>
+      <value>(616, 544)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -733,7 +733,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 724)</value>
+      <value>(552, 700)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -808,7 +808,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1040, 760)</value>
+      <value>(1264, 736)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -903,7 +903,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(640, 360)</value>
+      <value>(296, 288)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -990,7 +990,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1304, 648)</value>
+      <value>(1240, 624)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1065,7 +1065,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 680)</value>
+      <value>(208, 656)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1128,7 +1128,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(928, 568)</value>
+      <value>(792, 544)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1191,7 +1191,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1104, 568)</value>
+      <value>(1008, 544)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1290,7 +1290,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(496, 676)</value>
+      <value>(360, 652)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1445,7 +1445,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(672, 620)</value>
+      <value>(536, 596)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1588,7 +1588,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(752, 680)</value>
+      <value>(616, 656)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1612,6 +1612,172 @@
     </param>
     <param>
       <key>switch_s</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_probe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>3</value>
+    </param>
+    <param>
+      <key>cs_threshold</key>
+      <value>0.01</value>
+    </param>
+    <param>
+      <key>cs_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>enable_new_name</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file_name_extension</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1200, 884)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_probe_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_time_info</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>print_frame</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_path</key>
+      <value>"/home/inets/source/gr-inets/results/"</value>
+    </param>
+    <param>
+      <key>name_with_timestamp</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>dmdl_probe</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>block_id</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>cs_threshold</key>
+      <value>0.01</value>
+    </param>
+    <param>
+      <key>cs_mode</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>develop_mode</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>enable_new_name</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file_name_extension</key>
+      <value>""</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1064, 964)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>dmdl_probe_0_0_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_time_info</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>print_frame</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_on</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>record_path</key>
+      <value>"/home/inets/source/gr-inets/results/"</value>
+    </param>
+    <param>
+      <key>name_with_timestamp</key>
       <value>1</value>
     </param>
   </block>
@@ -1659,7 +1825,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 892)</value>
+      <value>(592, 884)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1667,7 +1833,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>dmdl_probe_0_0</value>
+      <value>dmdl_probe_0_0_1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1738,7 +1904,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1280, 536)</value>
+      <value>(1232, 512)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1837,7 +2003,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(888, 776)</value>
+      <value>(752, 752)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1896,7 +2062,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1240, 456)</value>
+      <value>(1264, 424)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2023,7 +2189,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 680)</value>
+      <value>(112, 656)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2082,7 +2248,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1080, 424)</value>
+      <value>(888, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2165,7 +2331,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(984, 700)</value>
+      <value>(848, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2256,7 +2422,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(864, 612)</value>
+      <value>(728, 588)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2359,7 +2525,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 552)</value>
+      <value>(392, 528)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2446,7 +2612,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(904, 424)</value>
+      <value>(704, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2565,12 +2731,6 @@
   </connection>
   <connection>
     <source_block_id>dmdl_backoff_0</source_block_id>
-    <sink_block_id>dmdl_probe_0_0</sink_block_id>
-    <source_key>End</source_key>
-    <sink_key>info_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_backoff_0</source_block_id>
     <sink_block_id>dmdl_resend_check_0</sink_block_id>
     <source_key>End</source_key>
     <sink_key>Begin</sink_key>
@@ -2604,12 +2764,6 @@
     <sink_block_id>dmdl_backoff_0_0</sink_block_id>
     <source_key>cs_Threshold</source_key>
     <sink_key>cs_Threshold</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_dummy_source_0</source_block_id>
-    <sink_block_id>dmdl_framing_0</sink_block_id>
-    <source_key>End</source_key>
-    <sink_key>Begin</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_error_detection_0</source_block_id>
@@ -2670,6 +2824,12 @@
     <sink_block_id>dmdl_carrier_sensing_0</sink_block_id>
     <source_key>rx_power_out</source_key>
     <sink_key>Rssi</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_receiving_0</source_block_id>
+    <sink_block_id>dmdl_probe_0_0_0</sink_block_id>
+    <source_key>rx_switch_out</source_key>
+    <sink_key>info_in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_receiving_0</source_block_id>

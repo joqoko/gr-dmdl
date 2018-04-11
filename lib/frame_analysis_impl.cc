@@ -208,9 +208,9 @@ namespace gr {
       int is_good_frame = 0;
       // Get frame index
       int index_pos = _len_frame_type;
-      std::vector<unsigned char> Begindex_array(frame_header_array.begin() + index_pos, frame_header_array.begin() + index_pos + _len_frame_index);
-      // disp_vec(Begindex_array);
-      int Begindex = BytesToint(Begindex_array);
+      std::vector<unsigned char> index_array(frame_header_array.begin() + index_pos, frame_header_array.begin() + index_pos + _len_frame_index);
+      // disp_vec(index_array);
+      int index = BytesToint(index_array);
 
       // Get destination address
       int dest_pos = index_pos + _len_frame_index;
@@ -273,7 +273,7 @@ namespace gr {
         std::cout << "Frame header array is: ";
         disp_vec(frame_header_array);
         std::cout << "frame type is: " << frame_type << std::endl;
-        std::cout << "frame index is: " << Begindex << std::endl;
+        std::cout << "frame index is: " << index << std::endl;
         std::cout << "destination address is: " << destination_address << std::endl;
         std::cout << "source address is: " << source_address << std::endl;
         std::cout << "number of transmission is: " << num_transmission << std::endl;
@@ -305,7 +305,7 @@ namespace gr {
         pmt::pmt_t frame_header_array_pmt = pmt::cons(meta, frame_header_array_u8vector);
       
         frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("frame_type"), pmt::from_long(frame_type));
-        frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("Begindex"), pmt::from_long(Begindex));
+        frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("frame_index"), pmt::from_long(index));
         frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("destination_address"), pmt::from_long(destination_address));
         frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("source_address"), pmt::from_long(source_address));
         frame_INFO = pmt::dict_add(frame_INFO, pmt::string_to_symbol("num_transmission"), pmt::from_long(num_transmission));
@@ -329,9 +329,9 @@ namespace gr {
         {
           double current_time = t.tv_sec - double(int(t.tv_sec/101)*100) + t.tv_usec / 1000000.0;
           if(frame_type == 1)
-            std::cout << "* header analysis ID: " << _block_id << " get the " << num_transmission <<"th transmission of data frame "<< Begindex << " at time " << current_time << " s" << std::endl;
+            std::cout << "* header analysis ID: " << _block_id << " get the " << num_transmission <<"th transmission of data frame "<< index << " at time " << current_time << " s" << std::endl;
           else
-            std::cout << "* header analysis ID: " << _block_id << " get the ack frame of the " << num_transmission <<"th transmission of data frame "<< Begindex << " at time " << current_time << " s" << std::endl;
+            std::cout << "* header analysis ID: " << _block_id << " get the ack frame of the " << num_transmission <<"th transmission of data frame "<< index << " at time " << current_time << " s" << std::endl;
         }
       } 
       return frame_INFO;
