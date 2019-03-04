@@ -27,7 +27,7 @@
       <opt>hide_reserve:all</opt>
     </option>
     <option>
-      <name>Continual</name>
+      <name>Continuous</name>
       <key>2</key>
       <opt>hide_reserve:part</opt>
     </option>
