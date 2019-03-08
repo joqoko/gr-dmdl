@@ -129,41 +129,41 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
    <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>hAlt</name>
+    <name>A</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$suspend_timer</hide>
   </sink>
 
   <sink>
-    <name>Resume</name>
+    <name>RS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$resume_timer</hide>
   </sink>
 
   <sink>
-    <name>Stop</name>
+    <name>S</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$disable_timer</hide>
   </sink>
 
   <sink>
-    <name>Reset</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset_duration</hide>
   </sink>
 
   <source>
-    <name>End</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>

@@ -132,7 +132,7 @@
   </param>
 
   <param>
-    <name>File name extension</name>
+    <name>Name</name>
     <key>file_name_extension</key>
     <value>""</value>
     <type>string</type>
