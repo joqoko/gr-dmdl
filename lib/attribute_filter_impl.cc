@@ -49,12 +49,12 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of attribute filter ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&attribute_filter_impl::filtering, this, _1 ));
-      message_port_register_in(pmt::mp("reconfiGure"));
-      set_msg_handler(pmt::mp("reconfiGure"), boost::bind(&attribute_filter_impl::reset, this, _1 ));
-      message_port_register_out(pmt::mp("Pass"));
-      message_port_register_out(pmt::mp("Fail"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&attribute_filter_impl::filtering, this, _1 ));
+      message_port_register_in(pmt::mp("G"));
+      set_msg_handler(pmt::mp("G"), boost::bind(&attribute_filter_impl::reset, this, _1 ));
+      message_port_register_out(pmt::mp("P"));
+      message_port_register_out(pmt::mp("F"));
     }
 
     /*
@@ -75,13 +75,13 @@ namespace gr {
           int attribute = pmt::to_long(pmt::dict_ref(cmd_in, pmt::string_to_symbol(_field_name), not_found));
           if(attribute == _value)
           {
-            message_port_pub(pmt::mp("Pass"), cmd_in);
+            message_port_pub(pmt::mp("P"), cmd_in);
             if(_develop_mode == 1)
               std::cout << "Arrived cmd in attribute filter ID: " << _block_id<< " has a attribute " << _field_name << " with the appointed value" << std::endl;
           } 
           else
           {
-            message_port_pub(pmt::mp("Fail"), cmd_in);
+            message_port_pub(pmt::mp("F"), cmd_in);
             if(_develop_mode == 1)
               std::cout << "Arrived cmd in attribute filter ID: " << _block_id<< " has attribute " << _field_name << " without the appointed value" << std::endl;
           }

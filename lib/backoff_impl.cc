@@ -67,27 +67,27 @@ namespace gr {
         std::cout << "develop_mode of backoff ID " << _block_id << " is activated." << std::endl;
       _n_backoff = 0;
       std::srand((unsigned)time(NULL));  
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("End"));
-      message_port_register_out(pmt::mp("busy_time_out"));
-      message_port_register_out(pmt::mp("bof_time_out"));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_out(pmt::mp("BST"));
+      message_port_register_out(pmt::mp("BFT"));
       set_msg_handler(
-        pmt::mp("Begin"),
+        pmt::mp("B"),
         boost::bind(&backoff_impl::start_backoff, this, _1)
       );
-      message_port_register_in(pmt::mp("Virtual_cs"));
+      message_port_register_in(pmt::mp("VCS"));
       set_msg_handler(
-        pmt::mp("Virtual_cs"),
+        pmt::mp("VCS"),
         boost::bind(&backoff_impl::start_virtual_cs, this, _1)
       );
-      message_port_register_in(pmt::mp("Rssi"));
+      message_port_register_in(pmt::mp("R"));
       set_msg_handler(
-        pmt::mp("Rssi"),
+        pmt::mp("R"),
         boost::bind(&backoff_impl::carrier_sensing, this, _1)
       );
-      message_port_register_in(pmt::mp("cs_Threshold"));
+      message_port_register_in(pmt::mp("T"));
       set_msg_handler(
-        pmt::mp("cs_Threshold"),
+        pmt::mp("T"),
         boost::bind(&backoff_impl::set_cs_threshold, this, _1)
       );
       struct timeval t;
@@ -134,7 +134,7 @@ namespace gr {
             struct timeval t;
             gettimeofday(&t, NULL);
             double end_busy = t.tv_sec + t.tv_usec / 1000000.0;
-            message_port_pub(pmt::mp("busy_time_out"), pmt::from_double(end_busy - _start_busy));
+            message_port_pub(pmt::mp("BST"), pmt::from_double(end_busy - _start_busy));
           }
           _ch_busy = ch_busy_now;
         }
@@ -244,8 +244,8 @@ namespace gr {
       else
       {
         std::cout << "backoff ID " << _block_id << " warning: port Begin received correct data type but in _in_backoff states. backoff timer cannot be triggered twice. input cmd is directly forwarded to the next block" << std::endl;
-        message_port_pub(pmt::mp("End"), _cmd);
-        message_port_pub(pmt::mp("bof_time_out"),pmt::from_double(0));
+        message_port_pub(pmt::mp("E"), _cmd);
+        message_port_pub(pmt::mp("BFT"),pmt::from_double(0));
       }  
     }
 
@@ -261,7 +261,7 @@ namespace gr {
         double current_time = t.tv_sec - double(int(t.tv_sec/10)*10) + t.tv_usec / 1000000.0;
         std::cout << "++++ backoff ID: " << _block_id << "backoff timer is expired at time " << current_time << " s" << std::endl;
       }
-      message_port_pub(pmt::mp("End"), _cmd);
+      message_port_pub(pmt::mp("E"), _cmd);
       _in_backoff = false;
     }
 
@@ -281,34 +281,10 @@ namespace gr {
         double current_time = t.tv_sec - double(int(t.tv_sec/10)*10) + t.tv_usec / 1000000.0;
         std::cout << "++++ backoff ID: " << _block_id << "backoff timer is expired at time " << current_time << " s" << std::endl;
       }
-      message_port_pub(pmt::mp("End"), _cmd);
+      message_port_pub(pmt::mp("E"), _cmd);
       _in_backoff = false;
     }
-/*
-    void 
-    backoff_impl::countdown_exp_backoff()
-    {
-      struct timeval t;
-      if(_n_backoff)
-      {
-        //float backoff_time = std::rand() % std::pow(2, _n_backoff) + _min_bakcoff_ms;
-        float backoff_time = std::rand() % (int)std::pow(2, _n_backoff) * _backoff_time_unit_ms + _min_backoff_ms;
-        if(_develop_mode)
-          std::cout << "in " << _n_backoff << "th backoff, the backoff time is: " << backoff_time << "[ms]." << std::endl;
-        boost::this_thread::sleep(boost::posix_time::milliseconds(backoff_time));
-      }
-      else
-        if(_develop_mode)
-          std::cout << "backoff counter reset so no waiting this time." << std::endl; 
-      if(_develop_mode == 2)
-      {
-        gettimeofday(&t, NULL);
-        double current_time = t.tv_sec - double(int(t.tv_sec/10)*10) + t.tv_usec / 1000000.0;
-        std::cout << "* backoff ID: " << _block_id << "backoff timer is expired at time " << current_time << " s" << std::endl;
-      }
-      message_port_pub(pmt::mp("End"), _cmd);
-    }
-*/
+
     void 
     backoff_impl::countdown_exp_backoff_cs()
     {
@@ -387,10 +363,10 @@ namespace gr {
         if(_develop_mode)
           std::cout << "backoff counter reset so no waiting this time." << std::endl; 
       }
-      message_port_pub(pmt::mp("End"), _cmd);
+      message_port_pub(pmt::mp("E"), _cmd);
       gettimeofday(&t, NULL);
       double end_time = t.tv_sec + t.tv_usec / 1000000.0;
-      message_port_pub(pmt::mp("bof_time_out"),pmt::from_double(end_time - begin_time));
+      message_port_pub(pmt::mp("BFT"),pmt::from_double(end_time - begin_time));
       _in_backoff = false;
     }
 

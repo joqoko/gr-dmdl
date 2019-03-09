@@ -204,25 +204,25 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Rssi</name>
+    <name>R</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>Stop</name>
+    <name>S</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_stop</hide>
   </sink>
 
   <sink>
-    <name>reconfiGure</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset_duration</hide>
@@ -234,18 +234,18 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Pass</name>
+    <name>P</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>Fail</name>
+    <name>F</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_fail</hide>
   </source>
   <source>
-    <name>cs_Threshold</name>
+    <name>T</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_thre</hide>

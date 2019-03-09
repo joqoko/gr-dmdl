@@ -202,27 +202,27 @@
 
 
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>Rssi</name>
+    <name>R</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$apply_cs</hide>
   </sink>
 
   <sink>
-    <name>Virtual_cs</name>
+    <name>VCS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$virtual_cs</hide>
   </sink>
 
   <sink>
-    <name>cs_Threshold</name>
+    <name>T</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$set_cs</hide>
@@ -234,18 +234,18 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>End</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>busy_time_out</name>
+    <name>BST</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$export_busy</hide>
   </source>
   <source>
-    <name>bof_time_out</name>
+    <name>BFT</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$export_bof</hide>

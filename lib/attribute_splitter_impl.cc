@@ -46,10 +46,10 @@ namespace gr {
         _block_id(block_id),
         _command_name(command_name)
     {
-      message_port_register_out(pmt::mp("End"));
-      message_port_register_in(pmt::mp("Begin"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_in(pmt::mp("B"));
       set_msg_handler(
-        pmt::mp("Begin"),
+        pmt::mp("B"),
         boost::bind(&attribute_splitter_impl::splitting, this, _1)
       ); 
     }
@@ -67,7 +67,7 @@ namespace gr {
       if(pmt::dict_has_key(cmd_in, pmt::mp(_command_name)))
       {
         pmt::pmt_t not_found;
-        message_port_pub(pmt::mp("End"), pmt::dict_ref(cmd_in, pmt::string_to_symbol(_command_name), not_found));
+        message_port_pub(pmt::mp("E"), pmt::dict_ref(cmd_in, pmt::string_to_symbol(_command_name), not_found));
         if(_develop_mode)
           std::cout << "attribute_splitter block ID " << _block_id << " has field " << _command_name << ". the field is exported." << std::endl;
       }

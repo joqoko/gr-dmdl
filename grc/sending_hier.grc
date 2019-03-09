@@ -2882,7 +2882,7 @@
   <connection>
     <source_block_id>dmdl_attribute_splitter_0</source_block_id>
     <sink_block_id>dmdl_packetizer_simphy_0</sink_block_id>
-    <source_key>End</source_key>
+    <source_key>E</source_key>
     <sink_key>payload_in</sink_key>
   </connection>
   <connection>
@@ -2961,7 +2961,7 @@
     <source_block_id>pad_source_0</source_block_id>
     <sink_block_id>dmdl_attribute_splitter_0</sink_block_id>
     <source_key>out</source_key>
-    <sink_key>Begin</sink_key>
+    <sink_key>B</sink_key>
   </connection>
   <connection>
     <source_block_id>pad_source_0</source_block_id>

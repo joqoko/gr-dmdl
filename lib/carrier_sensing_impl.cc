@@ -59,27 +59,27 @@ namespace gr {
       _stop_sensing = false;
       if(_develop_mode == 1)
         std::cout << "develop_mode of carrier sensing is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("Fail"));
-      message_port_register_out(pmt::mp("Pass"));
-      message_port_register_out(pmt::mp("cs_Threshold"));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("F"));
+      message_port_register_out(pmt::mp("P"));
+      message_port_register_out(pmt::mp("T"));
       set_msg_handler(
-        pmt::mp("Begin"),
+        pmt::mp("B"),
         boost::bind(&carrier_sensing_impl::start_sensing, this, _1)
       );
-      message_port_register_in(pmt::mp("Stop"));
+      message_port_register_in(pmt::mp("S"));
       set_msg_handler(
-        pmt::mp("Stop"),
+        pmt::mp("S"),
         boost::bind(&carrier_sensing_impl::stop_sensing, this, _1)
       );
-      message_port_register_in(pmt::mp("Rssi"));
+      message_port_register_in(pmt::mp("R"));
       set_msg_handler(
-        pmt::mp("Rssi"),
+        pmt::mp("R"),
         boost::bind(&carrier_sensing_impl::sensing, this, _1)
       );
-      message_port_register_in(pmt::mp("reconfiGure"));
+      message_port_register_in(pmt::mp("G"));
       set_msg_handler(
-        pmt::mp("reconfiGure"),
+        pmt::mp("G"),
         boost::bind(&carrier_sensing_impl::reset_duration, this, _1)
       );
     }
@@ -137,7 +137,7 @@ namespace gr {
           _cs_threshold = _cs_threshold / len * rx_sens;
           if(_develop_mode)
             std::cout << " rx_sensitivity is " << rx_sens << " and the noise floor is " << _cs_threshold << std::endl;
-          message_port_pub(pmt::mp("cs_Threshold"), pmt::from_double(_cs_threshold));
+          message_port_pub(pmt::mp("T"), pmt::from_double(_cs_threshold));
           _nf_initial_n = -1;
         }
         else
@@ -206,7 +206,7 @@ namespace gr {
           {
             if(_develop_mode == 1)
               std::cout << "before sending a ack frame, no sensing" << std::endl;
-            message_port_pub(pmt::mp("Pass"), cmd_in);
+            message_port_pub(pmt::mp("P"), cmd_in);
           }
         }
         else
@@ -239,7 +239,7 @@ namespace gr {
             {
               if(_develop_mode == 1)
                 std::cout << "before sending a ack frame, no sensing" << std::endl;
-              message_port_pub(pmt::mp("Pass"), cmd_in);
+              message_port_pub(pmt::mp("P"), cmd_in);
             }
           }
           else
@@ -278,7 +278,7 @@ namespace gr {
           {
             if(_develop_mode == 1)
               std::cout << "before sending a ack frame, no sensing" << std::endl;
-            message_port_pub(pmt::mp("Pass"), cmd_in);
+            message_port_pub(pmt::mp("P"), cmd_in);
           }
         }
         else
@@ -306,13 +306,13 @@ namespace gr {
       {
         if(_develop_mode == 1)
           std::cout << "Carrier sensing passed. " << std::endl;
-        message_port_pub(pmt::mp("Pass"), _cmd);
+        message_port_pub(pmt::mp("P"), _cmd);
       }
       else
       {
         if(_develop_mode == 1)
           std::cout << "Carrier sensing failed. " << std::endl;
-        message_port_pub(pmt::mp("Fail"), _cmd);
+        message_port_pub(pmt::mp("F"), _cmd);
       }
     }
 
@@ -332,13 +332,13 @@ namespace gr {
       {
         if(_develop_mode == 1)
           std::cout << "Carrier sensing passed. " << std::endl;
-        message_port_pub(pmt::mp("Pass"), _cmd);
+        message_port_pub(pmt::mp("P"), _cmd);
       }
       else
       {
         if(_develop_mode == 1)
           std::cout << "Carrier sensing failed. " << std::endl;
-        message_port_pub(pmt::mp("Fail"), _cmd);
+        message_port_pub(pmt::mp("F"), _cmd);
       }
       _cs_time = current_time - start_time;
       if(_develop_mode == 1)
@@ -361,7 +361,7 @@ namespace gr {
       }
       if(_develop_mode == 1)
         std::cout << "Carrier sensing passed. " << std::endl;
-      message_port_pub(pmt::mp("Pass"), _cmd);
+      message_port_pub(pmt::mp("P"), _cmd);
       _cs_time = current_time - start_time;
       if(_develop_mode == 1)
         std::cout << "Carrier sensing time is: " << _cs_time << " s" << std::endl;
@@ -392,13 +392,13 @@ namespace gr {
       {
         if(_develop_mode == 1)
           std::cout << "carrier sensing passed. " << std::endl;
-        message_port_pub(pmt::mp("Pass"), _cmd);
+        message_port_pub(pmt::mp("P"), _cmd);
       }
       else
       {
         if(_develop_mode == 1)
           std::cout << "Carrier sensing failed. " << std::endl;
-        message_port_pub(pmt::mp("Fail"), _cmd);
+        message_port_pub(pmt::mp("F"), _cmd);
       }
       _cs_time = current_time - start_time;
       if(_develop_mode == 1)
