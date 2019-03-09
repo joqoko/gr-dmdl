@@ -273,14 +273,14 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>enQueue</name>
+    <name>Q</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$enqueue</hide>
   </sink>
 
   <sink>
-    <name>Dequeue</name>
+    <name>D</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$dequeue</hide>
@@ -294,21 +294,21 @@
   </sink> -->
 
   <sink>
-    <name>flusH</name>
+    <name>H</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$flush</hide>
   </sink>
 
   <sink>
-    <name>indicate_empty</name>
+    <name>IE</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$indicate</hide>
   </sink>
 
   <sink>
-    <name>reconfiGure</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset_size</hide>
@@ -320,24 +320,24 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>deqUeued</name>
+    <name>U</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>Not_full</name>
+    <name>NF</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_empty</hide>
   </source>
   <source>
-    <name>fuLl</name>
+    <name>L</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_full</hide>
   </source>
   <source>
-    <name>eMpty</name>
+    <name>M</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_empty</hide>

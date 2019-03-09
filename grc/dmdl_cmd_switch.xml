@@ -49,7 +49,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -72,7 +72,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>END</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>

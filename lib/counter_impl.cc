@@ -56,14 +56,14 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "the " << _counter_id << "th message counter is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&counter_impl::counting, this, _1 ));
-      message_port_register_in(pmt::mp("Reset"));
-      set_msg_handler(pmt::mp("Reset"), boost::bind(&counter_impl::reset, this, _1 ));
-      message_port_register_in(pmt::mp("start_counter_in"));
-      set_msg_handler(pmt::mp("start_counter_in"), boost::bind(&counter_impl::start_counting, this, _1 ));
-      message_port_register_in(pmt::mp("stop_counter_in"));
-      set_msg_handler(pmt::mp("stop_counter_in"), boost::bind(&counter_impl::stop_counting, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&counter_impl::counting, this, _1 ));
+      message_port_register_in(pmt::mp("RT"));
+      set_msg_handler(pmt::mp("RT"), boost::bind(&counter_impl::reset, this, _1 ));
+      message_port_register_in(pmt::mp("SC"));
+      set_msg_handler(pmt::mp("SC"), boost::bind(&counter_impl::start_counting, this, _1 ));
+      message_port_register_in(pmt::mp("S"));
+      set_msg_handler(pmt::mp("S"), boost::bind(&counter_impl::stop_counting, this, _1 ));
       if(interval_mode)
         _in_counting = 1;
       else

@@ -159,27 +159,27 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>Reset</name>
+    <name>RT</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset</hide>
   </sink>
 
   <sink>
-    <name>start_counter_in</name>
+    <name>SC</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$interval_mode</hide>
   </sink>
 
   <sink>
-    <name>stop_counter_in</name>
+    <name>S</name>
     <type>message</type>
     <optional>1</optional> <hide>$interval_mode</hide>
   </sink>

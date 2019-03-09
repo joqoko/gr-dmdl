@@ -48,13 +48,13 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of cmd_switch id: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&cmd_switch_impl::in_and_out, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&cmd_switch_impl::in_and_out, this, _1 ));
       message_port_register_in(pmt::mp("OFF"));
       set_msg_handler(pmt::mp("OFF"), boost::bind(&cmd_switch_impl::set_off, this, _1 ));
       message_port_register_in(pmt::mp("ON"));
       set_msg_handler(pmt::mp("ON"), boost::bind(&cmd_switch_impl::set_on, this, _1 ));
-      message_port_register_out(pmt::mp("End"));
+      message_port_register_out(pmt::mp("E"));
     }
 
 
@@ -70,14 +70,14 @@ namespace gr {
     {
       if(_switchs)
       {
-        message_port_pub(pmt::mp("End"), cmd_in);
+        message_port_pub(pmt::mp("E"), cmd_in);
         if(_develop_mode)
           std::cout << "cmd_switch block id " << _block_id << " forwards cmd" << std::endl;
       }
       else
       {
         if(_develop_mode)
-          std::cout << "cmd_switch block id " << _block_id << " stop forwards cmd" << std::endl;
+          std::cout << "cmd_switch block id " << _block_id << " cannot forward cmd" << std::endl;
       }
     }
 
@@ -85,12 +85,16 @@ namespace gr {
     cmd_switch_impl::set_off(pmt::pmt_t cmd_in)
     {
       _switchs = false;
+      if(_develop_mode)
+        std::cout << "cmd_switch block id " << _block_id << " is OFF." << std::endl;
     }
 
     void
     cmd_switch_impl::set_on(pmt::pmt_t cmd_in)
     {
       _switchs = true;
+      if(_develop_mode)
+        std::cout << "cmd_switch block id " << _block_id << " is ON." << std::endl;
     }
 
   } /* namespace dmdl */

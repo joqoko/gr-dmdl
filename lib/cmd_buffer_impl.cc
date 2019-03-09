@@ -52,24 +52,24 @@ namespace gr {
 	_dequeue_first(1),
 	_show_am_empty(1),
         _auto_dequeue_full(auto_dequeue_full)
-  //      _output_deqUeued(output_deqUeued)
+  //      _output_U(output_U)
     {
       if(_develop_mode)
         std::cout << "develop_mode of buffer ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("enQueue")); 
-      set_msg_handler(pmt::mp("enQueue"), boost::bind(&cmd_buffer_impl::enqueue, this, _1));
-      message_port_register_in(pmt::mp("indicate_empty")); 
-      set_msg_handler(pmt::mp("indicate_empty"), boost::bind(&cmd_buffer_impl::indicate, this, _1));
-      message_port_register_in(pmt::mp("Dequeue")); 
-      set_msg_handler(pmt::mp("Dequeue"), boost::bind(&cmd_buffer_impl::dequeue, this, _1));
-      message_port_register_in(pmt::mp("flusH")); 
-      set_msg_handler(pmt::mp("flusH"), boost::bind(&cmd_buffer_impl::flush, this, _1));
-      message_port_register_in(pmt::mp("reconfiGure")); 
-      set_msg_handler(pmt::mp("reconfiGure"), boost::bind(&cmd_buffer_impl::reset_size, this, _1));
-      message_port_register_out(pmt::mp("deqUeued"));
-      message_port_register_out(pmt::mp("Not_full"));
-      message_port_register_out(pmt::mp("fuLl"));
-      message_port_register_out(pmt::mp("eMpty"));
+      message_port_register_in(pmt::mp("Q")); 
+      set_msg_handler(pmt::mp("Q"), boost::bind(&cmd_buffer_impl::enqueue, this, _1));
+      message_port_register_in(pmt::mp("IE")); 
+      set_msg_handler(pmt::mp("IE"), boost::bind(&cmd_buffer_impl::indicate, this, _1));
+      message_port_register_in(pmt::mp("D")); 
+      set_msg_handler(pmt::mp("D"), boost::bind(&cmd_buffer_impl::dequeue, this, _1));
+      message_port_register_in(pmt::mp("H")); 
+      set_msg_handler(pmt::mp("H"), boost::bind(&cmd_buffer_impl::flush, this, _1));
+      message_port_register_in(pmt::mp("G")); 
+      set_msg_handler(pmt::mp("G"), boost::bind(&cmd_buffer_impl::reset_size, this, _1));
+      message_port_register_out(pmt::mp("U"));
+      message_port_register_out(pmt::mp("NF"));
+      message_port_register_out(pmt::mp("L"));
+      message_port_register_out(pmt::mp("M"));
     }
 
     /*
@@ -97,13 +97,13 @@ namespace gr {
     {
       if(_show_am_empty)
       {
-        message_port_pub(pmt::mp("Not_full"), pmt::from_long(1));
+        message_port_pub(pmt::mp("NF"), pmt::from_long(1));
         _show_am_empty = 0;
       }
       else
       {
         if(pmt::is_dict(trigger))
-          message_port_pub(pmt::mp("Not_full"), pmt::from_long(1));
+          message_port_pub(pmt::mp("NF"), pmt::from_long(1));
       }
     }
     
@@ -115,13 +115,13 @@ namespace gr {
       {
         _buffer.push(enqueue_element);
         if(_buffer.size() < _buffer_size)
-          message_port_pub(pmt::mp("Not_full"), pmt::from_long(1));
+          message_port_pub(pmt::mp("NF"), pmt::from_long(1));
         else
         {
-          message_port_pub(pmt::mp("fuLl"), pmt::mp("buffer_is_full"));
+          message_port_pub(pmt::mp("L"), pmt::mp("buffer_is_full"));
           if(_auto_dequeue_full)
           {
-            message_port_pub(pmt::mp("deqUeued"), _buffer.front());
+            message_port_pub(pmt::mp("U"), _buffer.front());
             _buffer.pop();
           }
         }
@@ -133,7 +133,7 @@ namespace gr {
           else
           {
             std::cout << " and buffer is full.";
-            message_port_pub(pmt::mp("fuLl"), pmt::from_long(1));
+            message_port_pub(pmt::mp("L"), pmt::from_long(1));
             if(_auto_dequeue_full)
               std::cout << " the first elements is dequeued." << std::endl;
           }
@@ -152,7 +152,7 @@ namespace gr {
          */
         if((_dequeue_first && _auto_dequeue_first) || _dequeue_when_available)
         {
-          message_port_pub(pmt::mp("deqUeued"), _buffer.front());
+          message_port_pub(pmt::mp("U"), _buffer.front());
           _buffer.pop();
           if(_develop_mode == 2)
           {
@@ -179,7 +179,7 @@ namespace gr {
       {
         if(_develop_mode)
           std::cout << "buffer ID: " << _block_id << " is full. current element is discarded." << std::endl;
-      //  message_port_pub(pmt::mp("deqUeued"), enqueue_element);
+      //  message_port_pub(pmt::mp("U"), enqueue_element);
       }
     }
     
@@ -205,11 +205,11 @@ namespace gr {
             }
             for(int i = 0; i < n_dequeue; i++)
             {
-              message_port_pub(pmt::mp("deqUeued"), _buffer.front());
+              message_port_pub(pmt::mp("U"), _buffer.front());
               _buffer.pop();
             }
             // after dequeueing all elements, output a pmt containing the number of frames as a conclusion.
-            message_port_pub(pmt::mp("deqUeued"), pmt::from_long(n_dequeue));
+            message_port_pub(pmt::mp("U"), pmt::from_long(n_dequeue));
             if(_develop_mode)
               std::cout << "buffer ID: " << _block_id << " has " << _buffer.size() << " elements after dequeue." << std::endl;
             if(_develop_mode == 2)
@@ -223,7 +223,7 @@ namespace gr {
           else
           {
             // dequeue a integer -2 means that the go-back-n requests no frame (most probably all transmissions are failed). 
-            message_port_pub(pmt::mp("deqUeued"), pmt::from_long(-2));
+            message_port_pub(pmt::mp("U"), pmt::from_long(-2));
             if(_develop_mode)
               std::cout << "0 element is required and no element is dequeued." << std::endl;
           }
@@ -231,7 +231,7 @@ namespace gr {
         else
         {
           // dequeue a integer -1 means that the buffer is empty
-          message_port_pub(pmt::mp("deqUeued"), pmt::from_long(-1));
+          message_port_pub(pmt::mp("U"), pmt::from_long(-1));
           if(_develop_mode)
             std::cout << "buffer is empty so no element can be dequeued." << std::endl;
         }
@@ -240,7 +240,7 @@ namespace gr {
       {
         if(_buffer.size() > 0)
         {
-          message_port_pub(pmt::mp("deqUeued"), _buffer.front());
+          message_port_pub(pmt::mp("U"), _buffer.front());
           _buffer.pop();
           if(_develop_mode)
             std::cout << "buffer ID: " << _block_id << " has " << _buffer.size() << " elements after dequeue." << std::endl;
@@ -252,7 +252,7 @@ namespace gr {
             std::cout << "buffer ID: " << _block_id << " dequeue at time " << current_time << " s" << std::endl;
           }
 //          if(_buffer.size() == 0)
-//            message_port_pub(pmt::mp("eMpty"), pmt::from_long(0));
+//            message_port_pub(pmt::mp("M"), pmt::from_long(0));
         }
         else
         {
@@ -267,7 +267,7 @@ namespace gr {
             if(_develop_mode)
               std::cout << "buffer ID: " << _block_id << " is empty. no element is popped." << std::endl;
           }
-          message_port_pub(pmt::mp("eMpty"), pmt::make_dict());
+          message_port_pub(pmt::mp("M"), pmt::make_dict());
         }
       }
     }
@@ -300,7 +300,7 @@ namespace gr {
       {
         for(int i = 0; i < flush_length; i++)
         {
-//          message_port_pub(pmt::mp("deqUeued"), _buffer.front());
+//          message_port_pub(pmt::mp("U"), _buffer.front());
           _buffer.pop();
         }
         if(_develop_mode)
