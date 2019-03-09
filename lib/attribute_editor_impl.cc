@@ -52,10 +52,9 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of attribute_editor ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("cmd_in"));
-      message_port_register_out(pmt::mp("cmd_out"));
-      message_port_register_out(pmt::mp("value_out"));
-      set_msg_handler(pmt::mp("cmd_in"), boost::bind(&attribute_editor_impl::catagorizing, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("E"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&attribute_editor_impl::catagorizing, this, _1 ));
     }
 
 
@@ -78,7 +77,7 @@ namespace gr {
           num_transmission = operating(num_transmission);
           cmd_in = pmt::dict_delete(cmd_in, pmt::string_to_symbol("num_transmission"));
           cmd_in = pmt::dict_add(cmd_in, pmt::string_to_symbol("num_transmission"), pmt::from_long(num_transmission));
-          message_port_pub(pmt::mp("cmd_out"), cmd_in);
+          message_port_pub(pmt::mp("E"), cmd_in);
         }
         else
           std::cout << "warning: attribute_editor ID " << _block_id << " input cmd  does not have such field. please ensure your connection is correct. " << std::endl;

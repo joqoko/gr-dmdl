@@ -49,11 +49,11 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of attribute editor ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&attribute_assignment_impl::reassign, this, _1 ));
-      message_port_register_in(pmt::mp("reconfiGure"));
-      set_msg_handler(pmt::mp("reconfiGure"), boost::bind(&attribute_assignment_impl::reset, this, _1 ));
-      message_port_register_out(pmt::mp("End"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&attribute_assignment_impl::reassign, this, _1 ));
+      message_port_register_in(pmt::mp("G"));
+      set_msg_handler(pmt::mp("G"), boost::bind(&attribute_assignment_impl::reset, this, _1 ));
+      message_port_register_out(pmt::mp("E"));
     }
 
     /*
@@ -75,7 +75,7 @@ namespace gr {
           cmd_in = pmt::dict_delete(cmd_in, pmt::string_to_symbol(_field_name));
           cmd_in = pmt::dict_add(cmd_in, pmt::string_to_symbol(_field_name), pmt::from_long(_value));
           std::cout << "Attribute: " << _field_name << " value: " << attribute << " in the arrived cmd in attribute editor ID: " << _block_id<< " is replaced by " << _value << std::endl;
-          message_port_pub(pmt::mp("End"), cmd_in);
+          message_port_pub(pmt::mp("E"), cmd_in);
         }
         else
         {

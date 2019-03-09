@@ -13,7 +13,7 @@
 
   <param>
     <name>Duration [ms]</name>
-    <key>duration</key>
+    <key>duration_ms</key>
     <value>1000</value>
     <type>raw</type>
     <hide>part</hide>

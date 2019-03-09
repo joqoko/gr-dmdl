@@ -81,13 +81,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>reconfiGure</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_reset</hide>
@@ -99,7 +99,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>End</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>

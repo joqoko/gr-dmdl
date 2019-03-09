@@ -53,17 +53,17 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of timer ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&timer_impl::start_timer, this, _1 ));
-      message_port_register_in(pmt::mp("hAlt"));
-      set_msg_handler(pmt::mp("hAlt"), boost::bind(&timer_impl::suspend_timer, this, _1 ));
-      message_port_register_in(pmt::mp("resume_timer_in"));
-      set_msg_handler(pmt::mp("resume_timer_in"), boost::bind(&timer_impl::resume_timer, this, _1 ));
-      message_port_register_in(pmt::mp("reconfiGure"));
-      set_msg_handler(pmt::mp("reconfiGure"), boost::bind(&timer_impl::reset_duration, this, _1 ));
-      message_port_register_in(pmt::mp("Stop"));
-      set_msg_handler(pmt::mp("Stop"), boost::bind(&timer_impl::disable_timer, this, _1 ));
-      message_port_register_out(pmt::mp("End"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&timer_impl::start_timer, this, _1 ));
+      message_port_register_in(pmt::mp("A"));
+      set_msg_handler(pmt::mp("A"), boost::bind(&timer_impl::suspend_timer, this, _1 ));
+      message_port_register_in(pmt::mp("RS"));
+      set_msg_handler(pmt::mp("RS"), boost::bind(&timer_impl::resume_timer, this, _1 ));
+      message_port_register_in(pmt::mp("G"));
+      set_msg_handler(pmt::mp("G"), boost::bind(&timer_impl::reset_duration, this, _1 ));
+      message_port_register_in(pmt::mp("S"));
+      set_msg_handler(pmt::mp("S"), boost::bind(&timer_impl::disable_timer, this, _1 ));
+      message_port_register_out(pmt::mp("E"));
       message_port_register_out(pmt::mp("address_check_out"));
       _disable_timer = 0;
       _frame_info = pmt::from_long(0);
@@ -261,7 +261,7 @@ namespace gr {
         }
         pmt::pmt_t expire = pmt::make_dict();
         expire = pmt::dict_add(expire, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
-        message_port_pub(pmt::mp("End"), expire);
+        message_port_pub(pmt::mp("E"), expire);
         if(_in_active)
         {
           _duration_list_ms.erase(_duration_list_ms.begin());
@@ -359,14 +359,14 @@ namespace gr {
       {
         _frame_info = pmt::dict_add(_frame_info, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
         _in_active = false;
-        message_port_pub(pmt::mp("End"), _frame_info);
+        message_port_pub(pmt::mp("E"), _frame_info);
       }
       else
       {
         pmt::pmt_t expire = pmt::make_dict();
         expire = pmt::dict_add(expire, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
         _in_active = false;
-        message_port_pub(pmt::mp("End"), _frame_info);
+        message_port_pub(pmt::mp("E"), _frame_info);
       }
     }
  
@@ -413,7 +413,7 @@ namespace gr {
           }
           _frame_info = pmt::dict_add(_frame_info, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
           _in_active = false;
-          message_port_pub(pmt::mp("End"), _frame_info);
+          message_port_pub(pmt::mp("E"), _frame_info);
         }
         else
         {
@@ -424,7 +424,7 @@ namespace gr {
           pmt::pmt_t expire = pmt::make_dict();
           expire = pmt::dict_add(expire, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
           _in_active = false;
-          message_port_pub(pmt::mp("End"), _frame_info);
+          message_port_pub(pmt::mp("E"), _frame_info);
         }
       }
       else
@@ -469,13 +469,13 @@ namespace gr {
         if(pmt::is_dict(_frame_info))
         {
           _frame_info = pmt::dict_add(_frame_info, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
-          message_port_pub(pmt::mp("End"), _frame_info);
+          message_port_pub(pmt::mp("E"), _frame_info);
         }
         else
         {
           pmt::pmt_t expire = pmt::make_dict();
           expire = pmt::dict_add(expire, pmt::string_to_symbol("time_stamp"), pmt::from_double(current_time));
-          message_port_pub(pmt::mp("End"), expire);
+          message_port_pub(pmt::mp("E"), expire);
         }
       }
     }

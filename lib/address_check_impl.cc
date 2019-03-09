@@ -49,11 +49,11 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of address_check ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("Pass"));
-      message_port_register_out(pmt::mp("payload_out"));
-      message_port_register_out(pmt::mp("Fail"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&address_check_impl::check_address, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("P"));
+      message_port_register_out(pmt::mp("PO"));
+      message_port_register_out(pmt::mp("F"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&address_check_impl::check_address, this, _1 ));
     }
 
     /*
@@ -85,12 +85,12 @@ namespace gr {
       frame_info = pmt::dict_add(frame_info, pmt::string_to_symbol("address_check"), pmt::from_long(is_my_address));
       if(is_my_address)
       {
-        message_port_pub(pmt::mp("Pass"), frame_info);
-        message_port_pub(pmt::mp("payload_out"), frame_info);
+        message_port_pub(pmt::mp("P"), frame_info);
+        message_port_pub(pmt::mp("PO"), frame_info);
       }
       else
       {
-        message_port_pub(pmt::mp("Fail"), frame_info);
+        message_port_pub(pmt::mp("F"), frame_info);
       }
       if(_develop_mode == 2)
       {
