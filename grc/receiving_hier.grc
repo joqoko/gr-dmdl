@@ -3386,7 +3386,7 @@
   <connection>
     <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
     <sink_block_id>rx_power_out</sink_block_id>
-    <source_key>RSSI</source_key>
+    <source_key>R</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>

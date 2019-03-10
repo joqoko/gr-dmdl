@@ -187,123 +187,8 @@
   </param>
 
   <param>
-    <name>Show DATA frame</name>
-    <key>data_frame</key>
-    <type>enum</type>
-    <hide>$data_frame.hide</hide>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-  </param>
-  <param>
-    <name>Show ACK frame</name>
-    <key>ack_frame</key>
-    <type>enum</type>
-    <hide>$ack_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-  <param>
-    <name>Show Beacon frame</name>
-    <key>beacon_frame</key>
-    <type>enum</type>
-    <hide>$beacon_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-  <param>
-    <name>Show RTS frame</name>
-    <key>rts_frame</key>
-    <type>enum</type>
-    <hide>$rts_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-  <param>
-    <name>Show CTS frame</name>
-    <key>cts_frame</key>
-    <type>enum</type>
-    <hide>$cts_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-
-  <param>
-    <name>Show AMPDU frame</name>
-    <key>ampdu_frame</key>
-    <type>enum</type>
-    <hide>$ampdu_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-
-  <param>
-    <name>Show AMSDU frame</name>
-    <key>amsdu_frame</key>
-    <type>enum</type>
-    <hide>$amsdu_frame.hide</hide>
-    <option>
-      <name>No</name>
-      <key>1</key>
-      <opt>hide:part</opt>
-    </option>
-    <option>
-      <name>Yes</name>
-      <key>0</key>
-      <opt>hide:none</opt>
-    </option>
-  </param>
-
-  <param>
-    <name>Show unknown frame</name>
-    <key>unknown_frame</key>
+    <name>Export sent frame</name>
+    <key>export_sent</key>
     <type>enum</type>
     <hide>$unknown_frame.hide</hide>
     <option>
@@ -357,52 +242,10 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>DATA</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
-    <hide>$data_frame</hide>
-  </source>
-  <source>
-    <name>ACK</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$ack_frame</hide>
-  </source>
-  <source>
-    <name>BEACON</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$beacon_frame</hide>
-  </source>
-  <source>
-    <name>RTS</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$rts_frame</hide>
-  </source>
-  <source>
-    <name>CTS</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$cts_frame</hide>
-  </source>
-  <source>
-    <name>AMPDU</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$ampdu_frame</hide>
-  </source>
-  <source>
-    <name>AMSDU</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$amsdu_frame</hide>
-  </source>
-  <source>
-    <name>OTHER</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$unknown_frame</hide>
+    <hide>$export_sent</hide>
   </source>
   <source>
     <name>RXO</name>

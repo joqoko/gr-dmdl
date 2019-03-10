@@ -51,7 +51,7 @@ namespace gr {
       if(_develop_mode)
         std::cout << "develop_mode of rx_switch_simphy ID: " << _block_id << " is activated." << std::endl;
       message_port_register_in(pmt::mp("RXI"));
-      message_port_register_out(pmt::mp("RSSI"));
+      message_port_register_out(pmt::mp("R"));
       message_port_register_out(pmt::mp("RXO"));
       set_msg_handler(pmt::mp("RXI"), boost::bind(&rx_switch_simphy_impl::kai_guan, this, _1 ));
     }
@@ -97,7 +97,7 @@ namespace gr {
       if(_vec_average_pow.size() >= _num_fetch_per_cs)
       {
         double pow_average_all_fetch = std::accumulate(_vec_average_pow.begin(), _vec_average_pow.end(), 0.0) / _num_fetch_per_cs;
-        message_port_pub(pmt::mp("RSSI"), pmt::from_double(pow_average_all_fetch));
+        message_port_pub(pmt::mp("R"), pmt::from_double(pow_average_all_fetch));
         //std::cout << "average power at rx switch is: " << pow_average_all_fetch << std::endl;
         _vec_average_pow.clear();
       }

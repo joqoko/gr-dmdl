@@ -47,14 +47,7 @@ class sending(gr.hier_block2):
  
         self.message_port_register_hier_in("B")
         self.message_port_register_hier_in("G")
-        self.message_port_register_hier_out("DATA")
-        self.message_port_register_hier_out("ACK")
-        self.message_port_register_hier_out("BEACON")
-        self.message_port_register_hier_out("RTS")
-        self.message_port_register_hier_out("CTS")
-        self.message_port_register_hier_out("AMPDU")
-        self.message_port_register_hier_out("AMSDU")
-        self.message_port_register_hier_out("OTHER")
+        self.message_port_register_hier_out("E")
         self.message_port_register_hier_out("RXO")
 
         ##################################################
@@ -81,14 +74,14 @@ class sending(gr.hier_block2):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.sending_hier_0, 'DATA'), (self, 'DATA'))    
-        self.msg_connect((self.sending_hier_0, 'ACK'), (self, 'ACK'))    
-        self.msg_connect((self.sending_hier_0, 'BEACON'), (self, 'BEACON'))    
-        self.msg_connect((self.sending_hier_0, 'RTS'), (self, 'RTS'))    
-        self.msg_connect((self.sending_hier_0, 'CTS'), (self, 'CTS'))    
-        self.msg_connect((self.sending_hier_0, 'AMPDU'), (self, 'AMPDU'))    
-        self.msg_connect((self.sending_hier_0, 'AMSDU'), (self, 'AMSDU'))    
-        self.msg_connect((self.sending_hier_0, 'OTHER'), (self, 'OTHER'))    
+        self.msg_connect((self.sending_hier_0, 'DATA'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'ACK'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'BEACON'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'RTS'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'CTS'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'AMPDU'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'AMSDU'), (self, 'E'))    
+        self.msg_connect((self.sending_hier_0, 'OTHER'), (self, 'E'))    
         self.msg_connect((self.sending_hier_0, 'RXO'), (self, 'RXO'))    
         self.msg_connect((self, 'B'), (self.sending_hier_0, 'B'))    
         self.msg_connect((self, 'G'), (self.sending_hier_0, 'G'))    

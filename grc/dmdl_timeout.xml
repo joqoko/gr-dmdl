@@ -12,34 +12,6 @@
        * type -->
 
   <param>
-    <name>DATA-ACK timeout</name>
-    <key>data_ack</key>
-    <type>enum</type>
-    <hide>part</hide>
-    <option>
-      <name>Select</name>
-      <key>0</key>
-    </option>
-    <option>
-      <name>Not select</name>
-      <key>1</key>
-    </option>
-  </param>
-  <param>
-    <name>RTS-CTS timeout</name>
-    <key>rts_cts</key>
-    <type>enum</type>
-    <hide>part</hide>
-    <option>
-      <name>Select</name>
-      <key>0</key>
-    </option>
-    <option>
-      <name>Not select</name>
-      <key>1</key>
-    </option>
-  </param>
-  <param>
     <name>LLC protocol</name>
     <key>llc_protocol</key>
     <type>enum</type>
@@ -118,28 +90,14 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>ACK</name>
+    <name>I</name>
     <type>message</type>
     <optional>1</optional>
-    <hide>$data_ack</hide>
   </sink>
   <sink>
-    <name>DATA</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
-    <hide>$data_ack</hide>
-  </sink>
-  <sink>
-    <name>RTS</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$rts_cts</hide>
-  </sink>
-  <sink>
-    <name>CTS</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$rts_cts</hide>
   </sink>
 
   <source>

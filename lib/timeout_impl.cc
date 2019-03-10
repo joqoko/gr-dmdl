@@ -55,24 +55,14 @@ namespace gr {
       gettimeofday(&t, NULL);
       _start_time = t.tv_sec + t.tv_usec / 1000000.0;
       message_port_register_out(pmt::mp("E"));
-      message_port_register_in(pmt::mp("DATA"));
-      message_port_register_in(pmt::mp("ACK"));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_in(pmt::mp("I"));
       set_msg_handler(
-        pmt::mp("DATA"),
+        pmt::mp("B"),
         boost::bind(&timeout_impl::start_timeout, this, _1)
       );
       set_msg_handler(
-        pmt::mp("ACK"),
-        boost::bind(&timeout_impl::kill_timeout, this, _1)
-      );
-      message_port_register_in(pmt::mp("RTS"));
-      message_port_register_in(pmt::mp("CTS"));
-      set_msg_handler(
-        pmt::mp("RTS"),
-        boost::bind(&timeout_impl::start_timeout, this, _1)
-      );
-      set_msg_handler(
-        pmt::mp("CTS"),
+        pmt::mp("I"),
         boost::bind(&timeout_impl::kill_timeout, this, _1)
       );
     }

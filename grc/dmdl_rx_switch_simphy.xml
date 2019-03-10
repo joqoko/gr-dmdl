@@ -76,7 +76,7 @@
     <type>complex</type>
   </source>
   <source>
-    <name>RSSI</name>
+    <name>R</name>
     <type>message</type>
   </source>
   <source>

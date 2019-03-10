@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sun Mar 10 14:58:56 2019
+# Generated: Sun Mar 10 17:23:43 2019
 ##################################################
 
 if __name__ == '__main__':
@@ -66,6 +66,7 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
+        self.dmdl_timeout_0 = dmdl.timeout(1, 10, 100, 1000, 0)
         self.dmdl_rts_framing_0 = dmdl.rts_framing(0, 30, 1, 1, 1, 1, 2, 1, 318, 2, 524, 2, 2, 1, 3, 64, diff_preamble_128, gnuradio.digital.constellation_qpsk().bits_per_symbol() * (samp_rate / sps), 1000, 800)
         self.dmdl_probe_1 = dmdl.probe(0, 100, 0, 0, 0.01, 0, "/home/inets/source/gr-inets/results/", "", 1)
         self.dmdl_framing_0 = dmdl.framing(0, 17, 1, 1, 0, 1, 1, 1, 2, 1, 318, 2, 524, 2, 2, 1, 1, 0, ([2, 3]), ([1000, 1000]), 2, 0, 300, 1)
@@ -79,7 +80,8 @@ class top_block(gr.top_block, Qt.QWidget):
         self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.dmdl_dummy_source_0, 'B'))
         self.msg_connect((self.dmdl_dummy_source_0, 'E'), (self.dmdl_framing_0, 'B'))
         self.msg_connect((self.dmdl_framing_0, 'E'), (self.dmdl_rts_framing_0, 'DATA'))
-        self.msg_connect((self.dmdl_rts_framing_0, 'RTS'), (self.dmdl_probe_1, 'B'))
+        self.msg_connect((self.dmdl_framing_0, 'E'), (self.dmdl_timeout_0, 'B'))
+        self.msg_connect((self.dmdl_rts_framing_0, 'RTS'), (self.dmdl_timeout_0, 'I'))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "top_block")
