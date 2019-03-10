@@ -45,12 +45,12 @@ class receiving(gr.hier_block2):
             gr.io_signature(0, 0, 0)
         ) # Output signature
 
-        self.message_port_register_hier_in("rx_switch_in")
-        self.message_port_register_hier_in("reconfig_in")
-        self.message_port_register_hier_out("rx_frame_out")
-        self.message_port_register_hier_out("snr_out")
-        self.message_port_register_hier_out("rx_power_out")
-        self.message_port_register_hier_out("rx_switch_out")
+        self.message_port_register_hier_in("RXI")
+        self.message_port_register_hier_in("G")
+        self.message_port_register_hier_out("E")
+        self.message_port_register_hier_out("SNR")
+        self.message_port_register_hier_out("R")
+        self.message_port_register_hier_out("RXO")
 
         ##################################################
         # Blocks
@@ -70,9 +70,9 @@ class receiving(gr.hier_block2):
             center_frequency=center_frequency,
         )
 
-        self.msg_connect((self.receiving_hier_0, 'rx_frame_out'), (self, 'rx_frame_out'))    
-        self.msg_connect((self.receiving_hier_0, 'rx_switch_out'), (self, 'rx_switch_out'))    
-        self.msg_connect((self.receiving_hier_0, 'snr_out'), (self, 'snr_out'))    
-        self.msg_connect((self.receiving_hier_0, 'rx_power_out'), (self, 'rx_power_out'))    
-        self.msg_connect((self, 'rx_switch_in'), (self.receiving_hier_0, 'rx_switch_in'))    
-        self.msg_connect((self, 'reconfig_in'), (self.receiving_hier_0, 'reconfig_in'))    
+        self.msg_connect((self.receiving_hier_0, 'E'), (self, 'E'))    
+        self.msg_connect((self.receiving_hier_0, 'RXO'), (self, 'RXO'))    
+        self.msg_connect((self.receiving_hier_0, 'SNR'), (self, 'SNR'))    
+        self.msg_connect((self.receiving_hier_0, 'R'), (self, 'R'))    
+        self.msg_connect((self, 'RXI'), (self.receiving_hier_0, 'RXI'))    
+        self.msg_connect((self, 'G'), (self.receiving_hier_0, 'G'))    

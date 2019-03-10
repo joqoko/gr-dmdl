@@ -118,32 +118,32 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>confIrm_ACK</name>
+    <name>ACK</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$data_ack</hide>
   </sink>
   <sink>
-    <name>Begin_DATA</name>
+    <name>DATA</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$data_ack</hide>
   </sink>
   <sink>
-    <name>Begin_RTS</name>
+    <name>RTS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$rts_cts</hide>
   </sink>
   <sink>
-    <name>confIrm_CTS</name>
+    <name>CTS</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$rts_cts</hide>
   </sink>
 
   <source>
-    <name>End</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>

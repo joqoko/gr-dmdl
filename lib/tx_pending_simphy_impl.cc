@@ -60,17 +60,17 @@ namespace gr {
       if(_develop_mode == 1)
         std::cout << "develop_mode of tx_pending_simphy ID: " << _block_id << " is activated." << std::endl;
       _wait_time = 0;
-      message_port_register_in(pmt::mp("tx_frame_info_in"));
-      set_msg_handler(pmt::mp("tx_frame_info_in"), boost::bind(&tx_pending_simphy_impl::buffer_tx_frame_info, this, _1 ));
-      message_port_register_out(pmt::mp("data_frame_out"));
-      message_port_register_out(pmt::mp("ack_frame_out"));
-      message_port_register_out(pmt::mp("beacon_frame_out"));
-      message_port_register_out(pmt::mp("rts_frame_out"));
-      message_port_register_out(pmt::mp("cts_frame_out"));
-      message_port_register_out(pmt::mp("ampdu_frame_out"));
-      message_port_register_out(pmt::mp("amsdu_frame_out"));
-      message_port_register_out(pmt::mp("unknown_frame_out"));
-      message_port_register_out(pmt::mp("rx_control_out"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&tx_pending_simphy_impl::buffer_tx_frame_info, this, _1 ));
+      message_port_register_out(pmt::mp("DATA"));
+      message_port_register_out(pmt::mp("ACK"));
+      message_port_register_out(pmt::mp("BEACON"));
+      message_port_register_out(pmt::mp("RTS"));
+      message_port_register_out(pmt::mp("CTS"));
+      message_port_register_out(pmt::mp("AMPDU"));
+      message_port_register_out(pmt::mp("AMSDU"));
+      message_port_register_out(pmt::mp("UKN"));
+      message_port_register_out(pmt::mp("RXO"));
 
       if(_record_on)
       {
@@ -195,49 +195,49 @@ namespace gr {
         {
           if(_develop_mode)
             std::cout << "frame type: data";
-          message_port_pub(pmt::mp("data_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("DATA"), tx_frame_info);
         } 
         else if(frame_type == 2)
         {
           if(_develop_mode)
             std::cout << "frame type: ack";
-          message_port_pub(pmt::mp("ack_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("ACK"), tx_frame_info);
         } 
         else if(frame_type == 3)
         {
           if(_develop_mode)
             std::cout << "frame type: beacon";
-          message_port_pub(pmt::mp("beacon_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("BEACON"), tx_frame_info);
         } 
         else if(frame_type == 4)
         {
           if(_develop_mode)
             std::cout << "frame type: rts";
-          message_port_pub(pmt::mp("rts_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("RTS"), tx_frame_info);
         } 
         else if(frame_type == 5)
         {
           if(_develop_mode)
             std::cout << "frame type: cts";
-          message_port_pub(pmt::mp("cts_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("CTS"), tx_frame_info);
         } 
         else if(frame_type == 6)
         {
           if(_develop_mode)
             std::cout << "frame type: ampdu";
-          message_port_pub(pmt::mp("ampdu_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("AMPDU"), tx_frame_info);
         } 
         else if(frame_type == 7)
         {
           if(_develop_mode)
             std::cout << "frame type: amsdu";
-          message_port_pub(pmt::mp("amsdu_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("AMSDU"), tx_frame_info);
         } 
         else
         {
           if(_develop_mode)
             std::cout << "frame type: unknown";
-          message_port_pub(pmt::mp("unknown_frame_out"), tx_frame_info);
+          message_port_pub(pmt::mp("UKN"), tx_frame_info);
         } 
         if(_develop_mode == 2)
           std::cout << ", starting tx time " << start_time_show << "s and finish time " << current_time_show << "s. the actual transmitting duration is " << current_time - start_time << "s" << std::endl; 
@@ -246,7 +246,7 @@ namespace gr {
       else
         std::cout << "pending_tx: tx_queue is empty. " << std::endl;
       _wait_time = 0;
-      message_port_pub(pmt::mp("rx_control_out"), pmt::from_bool(true));
+      message_port_pub(pmt::mp("RXO"), pmt::from_bool(true));
     }
 
   } /* namespace dmdl */

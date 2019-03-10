@@ -109,7 +109,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>ack_frame_out</value>
+      <value>ACK</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -152,7 +152,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>ampdu_frame_out</value>
+      <value>AMPDU</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -195,7 +195,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>amsdu_frame_out</value>
+      <value>AMSDU</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -238,7 +238,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>beacon_frame_out</value>
+      <value>BEACON</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -622,7 +622,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>cts_frame_out</value>
+      <value>CTS</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -665,7 +665,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>data_frame_out</value>
+      <value>DATA</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1113,7 +1113,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 472)</value>
+      <value>(376, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1414,7 +1414,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>in</value>
+      <value>B</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1457,7 +1457,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>reconfig_in</value>
+      <value>G</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1661,7 +1661,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rts_frame_out</value>
+      <value>RTS</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1704,7 +1704,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rx_control_out</value>
+      <value>RXO</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -2785,7 +2785,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>unknown_frame_out</value>
+      <value>OTHER</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -2906,55 +2906,55 @@
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>ack_frame_out</sink_block_id>
-    <source_key>ack_frame_out</source_key>
+    <source_key>ACK</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>ampdu_frame_out</sink_block_id>
-    <source_key>ampdu_frame_out</source_key>
+    <source_key>AMPDU</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>amsdu_frame_out</sink_block_id>
-    <source_key>amsdu_frame_out</source_key>
+    <source_key>AMSDU</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>beacon_frame_out</sink_block_id>
-    <source_key>beacon_frame_out</source_key>
+    <source_key>BEACON</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>cts_frame_out</sink_block_id>
-    <source_key>cts_frame_out</source_key>
+    <source_key>CTS</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>data_frame_out</sink_block_id>
-    <source_key>data_frame_out</source_key>
+    <source_key>DATA</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>rts_frame_out</sink_block_id>
-    <source_key>rts_frame_out</source_key>
+    <source_key>RTS</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>rx_control_out</sink_block_id>
-    <source_key>rx_control_out</source_key>
+    <source_key>RXO</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_tx_pending_simphy_0</source_block_id>
     <sink_block_id>unknown_frame_out</sink_block_id>
-    <source_key>unknown_frame_out</source_key>
+    <source_key>UKN</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
@@ -2967,13 +2967,7 @@
     <source_block_id>pad_source_0</source_block_id>
     <sink_block_id>dmdl_tx_pending_simphy_0</sink_block_id>
     <source_key>out</source_key>
-    <sink_key>tx_frame_info_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>pad_source_0_0</source_block_id>
-    <sink_block_id>dmdl_path_0</sink_block_id>
-    <source_key>out</source_key>
-    <sink_key>Begin</sink_key>
+    <sink_key>B</sink_key>
   </connection>
   <connection>
     <source_block_id>pad_source_0_0</source_block_id>

@@ -45,8 +45,8 @@ class sending(gr.hier_block2):
             gr.io_signature(0, 0, 0)
         ) # Output signature
  
-        self.message_port_register_hier_in("in")
-        self.message_port_register_hier_in("reconfig_in")
+        self.message_port_register_hier_in("B")
+        self.message_port_register_hier_in("G")
         self.message_port_register_hier_out("DATA")
         self.message_port_register_hier_out("ACK")
         self.message_port_register_hier_out("BEACON")
@@ -54,8 +54,8 @@ class sending(gr.hier_block2):
         self.message_port_register_hier_out("CTS")
         self.message_port_register_hier_out("AMPDU")
         self.message_port_register_hier_out("AMSDU")
-        self.message_port_register_hier_out("unknown_frame_out")
-        self.message_port_register_hier_out("rx_control_out")
+        self.message_port_register_hier_out("OTHER")
+        self.message_port_register_hier_out("RXO")
 
         ##################################################
         # Blocks
@@ -81,14 +81,14 @@ class sending(gr.hier_block2):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.sending_hier_0, 'data_frame_out'), (self, 'DATA'))    
-        self.msg_connect((self.sending_hier_0, 'ack_frame_out'), (self, 'ACK'))    
-        self.msg_connect((self.sending_hier_0, 'beacon_frame_out'), (self, 'BEACON'))    
-        self.msg_connect((self.sending_hier_0, 'rts_frame_out'), (self, 'RTS'))    
-        self.msg_connect((self.sending_hier_0, 'cts_frame_out'), (self, 'CTS'))    
-        self.msg_connect((self.sending_hier_0, 'ampdu_frame_out'), (self, 'AMPDU'))    
-        self.msg_connect((self.sending_hier_0, 'amsdu_frame_out'), (self, 'AMSDU'))    
-        self.msg_connect((self.sending_hier_0, 'unknown_frame_out'), (self, 'unknown_frame_out'))    
-        self.msg_connect((self.sending_hier_0, 'rx_control_out'), (self, 'rx_control_out'))    
-        self.msg_connect((self, 'in'), (self.sending_hier_0, 'in'))    
-        self.msg_connect((self, 'reconfig_in'), (self.sending_hier_0, 'reconfig_in'))    
+        self.msg_connect((self.sending_hier_0, 'DATA'), (self, 'DATA'))    
+        self.msg_connect((self.sending_hier_0, 'ACK'), (self, 'ACK'))    
+        self.msg_connect((self.sending_hier_0, 'BEACON'), (self, 'BEACON'))    
+        self.msg_connect((self.sending_hier_0, 'RTS'), (self, 'RTS'))    
+        self.msg_connect((self.sending_hier_0, 'CTS'), (self, 'CTS'))    
+        self.msg_connect((self.sending_hier_0, 'AMPDU'), (self, 'AMPDU'))    
+        self.msg_connect((self.sending_hier_0, 'AMSDU'), (self, 'AMSDU'))    
+        self.msg_connect((self.sending_hier_0, 'OTHER'), (self, 'OTHER'))    
+        self.msg_connect((self.sending_hier_0, 'RXO'), (self, 'RXO'))    
+        self.msg_connect((self, 'B'), (self.sending_hier_0, 'B'))    
+        self.msg_connect((self, 'G'), (self.sending_hier_0, 'G'))    

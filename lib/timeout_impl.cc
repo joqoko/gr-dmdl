@@ -54,25 +54,25 @@ namespace gr {
       struct timeval t;
       gettimeofday(&t, NULL);
       _start_time = t.tv_sec + t.tv_usec / 1000000.0;
-      message_port_register_out(pmt::mp("End"));
-      message_port_register_in(pmt::mp("Begin_DATA"));
-      message_port_register_in(pmt::mp("confIrm_ACK"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_in(pmt::mp("DATA"));
+      message_port_register_in(pmt::mp("ACK"));
       set_msg_handler(
-        pmt::mp("Begin_DATA"),
+        pmt::mp("DATA"),
         boost::bind(&timeout_impl::start_timeout, this, _1)
       );
       set_msg_handler(
-        pmt::mp("confIrm_ACK"),
+        pmt::mp("ACK"),
         boost::bind(&timeout_impl::kill_timeout, this, _1)
       );
-      message_port_register_in(pmt::mp("Begin_RTS"));
-      message_port_register_in(pmt::mp("confIrm_CTS"));
+      message_port_register_in(pmt::mp("RTS"));
+      message_port_register_in(pmt::mp("CTS"));
       set_msg_handler(
-        pmt::mp("Begin_RTS"),
+        pmt::mp("RTS"),
         boost::bind(&timeout_impl::start_timeout, this, _1)
       );
       set_msg_handler(
-        pmt::mp("confIrm_CTS"),
+        pmt::mp("CTS"),
         boost::bind(&timeout_impl::kill_timeout, this, _1)
       );
     }
@@ -121,7 +121,7 @@ namespace gr {
               ack_frame_info = pmt::dict_add(ack_frame_info, pmt::string_to_symbol("generation_time"),pmt::from_double(gen_time));
               ack_frame_info = pmt::dict_add(ack_frame_info, pmt::string_to_symbol("num_transmission"),pmt::from_long(num_transmission));
               _in_timeout = false;
-              message_port_pub(pmt::mp("End"), ack_frame_info);
+              message_port_pub(pmt::mp("E"), ack_frame_info);
               if(_develop_mode)
                 std::cout << "timeout is terminated by correctly received ack frame." << std::endl;
             }
@@ -165,7 +165,7 @@ namespace gr {
               std::cout << "frame type: " << frame_type << " ack_dest: " << ack_dest << " wait_src: " << wait_src << " ack_src: " << ack_src << "wait_dest: " << wait_dest << " ack_index: " << ack_index << " wait_index: " << wait_index << std::endl;
             if((frame_type == 2) && (ack_dest == wait_src) && (ack_src == wait_dest) && (ack_index >= wait_index))
             { 
-              message_port_pub(pmt::mp("End"), ack_frame_info);
+              message_port_pub(pmt::mp("E"), ack_frame_info);
               if(_window.size() - (ack_index - wait_index) == 1)
               {
                 _in_timeout = false;
@@ -340,15 +340,15 @@ namespace gr {
       {
         // stop and wait
         if(_llc_protocol == 0)
-          message_port_pub(pmt::mp("End"), _waiting_frame_info);
+          message_port_pub(pmt::mp("E"), _waiting_frame_info);
         else if(_llc_protocol == 1)
         {
-          message_port_pub(pmt::mp("End"), _window.front());
+          message_port_pub(pmt::mp("E"), _window.front());
           flush_window();
         }
         else if(_llc_protocol == 2)
         {
-          message_port_pub(pmt::mp("End"), _window.front());
+          message_port_pub(pmt::mp("E"), _window.front());
           flush_window();
         }
           

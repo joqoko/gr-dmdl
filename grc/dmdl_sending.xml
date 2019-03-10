@@ -339,13 +339,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>in</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>reconfig_in</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset</hide>
@@ -399,13 +399,13 @@
     <hide>$amsdu_frame</hide>
   </source>
   <source>
-    <name>unknown_frame_out</name>
+    <name>OTHER</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$unknown_frame</hide>
   </source>
   <source>
-    <name>rx_control_out</name>
+    <name>RXO</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$rx_control</hide>

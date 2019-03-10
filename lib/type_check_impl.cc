@@ -47,7 +47,7 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of frame_type check ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
+      message_port_register_in(pmt::mp("B"));
       message_port_register_out(pmt::mp("DATA"));
       message_port_register_out(pmt::mp("ACK"));
       message_port_register_out(pmt::mp("BEACON"));
@@ -55,10 +55,10 @@ namespace gr {
       message_port_register_out(pmt::mp("CTS"));
       message_port_register_out(pmt::mp("AMPDU"));
       message_port_register_out(pmt::mp("AMSDU"));
-      message_port_register_out(pmt::mp("AMPDU_sub"));
-      message_port_register_out(pmt::mp("AMSDU_sub"));
+      message_port_register_out(pmt::mp("AMPDUs"));
+      message_port_register_out(pmt::mp("AMSDUs"));
       message_port_register_out(pmt::mp("OTHER"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&type_check_impl::selector, this, _1 ));
+      set_msg_handler(pmt::mp("B"), boost::bind(&type_check_impl::selector, this, _1 ));
     }
 
     /*
@@ -129,13 +129,13 @@ namespace gr {
       {
         if(_develop_mode)
           std::cout << "an ampdu subframe" << std::endl;
-        message_port_pub(pmt::mp("AMPDU_sub"), info);
+        message_port_pub(pmt::mp("AMPDUs"), info);
       } 
       else if(frame_type == 9)
       {
         if(_develop_mode)
           std::cout << "an amsdu subframe" << std::endl;
-        message_port_pub(pmt::mp("AMSDU_sub"), info);
+        message_port_pub(pmt::mp("AMSDUs"), info);
       } 
       else
       {

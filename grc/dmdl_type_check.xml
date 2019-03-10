@@ -221,7 +221,7 @@
 
 
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -274,13 +274,13 @@
     <hide>$amsdu_frame</hide>
   </source>
   <source>
-    <name>AMPDU_sub</name>
+    <name>AMPDUs</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$ampdu_frame</hide>
   </source>
   <source>
-    <name>ASMDU_sub</name>
+    <name>AMSDUs</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$amsdu_frame</hide>

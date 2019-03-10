@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.12'?>
+<?grc format='1' created='3.7.11'?>
 <flow_graph>
   <timestamp>Tue Feb  7 10:41:31 2017</timestamp>
   <block>
@@ -73,20 +73,12 @@
       <value>True</value>
     </param>
     <param>
-      <key>sizing_mode</key>
-      <value>fixed</value>
-    </param>
-    <param>
       <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
       <key>title</key>
       <value>receiving_hier</value>
-    </param>
-    <param>
-      <key>placement</key>
-      <value>(0,0)</value>
     </param>
   </block>
   <block>
@@ -266,10 +258,6 @@
     <param>
       <key>short_id</key>
       <value></value>
-    </param>
-    <param>
-      <key>hide</key>
-      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -629,10 +617,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>eng_float</value>
     </param>
@@ -676,10 +660,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value></value>
     </param>
@@ -721,10 +701,6 @@
     <param>
       <key>short_id</key>
       <value></value>
-    </param>
-    <param>
-      <key>hide</key>
-      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -1199,7 +1175,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 264)</value>
+      <value>(400, 264)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1393,10 +1369,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value></value>
     </param>
@@ -1440,10 +1412,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>eng_float</value>
     </param>
@@ -1480,7 +1448,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rx_frame_out</value>
+      <value>E</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1523,7 +1491,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>snr_out</value>
+      <value>SNR</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1550,7 +1518,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 276)</value>
+      <value>(0, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1562,7 +1530,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>reconfig_in</value>
+      <value>G</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1593,7 +1561,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 372)</value>
+      <value>(160, 372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1605,7 +1573,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rx_switch_in</value>
+      <value>RXI</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1659,10 +1627,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value></value>
     </param>
@@ -1706,10 +1670,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>eng_float</value>
     </param>
@@ -1746,7 +1706,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rx_power_out</value>
+      <value>R</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1789,7 +1749,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>rx_switch_out</value>
+      <value>RXO</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -1839,10 +1799,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>eng_float</value>
     </param>
@@ -1886,10 +1842,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>intx</value>
     </param>
@@ -1931,10 +1883,6 @@
     <param>
       <key>short_id</key>
       <value></value>
-    </param>
-    <param>
-      <key>hide</key>
-      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -3129,7 +3077,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(184, 240)</value>
+      <value>(136, 224)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3319,10 +3267,6 @@
       <value></value>
     </param>
     <param>
-      <key>hide</key>
-      <value>none</value>
-    </param>
-    <param>
       <key>type</key>
       <value>string</value>
     </param>
@@ -3442,7 +3386,13 @@
   <connection>
     <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
     <sink_block_id>rx_power_out</sink_block_id>
-    <source_key>power_out</source_key>
+    <source_key>RSSI</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
+    <sink_block_id>rx_switch_out</sink_block_id>
+    <source_key>RXO</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
@@ -3450,12 +3400,6 @@
     <sink_block_id>analog_agc2_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_rx_switch_simphy_0</source_block_id>
-    <sink_block_id>rx_switch_out</sink_block_id>
-    <source_key>rx_switch_out</source_key>
-    <sink_key>in</sink_key>
   </connection>
   <connection>
     <source_block_id>dmdl_variable_rotator_simphy_0</source_block_id>
@@ -3473,7 +3417,7 @@
     <source_block_id>pad_source_rx_switch</source_block_id>
     <sink_block_id>dmdl_rx_switch_simphy_0</sink_block_id>
     <source_key>out</source_key>
-    <sink_key>rx_switch_in</sink_key>
+    <sink_key>RXI</sink_key>
   </connection>
   <connection>
     <source_block_id>uhd_usrp_source_0_0</source_block_id>

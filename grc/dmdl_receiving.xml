@@ -232,7 +232,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>rx_switch_in</name>
+    <name>RXI</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset_rf</hide>
@@ -240,7 +240,7 @@
 
 
   <sink>
-    <name>reconfig_in</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset</hide>
@@ -252,25 +252,25 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>rx_power_out</name>
+    <name>R</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_rss</hide>
   </source>
   <source>
-    <name>rx_frame_out</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_rx_frame</hide>
   </source>
   <source>
-    <name>snr_out</name>
+    <name>SNR</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_snr</hide>
   </source>
   <source>
-    <name>rx_switch_out</name>
+    <name>RXO</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_rx_switch</hide>
