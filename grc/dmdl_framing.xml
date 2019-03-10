@@ -365,20 +365,20 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>reset_index</name>
+    <name>RT</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_reset_index</hide>
   </sink>
 
   <sink>
-    <name>reset_initial_index</name>
+    <name>RTI</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$show_reset_initial_index</hide>
@@ -390,12 +390,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>End</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>frame_pmt_out</name>
+    <name>PF</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_frame_pmt</hide>

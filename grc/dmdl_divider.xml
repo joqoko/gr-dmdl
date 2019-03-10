@@ -117,20 +117,20 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>Stop</name>
+    <name>RT</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$reset</hide>
   </sink>
 
   <sink>
-    <name>reconfiGure</name>
+    <name>G</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$set</hide>
@@ -142,13 +142,13 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>picK</name>
+    <name>K</name>
     <type>message</type>
     <optional>1</optional>
   </source>
 
   <source>
-    <name>staY</name>
+    <name>RE</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$unselect</hide>

@@ -50,21 +50,21 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of divider id: " << _block_id << " is activated." << std::endl;
-      message_port_register_out(pmt::mp("picK"));
-      message_port_register_out(pmt::mp("staY"));
-      message_port_register_in(pmt::mp("Begin"));
+      message_port_register_out(pmt::mp("K"));
+      message_port_register_out(pmt::mp("RE"));
+      message_port_register_in(pmt::mp("B"));
       set_msg_handler(
-        pmt::mp("Begin"),
+        pmt::mp("B"),
         boost::bind(&divider_impl::counting, this, _1)
       );
-      message_port_register_in(pmt::mp("Stop"));
+      message_port_register_in(pmt::mp("RT"));
       set_msg_handler(
-        pmt::mp("Stop"),
-        boost::bind(&divider_impl::stop, this, _1)
+        pmt::mp("RT"),
+        boost::bind(&divider_impl::reset, this, _1)
       );
-      message_port_register_in(pmt::mp("reconfiGure"));
+      message_port_register_in(pmt::mp("G"));
       set_msg_handler(
-        pmt::mp("reconfiGure"),
+        pmt::mp("G"),
         boost::bind(&divider_impl::set_counts, this, _1)
       );
     }
@@ -99,7 +99,7 @@ namespace gr {
     }
 
     void
-    divider_impl::stop(pmt::pmt_t pmt_in)
+    divider_impl::reset(pmt::pmt_t pmt_in)
     {
       if(_mode == 0)
       {
@@ -120,13 +120,13 @@ namespace gr {
         {
           if(_develop_mode)
             std::cout << "current counts is :" << _current_count << ". target is " << _counts << std::endl;
-          message_port_pub(pmt::mp("staY"), pmt_in);
+          message_port_pub(pmt::mp("RE"), pmt_in);
         }
         else
         {
           if(_develop_mode == 1)
             std::cout << "current counts is :" << _current_count << ". target is " << _counts << std::endl;
-          message_port_pub(pmt::mp("picK"), pmt_in);
+          message_port_pub(pmt::mp("K"), pmt_in);
         } 
       }
       // frame index mode

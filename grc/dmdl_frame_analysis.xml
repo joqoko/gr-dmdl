@@ -145,7 +145,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -181,7 +181,7 @@
 
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Pass</name>
+    <name>P</name>
     <type>message</type>
     <optional>1</optional>
   </source>

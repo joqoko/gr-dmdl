@@ -52,11 +52,11 @@ namespace gr {
       if(_develop_mode)
         std::cout << "develop_mode of dummy source ID: " << _block_id << " is activated." << std::endl;
       _generating = false;
-      message_port_register_in(pmt::mp("Begin")); 
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&dummy_source_impl::trigger, this, _1));
-      message_port_register_in(pmt::mp("Stop")); 
-      set_msg_handler(pmt::mp("Stop"), boost::bind(&dummy_source_impl::stop_generation, this, _1));
-      message_port_register_out(pmt::mp("End"));
+      message_port_register_in(pmt::mp("B")); 
+      set_msg_handler(pmt::mp("B"), boost::bind(&dummy_source_impl::trigger, this, _1));
+      message_port_register_in(pmt::mp("S")); 
+      set_msg_handler(pmt::mp("S"), boost::bind(&dummy_source_impl::stop_generation, this, _1));
+      message_port_register_out(pmt::mp("E"));
       std::srand(std::time(0));
       for (unsigned int i = 0; i < _payload_length; i++)
       {
@@ -91,17 +91,17 @@ namespace gr {
           for(int i = 0; i < pmt::to_long(trig); i++)
           {
             std::vector<unsigned char> payload(_payload_length);
-            message_port_pub(pmt::mp("End"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(payload.size(), payload)));
+            message_port_pub(pmt::mp("E"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(payload.size(), payload)));
             if(_develop_mode)
               std::cout << "dummy infinite source ID: " << _block_id << " generate a payload." << std::endl;
           }
           if(_develop_mode)
-            std::cout << "dummy infinite source ID: " << _block_id << " generate and End " << pmt::to_long(trig) << " payloads in a row." << std::endl;
-//          message_port_pub(pmt::mp("End"), trig);
+            std::cout << "dummy infinite source ID: " << _block_id << " generate and E " << pmt::to_long(trig) << " payloads in a row." << std::endl;
+//          message_port_pub(pmt::mp("E"), trig);
         }
         else
         {
-          message_port_pub(pmt::mp("End"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
+          message_port_pub(pmt::mp("E"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
         }
       }
       /*
@@ -117,7 +117,7 @@ namespace gr {
           boost::this_thread::sleep(boost::posix_time::microseconds(1 / _packet_rate * 1000000));
           gettimeofday(&t, NULL);
           double current_time = t.tv_sec + t.tv_usec / 1000000.0;
-          message_port_pub(pmt::mp("End"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
+          message_port_pub(pmt::mp("E"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
           if(_develop_mode)
             std::cout << "dummy constant rate source ID: " << _block_id << " generate a payload." << std::endl;
         }
@@ -126,7 +126,7 @@ namespace gr {
       {  
         if(_develop_mode)
           std::cout << "dummy source ID: " << _block_id << " generates an oneshot payload." << std::endl;
-        message_port_pub(pmt::mp("End"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
+        message_port_pub(pmt::mp("E"), pmt::cons(pmt::make_dict(), pmt::init_u8vector(_payload.size(), _payload)));
       }
       else
         std::cout << "The chosen source is not supported yet. Your contribution is welcome." << std::endl; 

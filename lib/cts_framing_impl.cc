@@ -68,11 +68,11 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of cts_framing ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("rts_frame_info_in"));
-      set_msg_handler(pmt::mp("rts_frame_info_in"), boost::bind(&cts_framing_impl::framing, this, _1 ));
-      message_port_register_out(pmt::mp("frame_out"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&cts_framing_impl::framing, this, _1 ));
+      message_port_register_out(pmt::mp("E"));
       // only in develop_mode
-      message_port_register_out(pmt::mp("frame_pmt_out"));
+      message_port_register_out(pmt::mp("PF"));
       if(_frame_index > 255 || _frame_index < 0)
       {
         if(_develop_mode)
@@ -142,8 +142,8 @@ namespace gr {
       // std::vector<unsigned char> frame_after_crc_vector = pmt::u8vector_elements(pmt::cdr(frame_after_crc));
       // if(_develop_mode)
         // std::cout << "ack frame with crc (no payload), length " << frame_after_crc_vector.size() << std::endl;
-      message_port_pub(pmt::mp("frame_out"), frame_info);
-      message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+      message_port_pub(pmt::mp("E"), frame_info);
+      message_port_pub(pmt::mp("PF"), frame_after_crc);
       if(_develop_mode == 2)
       {
         struct timeval t; 

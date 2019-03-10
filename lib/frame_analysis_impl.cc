@@ -61,9 +61,9 @@ namespace gr {
     {
       if(_develop_mode == 1)
         std::cout << "develop_mode of frame_analysis ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("Pass"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&frame_analysis_impl::frame_analysis, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("P"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&frame_analysis_impl::frame_analysis, this, _1 ));
     }
 
     /*
@@ -100,7 +100,7 @@ namespace gr {
           {
             frame_INFO = frame_decompose(frame_pmt, frame_type);
 	    if(pmt::to_long(pmt::dict_ref(frame_INFO, pmt::string_to_symbol("self_address_check"), not_found)))
-              message_port_pub(pmt::mp("Pass"), frame_INFO);
+              message_port_pub(pmt::mp("P"), frame_INFO);
 	    else
               if(_develop_mode == 1)
                 std::cout << "no output self frame." << std::endl;
@@ -163,7 +163,7 @@ namespace gr {
         subframe_INFO = frame_decompose(mpdu_pmt, frame_type);
         if(pmt::to_long(pmt::dict_ref(subframe_INFO, pmt::string_to_symbol("self_address_check"), not_found)))
 	{
-          message_port_pub(pmt::mp("Pass"), subframe_INFO);
+          message_port_pub(pmt::mp("P"), subframe_INFO);
 	}
 	else
 	  std::cout << "no output self frame." << std::endl;

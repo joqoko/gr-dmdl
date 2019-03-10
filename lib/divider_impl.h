@@ -35,7 +35,7 @@ namespace gr {
       int _counts;
       int _mode;
       void counting(pmt::pmt_t pmt_in);
-      void stop(pmt::pmt_t pmt_in);
+      void reset(pmt::pmt_t pmt_in);
       void set_counts(pmt::pmt_t pmt_in);
 
      public:

@@ -262,7 +262,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>rts_frame_info_in</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -273,12 +273,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>frame_out</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>frame_pmt_out</name>
+    <name>PF</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_frame_pmt</hide>

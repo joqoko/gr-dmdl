@@ -58,15 +58,15 @@ namespace gr {
         _name_with_timestamp(name_with_timestamp),
         _cs_threshold(cs_threshold)
     {
-      message_port_register_out(pmt::mp("info_out"));
-      message_port_register_in(pmt::mp("info_in"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_in(pmt::mp("B"));
       set_msg_handler(
-        pmt::mp("info_in"),
+        pmt::mp("B"),
         boost::bind(&probe_impl::read_info, this, _1)
       ); 
-      message_port_register_in(pmt::mp("file_name_in"));
+      message_port_register_in(pmt::mp("FN"));
       set_msg_handler(
-        pmt::mp("file_name_in"),
+        pmt::mp("FN"),
         boost::bind(&probe_impl::change_file_name, this, _1)
       ); 
       struct timeval t;
@@ -121,7 +121,7 @@ namespace gr {
         double current_time_show = t.tv_sec - double(int(t.tv_sec/100)*100) + t.tv_usec / 1000000.0;
         pmt::pmt_t time_info;
         time_info = pmt::from_double(current_time);
-        message_port_pub(pmt::mp("info_out"), time_info);
+        message_port_pub(pmt::mp("E"), time_info);
         if(_cs_mode)
         {
           if(pmt::is_real(frame_info))

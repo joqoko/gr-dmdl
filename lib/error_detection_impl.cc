@@ -50,11 +50,11 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of error_detection ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("Pass"));
-      message_port_register_out(pmt::mp("Fail"));
-      message_port_register_out(pmt::mp("payload_out"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&error_detection_impl::check_frame, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("P"));
+      message_port_register_out(pmt::mp("F"));
+      message_port_register_out(pmt::mp("PF"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&error_detection_impl::check_frame, this, _1 ));
     }
 
     /*
@@ -148,11 +148,11 @@ namespace gr {
         frame_info = pmt::dict_add(frame_info, pmt::string_to_symbol("good_frame"), pmt::from_long(is_good_frame));
 	if(is_good_frame)
 	{
-          message_port_pub(pmt::mp("Pass"), frame_info);
-          message_port_pub(pmt::mp("payload_out"), payload);
+          message_port_pub(pmt::mp("P"), frame_info);
+          message_port_pub(pmt::mp("PF"), payload);
 	}
         else
-          message_port_pub(pmt::mp("Fail"), frame_info);
+          message_port_pub(pmt::mp("F"), frame_info);
           
       }
       else 

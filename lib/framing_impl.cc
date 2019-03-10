@@ -72,15 +72,15 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of framing ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&framing_impl::catagorization, this, _1 ));
-      message_port_register_in(pmt::mp("reset_index"));
-      set_msg_handler(pmt::mp("reset_index"), boost::bind(&framing_impl::reset_frame_index, this, _1 ));
-      message_port_register_in(pmt::mp("reset_initial_index"));
-      set_msg_handler(pmt::mp("reset_initial_index"), boost::bind(&framing_impl::reset_initial_frame_index, this, _1 ));
-      message_port_register_out(pmt::mp("End"));
+      message_port_register_in(pmt::mp("B"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&framing_impl::catagorization, this, _1 ));
+      message_port_register_in(pmt::mp("RT"));
+      set_msg_handler(pmt::mp("RT"), boost::bind(&framing_impl::reset_frame_index, this, _1 ));
+      message_port_register_in(pmt::mp("RTI"));
+      set_msg_handler(pmt::mp("RTI"), boost::bind(&framing_impl::reset_initial_frame_index, this, _1 ));
+      message_port_register_out(pmt::mp("E"));
       // only in develop_mode
-      message_port_register_out(pmt::mp("frame_pmt_out"));
+      message_port_register_out(pmt::mp("PF"));
       _default_index = _frame_index;
       if(_frame_index > 255 || _frame_index < 0)
       {
@@ -145,7 +145,7 @@ namespace gr {
           std::cout << "Error. wrong frame type in framing ID: " << _block_id << ". please check your connections." << std::endl;
         if(pmt::dict_has_key(generated_frame, pmt::string_to_symbol("frame_pmt")))
         {
-          message_port_pub(pmt::mp("End"), generated_frame);
+          message_port_pub(pmt::mp("E"), generated_frame);
         }
       }
       else if(pmt::is_integer(data_in) && !_internal_index && _frame_type == 1)
@@ -153,14 +153,14 @@ namespace gr {
         generated_frame = data_frame_formation(data_in);
         if(pmt::dict_has_key(generated_frame, pmt::string_to_symbol("frame_pmt")))
         {
-          message_port_pub(pmt::mp("End"), generated_frame);
+          message_port_pub(pmt::mp("E"), generated_frame);
         }
       } 
       else
       {
         if(_develop_mode)
           std::cout << "framing ID: " << _block_id << " cannot framing input pmt. it is passed to the next blocks." << std::endl;
-        message_port_pub(pmt::mp("End"), data_in);
+        message_port_pub(pmt::mp("E"), data_in);
         
       }
 
@@ -261,7 +261,7 @@ namespace gr {
             std::cout << "ampdu delimiter + mpdu + crc32, length " << payload_array.size() << std::endl;
           ampdu_subframe_info = pmt::dict_add(ampdu_subframe_info, pmt::string_to_symbol("subframe_pmt"), subframe_after_crc);
           ampdu_subframe_info = pmt::dict_add(ampdu_subframe_info, pmt::string_to_symbol("mpdu_info"), mpdu_info);
-          message_port_pub(pmt::mp("frame_pmt_out"), subframe_after_crc);
+          message_port_pub(pmt::mp("PF"), subframe_after_crc);
           if(_develop_mode == 2)
           {
             struct timeval t; 
@@ -335,7 +335,7 @@ namespace gr {
           frame_after_crc = crc32_bb_calc(frame_before_crc);
           frame_info = pmt::dict_add(frame_info, pmt::string_to_symbol("frame_pmt"), frame_after_crc);
           std::vector<unsigned char> frame_after_crc_vector = pmt::u8vector_elements(pmt::cdr(frame_after_crc));
-          message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+          message_port_pub(pmt::mp("PF"), frame_after_crc);
           if(_develop_mode)
             std::cout << "frame header with payload with crc, length " << frame_after_crc_vector.size() << std::endl;
           if(_develop_mode == 2)
@@ -409,7 +409,7 @@ namespace gr {
       }
       else 
         std::cout << "Error: pmt is not a dict, cannot generate an ack frame. please check your connections." << std::endl;
-      message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+      message_port_pub(pmt::mp("PF"), frame_after_crc);
       if(_develop_mode == 2)
       {
         struct timeval t; 
@@ -475,7 +475,7 @@ namespace gr {
      
          if(_develop_mode)
            std::cout << "frame header with payload with crc, length " << frame_after_crc_vector.size() << std::endl;
-        message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+        message_port_pub(pmt::mp("PF"), frame_after_crc);
         if(_develop_mode == 2)
         {
           struct timeval t; 

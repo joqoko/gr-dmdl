@@ -49,9 +49,9 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of path ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("End"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&path_impl::control, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("E"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&path_impl::control, this, _1 ));
     }
 
     /*
@@ -68,7 +68,7 @@ namespace gr {
       {
         if(_develop_mode)
           std::cout << " path block ID " << _block_id << " is set to ON node. input cmd is exported." << std::endl;
-        message_port_pub(pmt::mp("End"), cmd_in);
+        message_port_pub(pmt::mp("E"), cmd_in);
       }
       else
       {

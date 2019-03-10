@@ -171,20 +171,20 @@
 
 
   <sink>
-    <name>info_in</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
 
   <sink>
-    <name>file_name_in</name>
+    <name>FN</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$enable_new_name</hide>
   </sink>
 
   <source>
-    <name>info_out</name>
+    <name>E</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_time_info</hide>
