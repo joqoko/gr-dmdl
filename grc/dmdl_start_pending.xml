@@ -36,7 +36,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>msg_in</name>
+    <name>MSG</name>
     <type>message</type>
   </sink>
 
@@ -46,7 +46,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
   </source>
 </block>

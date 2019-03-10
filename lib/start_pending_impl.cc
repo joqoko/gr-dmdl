@@ -46,10 +46,10 @@ namespace gr {
         _start_next_time_s(start_next_time_s),
         _system_time_granularity_us(system_time_granularity_us)
     {
+      message_port_register_in(pmt::mp("MSG"));
+      message_port_register_out(pmt::mp("B"));
+      set_msg_handler(pmt::mp("MSG"), boost::bind(&start_pending_impl::check_start, this, _1 ));
       _started = false;
-      message_port_register_in(pmt::mp("msg_in"));
-      message_port_register_out(pmt::mp("Begin"));
-      set_msg_handler(pmt::mp("msg_in"), boost::bind(&start_pending_impl::check_start, this, _1 ));
     }
 
     /*
@@ -79,7 +79,7 @@ namespace gr {
         gettimeofday(&t, NULL);
         double current_time_show = t.tv_sec - double(int(t.tv_sec/100)*100) + t.tv_usec / 1000000.0;
         std::cout << "node starts running at " << current_time_show << std::endl;
-        message_port_pub(pmt::mp("Begin"), msg);
+        message_port_pub(pmt::mp("B"), msg);
       }
     }
 

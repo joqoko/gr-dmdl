@@ -35,7 +35,7 @@ class start(gr.hier_block2):
             gr.io_signature(0, 0, 0),  # Input signature
             gr.io_signature(0, 0, 0)) # Output signature
 
-        self.message_port_register_hier_out("Begin")
+        self.message_port_register_hier_out("B")
         ##################################################
         # Blocks
         ##################################################
@@ -45,5 +45,5 @@ class start(gr.hier_block2):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.dmdl_start_pending_0, 'msg_in'))
-        self.msg_connect((self.dmdl_start_pending_0, 'Begin'), (self, 'Begin'))
+        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.dmdl_start_pending_0, 'MSG'))
+        self.msg_connect((self.dmdl_start_pending_0, 'B'), (self, 'B'))

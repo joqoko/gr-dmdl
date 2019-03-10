@@ -41,7 +41,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
   </source>
 </block>
