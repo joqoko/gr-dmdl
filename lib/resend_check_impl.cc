@@ -48,10 +48,10 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop mode of resend_check ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("Pass"));
-      message_port_register_out(pmt::mp("Fail"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&resend_check_impl::check_resend, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("P"));
+      message_port_register_out(pmt::mp("F"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&resend_check_impl::check_resend, this, _1 ));
     }
 
     /*
@@ -70,7 +70,7 @@ namespace gr {
       {
         if(_develop_mode)
           std::cout <<"frame: " << pmt::to_long(pmt::dict_ref(frame_in, pmt::string_to_symbol("frame_index"), not_found)) <<  " from node: " << pmt::to_long(pmt::dict_ref(frame_in, pmt::string_to_symbol("source_address"), not_found)) << " is dropped because its max retransmission counter is reached. " << std::endl;
-        message_port_pub(pmt::mp("Fail"), frame_in);
+        message_port_pub(pmt::mp("F"), frame_in);
       }
       else
       {
@@ -127,7 +127,7 @@ namespace gr {
           if(_develop_mode)
             std::cout << "an unknown type frame with index " << pmt::to_long(pmt::dict_ref(frame_in, pmt::string_to_symbol("frame_index"), not_found)) << " from node: " << pmt::to_long(pmt::dict_ref(frame_in, pmt::string_to_symbol("source_address"), not_found))  << " has been transmitted " << n_transmission  << "th time" << std::endl;
         } 
-        message_port_pub(pmt::mp("Pass"),frame_in);
+        message_port_pub(pmt::mp("P"),frame_in);
       }
     }
 

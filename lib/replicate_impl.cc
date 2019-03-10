@@ -48,16 +48,16 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of replicate id: " << _block_id << " is activated." << std::endl;
-      message_port_register_out(pmt::mp("End"));
-      message_port_register_out(pmt::mp("complete_out"));
-      message_port_register_in(pmt::mp("Begin"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_out(pmt::mp("CLO"));
+      message_port_register_in(pmt::mp("B"));
       set_msg_handler(
-        pmt::mp("Begin"),
+        pmt::mp("B"),
         boost::bind(&replicate_impl::do_replicate, this, _1)
       );
-      message_port_register_in(pmt::mp("reconfiGure"));
+      message_port_register_in(pmt::mp("G"));
       set_msg_handler(
-        pmt::mp("reconfiGure"),
+        pmt::mp("G"),
         boost::bind(&replicate_impl::reset_number, this, _1)
       );
     }
@@ -97,7 +97,7 @@ namespace gr {
       if(pmt::dict_has_key(cmd_in, pmt::string_to_symbol("frame_pmt")))
       {
         for(int i = 0; i < _replicate_number; i++)
-          message_port_pub(pmt::mp("End"), cmd_in);
+          message_port_pub(pmt::mp("E"), cmd_in);
         message_port_pub(pmt::mp("complete_out"), pmt::from_long(0));
       }
       else

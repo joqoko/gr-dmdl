@@ -48,10 +48,10 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of redundancy_remover ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("Begin"));
-      message_port_register_out(pmt::mp("End"));
-      message_port_register_out(pmt::mp("redundancy_out"));
-      set_msg_handler(pmt::mp("Begin"), boost::bind(&redundancy_remover_impl::check_redundancy, this, _1 ));
+      message_port_register_in(pmt::mp("B"));
+      message_port_register_out(pmt::mp("E"));
+      message_port_register_out(pmt::mp("RD"));
+      set_msg_handler(pmt::mp("B"), boost::bind(&redundancy_remover_impl::check_redundancy, this, _1 ));
     }
 
     /*
@@ -72,13 +72,13 @@ namespace gr {
         {
           if(_develop_mode)
             std::cout << "new frame arrives at redundancy_remover ID " << _block_id << ". It is exported." << std::endl;
-          message_port_pub(pmt::mp("End"), cmd_in);
+          message_port_pub(pmt::mp("E"), cmd_in);
         }
         else
         {
           if(_develop_mode)
             std::cout << "same frame arrives at redundancy_remover ID " << _block_id << ". It is discarded." << std::endl;
-          message_port_pub(pmt::mp("redundancy_out"), cmd_in);
+          message_port_pub(pmt::mp("RD"), cmd_in);
         }
         _last_index = index;
       }

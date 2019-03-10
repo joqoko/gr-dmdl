@@ -68,13 +68,13 @@ namespace gr {
     {
       if(_develop_mode)
         std::cout << "develop_mode of rts_framing ID: " << _block_id << " is activated." << std::endl;
-      message_port_register_in(pmt::mp("data_frame_in"));
-      set_msg_handler(pmt::mp("data_frame_in"), boost::bind(&rts_framing_impl::framing, this, _1 ));
-      message_port_register_in(pmt::mp("cts_frame_in"));
-      set_msg_handler(pmt::mp("cts_frame_in"), boost::bind(&rts_framing_impl::send_data, this, _1 ));
-      message_port_register_out(pmt::mp("frame_out"));
+      message_port_register_in(pmt::mp("DATA"));
+      set_msg_handler(pmt::mp("DATA"), boost::bind(&rts_framing_impl::framing, this, _1 ));
+      message_port_register_in(pmt::mp("CTS"));
+      set_msg_handler(pmt::mp("CTS"), boost::bind(&rts_framing_impl::send_data, this, _1 ));
+      message_port_register_out(pmt::mp("RTS"));
       // only in develop_mode
-      message_port_register_out(pmt::mp("frame_pmt_out"));
+      message_port_register_out(pmt::mp("PF"));
       if(_frame_index > 255 || _frame_index < 0)
       {
         if(_develop_mode)
@@ -109,9 +109,9 @@ namespace gr {
         {
           if(pmt::is_dict(_data_frame))
           {
-            message_port_pub(pmt::mp("frame_out"), _data_frame);
+            message_port_pub(pmt::mp("RTS"), _data_frame);
             pmt::pmt_t frame_after_crc = pmt::dict_ref(_data_frame, pmt::string_to_symbol("frame_pmt"), not_found);
-            message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+            message_port_pub(pmt::mp("PF"), frame_after_crc);
             _data_frame = pmt::from_long(0);
             _rts_frame = pmt::from_long(0);
             if(_develop_mode)
@@ -198,8 +198,8 @@ namespace gr {
       // if(_develop_mode)
         // std::cout << "ack frame with crc (no payload), length " << frame_after_crc_vector.size() << std::endl;
       _rts_frame = frame_info;
-      message_port_pub(pmt::mp("frame_out"), _rts_frame);
-      message_port_pub(pmt::mp("frame_pmt_out"), frame_after_crc);
+      message_port_pub(pmt::mp("RTS"), _rts_frame);
+      message_port_pub(pmt::mp("PF"), frame_after_crc);
       if(_develop_mode == 2)
       {
         struct timeval t; 

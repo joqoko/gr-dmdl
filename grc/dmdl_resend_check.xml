@@ -52,7 +52,7 @@
   </param>
 
   <sink>
-    <name>Begin</name>
+    <name>B</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -63,12 +63,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>Fail</name>
+    <name>F</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>Pass</name>
+    <name>P</name>
     <type>message</type>
     <optional>1</optional>
   </source>

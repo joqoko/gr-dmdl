@@ -262,12 +262,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>data_frame_in</name>
+    <name>DATA</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
   <sink>
-    <name>cts_frame_in</name>
+    <name>CTS</name>
     <type>message</type>
     <optional>1</optional>
   </sink>
@@ -278,12 +278,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>frame_out</name>
+    <name>RTS</name>
     <type>message</type>
     <optional>1</optional>
   </source>
   <source>
-    <name>frame_pmt_out</name>
+    <name>PF</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_frame_pmt</hide>
