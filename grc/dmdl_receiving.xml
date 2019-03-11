@@ -252,16 +252,16 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>R</name>
-    <type>message</type>
-    <optional>1</optional>
-    <hide>$output_rss</hide>
-  </source>
-  <source>
     <name>E</name>
     <type>message</type>
     <optional>1</optional>
     <hide>$output_rx_frame</hide>
+  </source>
+  <source>
+    <name>R</name>
+    <type>message</type>
+    <optional>1</optional>
+    <hide>$output_rss</hide>
   </source>
   <source>
     <name>SNR</name>
