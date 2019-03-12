@@ -121,7 +121,7 @@
   <param>
     <name>System time granularity [us]</name>
     <key>system_time_granularity_us</key>
-    <value>system_time_granularity_us</value>
+    <value>10</value>
     <type>int</type>
     <hide>part</hide>
   </param>

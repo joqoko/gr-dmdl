@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.11'?>
+<?grc format='1' created='3.7.13'?>
 <flow_graph>
   <timestamp>Sat Mar  9 14:03:15 2019</timestamp>
   <block>
@@ -73,12 +73,20 @@
       <value>True</value>
     </param>
     <param>
+      <key>sizing_mode</key>
+      <value>fixed</value>
+    </param>
+    <param>
       <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
       <key>title</key>
       <value></value>
+    </param>
+    <param>
+      <key>placement</key>
+      <value>(0,0)</value>
     </param>
   </block>
   <block>
@@ -129,33 +137,6 @@
     <param>
       <key>id</key>
       <value>backoff_time_unit_ms</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>50</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(272, 132)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>backoff_time_unit_ms_0</value>
     </param>
     <param>
       <key>value</key>
@@ -228,33 +209,6 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 132)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>cs_duration_0</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>50</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
       <value>(1312, 68)</value>
     </param>
     <param>
@@ -264,33 +218,6 @@
     <param>
       <key>id</key>
       <value>cs_threshold</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>0.005</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(680, 132)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>cs_threshold_0</value>
     </param>
     <param>
       <key>value</key>
@@ -795,33 +722,6 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(432, 132)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>min_backoff_ms_0</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>50</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
       <value>(88, 564)</value>
     </param>
     <param>
@@ -1045,6 +945,33 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(560, 132)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>result_record_directory</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>"/home/pwa/Source/gr-dmdl/results"</value>
+    </param>
+  </block>
+  <block>
     <key>variable_rrc_filter_taps</key>
     <param>
       <key>comment</key>
@@ -1099,7 +1026,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 132)</value>
+      <value>(272, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1288,7 +1215,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(936, 132)</value>
+      <value>(416, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1315,7 +1242,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1424, 4)</value>
+      <value>(120, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1327,34 +1254,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>"addr=10.0.0.6"</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(120, 132)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>usrp_device_address_0</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>"addr=10.0.0.6"</value>
+      <value>"addr=192.168.10.4"</value>
     </param>
   </block>
   <block>
@@ -1575,7 +1475,7 @@
     </param>
     <param>
       <key>source_type</key>
-      <value>1</value>
+      <value>2</value>
     </param>
   </block>
   <block>
@@ -2014,7 +1914,7 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>result_record_directory</value>
     </param>
     <param>
       <key>name_with_timestamp</key>
@@ -2097,7 +1997,7 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>result_record_directory</value>
     </param>
     <param>
       <key>name_with_timestamp</key>
@@ -2180,7 +2080,7 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>result_record_directory</value>
     </param>
     <param>
       <key>name_with_timestamp</key>
@@ -2263,7 +2163,7 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>result_record_directory</value>
     </param>
     <param>
       <key>name_with_timestamp</key>
@@ -2346,7 +2246,7 @@
     </param>
     <param>
       <key>record_path</key>
-      <value>"/home/inets/source/gr-inets/results/"</value>
+      <value>result_record_directory</value>
     </param>
     <param>
       <key>name_with_timestamp</key>
@@ -2678,7 +2578,7 @@
     </param>
     <param>
       <key>system_time_granularity_us</key>
-      <value>1000</value>
+      <value>10</value>
     </param>
     <param>
       <key>timeout_duration_ms</key>
@@ -2840,6 +2740,12 @@
     <sink_key>B</sink_key>
   </connection>
   <connection>
+    <source_block_id>dmdl_framing_0</source_block_id>
+    <sink_block_id>dmdl_cmd_buffer_0</sink_block_id>
+    <source_key>E</source_key>
+    <sink_key>Q</sink_key>
+  </connection>
+  <connection>
     <source_block_id>dmdl_path_0</source_block_id>
     <sink_block_id>dmdl_receiving_0</sink_block_id>
     <source_key>E</source_key>
@@ -2849,12 +2755,6 @@
     <source_block_id>dmdl_receiving_0</source_block_id>
     <sink_block_id>dmdl_frame_analysis_0</sink_block_id>
     <source_key>E</source_key>
-    <sink_key>B</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>dmdl_receiving_0</source_block_id>
-    <sink_block_id>dmdl_probe_0_0</sink_block_id>
-    <source_key>R</source_key>
     <sink_key>B</sink_key>
   </connection>
   <connection>
